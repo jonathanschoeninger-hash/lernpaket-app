@@ -1,0 +1,488 @@
+{
+  "format": "lernpaket",
+  "version": 1,
+  "id": "bio-zellatmung-ahs10",
+  "titel": "Zellatmung",
+  "fach": "Biologie",
+  "schultyp": "AHS",
+  "schulstufe": 10,
+  "pruefungsart": "Schularbeit",
+  "erstellt": "2026-11-26",
+  "ersteller": "Lernpaket-App (Beispiel)",
+  "quellen": [
+    { "id": "q1", "name": "Beispielpaket – eigene Zusammenstellung (Demo, keine echte Quelle)" }
+  ],
+  "unterthemen": [
+    { "id": "u1", "name": "Glykolyse" },
+    { "id": "u2", "name": "Oxidative Decarboxylierung und Citratzyklus" },
+    { "id": "u3", "name": "Atmungskette und Energiebilanz" }
+  ],
+  "zusammenfassung": [
+    {
+      "unterthema": "u1",
+      "kurz": "Die Glykolyse spaltet im Zellplasma ein Molekül Glucose in zwei Moleküle Pyruvat. Dabei gewinnt die Zelle netto 2 ATP und 2 NADH – ganz ohne Sauerstoff.",
+      "normal": "Die Glykolyse ist der erste Abschnitt der Zellatmung und läuft im Zellplasma ab. Ausgangsstoff ist Glucose, ein Zucker mit sechs Kohlenstoffatomen. Zuerst wird die Glucose unter Verbrauch von 2 ATP aktiviert und dann in zwei Bruchstücke mit je drei Kohlenstoffatomen gespalten. Diese werden oxidiert, dabei entstehen 2 NADH und insgesamt 4 ATP. Am Ende stehen zwei Moleküle Pyruvat. Netto bleiben pro Glucose 2 ATP übrig. Die Glykolyse braucht keinen Sauerstoff und kann deshalb auch anaerob ablaufen.",
+      "ausfuehrlich": "Die Glykolyse ist der erste Abschnitt der Zellatmung. Sie findet im Zellplasma statt, also außerhalb der Mitochondrien. Ausgangsstoff ist Glucose mit der Summenformel C6H12O6.\n\nIm ersten Teil wird die Glucose aktiviert: Die Zelle hängt unter Verbrauch von 2 ATP Phosphatgruppen an das Zuckermolekül. Danach wird das aktivierte Molekül in zwei Bruchstücke mit je drei Kohlenstoffatomen gespalten. Im dritten Teil werden diese Bruchstücke oxidiert. Dabei nimmt NAD+ Elektronen auf und wird zu NADH. Gleichzeitig entstehen 4 ATP, die direkt bei den Reaktionen gebildet werden.\n\nAm Ende der Glykolyse stehen zwei Moleküle Pyruvat. Die Bilanz pro Glucose lautet: 2 Pyruvat, 2 NADH und netto 2 ATP, weil 2 der 4 gebildeten ATP am Anfang investiert wurden.\n\nDie Glykolyse braucht keinen Sauerstoff, aber ständig NAD+. Ist Sauerstoff vorhanden, wird NADH später in der Atmungskette wieder zu NAD+. Fehlt Sauerstoff, gewinnt die Zelle das NAD+ über eine Gärung zurück. Bei der Milchsäuregärung, etwa im Muskel bei starker Belastung, entsteht aus Pyruvat Lactat. Bei der alkoholischen Gärung, etwa bei Hefe, entstehen Ethanol und Kohlenstoffdioxid. Eine Gärung liefert nur die 2 ATP der Glykolyse und ist daher viel weniger ergiebig als die vollständige Zellatmung.",
+      "merke": [
+        "Ort: Zellplasma",
+        "Glucose → 2 Pyruvat",
+        "Bilanz: netto 2 ATP und 2 NADH",
+        "läuft auch ohne Sauerstoff ab"
+      ],
+      "begriffe": ["Glykolyse", "Pyruvat", "NADH", "Gärung", "Lactat"],
+      "quelle": { "id": "q1", "stelle": "Abschnitt 1" }
+    },
+    {
+      "unterthema": "u2",
+      "kurz": "Pyruvat wird in der Mitochondrienmatrix zu Acetyl-CoA umgebaut, das im Citratzyklus vollständig zu Kohlenstoffdioxid abgebaut wird. Dabei entstehen vor allem NADH und FADH2 für die Atmungskette.",
+      "normal": "Das Pyruvat aus der Glykolyse wandert in die Mitochondrien. In der Mitochondrienmatrix wird von jedem Pyruvat ein Molekül Kohlenstoffdioxid abgespalten, dabei entstehen Acetyl-CoA und NADH. Diesen Schritt nennt man oxidative Decarboxylierung. Im Citratzyklus verbindet sich Acetyl-CoA mit Oxalacetat zu Citrat. In mehreren Schritten werden zwei Moleküle Kohlenstoffdioxid abgespalten, bis wieder Oxalacetat vorliegt. Pro Durchlauf entstehen 3 NADH, 1 FADH2 und 1 ATP. Weil aus einer Glucose zwei Pyruvat entstehen, läuft der Zyklus pro Glucose zweimal.",
+      "ausfuehrlich": "Nach der Glykolyse gelangt das Pyruvat in die Mitochondrien. Dort läuft in der Mitochondrienmatrix zuerst die oxidative Decarboxylierung ab. Von jedem Pyruvat wird ein Molekül Kohlenstoffdioxid abgespalten, und der verbleibende Rest mit zwei Kohlenstoffatomen wird an Coenzym A gebunden. So entsteht Acetyl-CoA. Dabei wird NAD+ zu NADH.\n\nDas Acetyl-CoA tritt in den Citratzyklus ein, der nach seinem Entdecker Hans Krebs auch Krebs-Zyklus oder Zitronensäurezyklus heißt. Der Acetylrest mit zwei Kohlenstoffatomen verbindet sich mit Oxalacetat, das vier Kohlenstoffatome hat. Es entsteht Citrat mit sechs Kohlenstoffatomen. In mehreren Schritten werden zwei Moleküle Kohlenstoffdioxid abgespalten. Dabei werden Elektronen auf NAD+ und FAD übertragen. Am Ende liegt wieder Oxalacetat vor, das das nächste Acetyl-CoA aufnehmen kann – deshalb spricht man von einem Kreislauf.\n\nPro Durchlauf entstehen 2 Kohlenstoffdioxid, 3 NADH, 1 FADH2 und 1 ATP, das manche Lehrbücher als GTP angeben. Pro Glucose läuft der Zyklus zweimal. Zusammen mit der oxidativen Decarboxylierung wird der Kohlenstoff der Glucose damit vollständig zu 6 Molekülen Kohlenstoffdioxid abgebaut. Der Citratzyklus liefert selbst nur wenig ATP. Seine wichtigste Aufgabe ist es, energiereiche Elektronen in Form von NADH und FADH2 für die Atmungskette bereitzustellen.",
+      "merke": [
+        "Ort: Mitochondrienmatrix",
+        "Pyruvat → Acetyl-CoA + Kohlenstoffdioxid + NADH",
+        "pro Durchlauf: 2 Kohlenstoffdioxid, 3 NADH, 1 FADH2, 1 ATP",
+        "zwei Durchläufe pro Glucose"
+      ],
+      "begriffe": ["oxidative Decarboxylierung", "Acetyl-CoA", "Citratzyklus", "Oxalacetat", "Citrat", "FADH2"],
+      "quelle": { "id": "q1", "stelle": "Abschnitt 2" }
+    },
+    {
+      "unterthema": "u3",
+      "kurz": "In der Atmungskette an der inneren Mitochondrienmembran geben NADH und FADH2 ihre Elektronen ab, bis diese am Ende auf Sauerstoff übertragen werden. Die frei werdende Energie nutzt die ATP-Synthase, um den Großteil des ATP zu bilden.",
+      "normal": "Die Atmungskette sitzt in der inneren Mitochondrienmembran. NADH und FADH2 geben dort ihre Elektronen an mehrere hintereinanderliegende Enzymkomplexe ab. Während die Elektronen weitergereicht werden, pumpen die Komplexe Protonen in den Intermembranraum. So entsteht ein Protonengradient. Die Protonen strömen durch die ATP-Synthase zurück in die Matrix, und dieses Enzym bildet dabei ATP aus ADP und Phosphat. Am Ende nimmt Sauerstoff die Elektronen auf und reagiert mit Protonen zu Wasser. Insgesamt gewinnt die Zelle so etwa 30 bis 38 ATP pro Glucose, je nach Lehrbuch.",
+      "ausfuehrlich": "Die Atmungskette ist der letzte Abschnitt der Zellatmung. Sie befindet sich in der inneren Mitochondrienmembran, die stark gefaltet ist und dadurch eine große Oberfläche hat.\n\nNADH und FADH2 aus Glykolyse und Citratzyklus geben ihre Elektronen an eine Kette von Enzymkomplexen ab. Die Elektronen werden von Komplex zu Komplex weitergereicht und geben dabei schrittweise Energie ab. Mit dieser Energie pumpen die Komplexe Protonen aus der Matrix in den Intermembranraum. Dadurch entsteht ein Protonengradient: Auf der einen Seite der Membran sind viel mehr Protonen als auf der anderen.\n\nDie Protonen können nur durch ein bestimmtes Enzym zurück in die Matrix strömen, die ATP-Synthase. Wie bei einer Turbine treibt der Protonenstrom das Enzym an, und es bildet ATP aus ADP und Phosphat. Diese Art der ATP-Bildung heißt oxidative Phosphorylierung.\n\nAm Ende der Kette nimmt Sauerstoff die Elektronen auf und reagiert mit Protonen zu Wasser. Sauerstoff ist also der letzte Elektronenempfänger. Fehlt er, stauen sich die Elektronen, die Atmungskette bleibt stehen, und die Zelle kann nur noch über Glykolyse und Gärung wenig ATP gewinnen.\n\nDie Atmungskette liefert den weitaus größten Teil des ATP. Insgesamt entstehen bei der vollständigen Zellatmung etwa 30 bis 38 ATP pro Glucose; die genaue Zahl wird je nach Lehrbuch unterschiedlich angegeben. Die Summengleichung der Zellatmung lautet: C6H12O6 + 6 O2 → 6 CO2 + 6 H2O + Energie.",
+      "merke": [
+        "Ort: innere Mitochondrienmembran",
+        "der Protonengradient treibt die ATP-Synthase an",
+        "Sauerstoff ist der letzte Elektronenempfänger → Wasser",
+        "liefert den Großteil des ATP"
+      ],
+      "begriffe": ["Atmungskette", "Protonengradient", "ATP-Synthase", "oxidative Phosphorylierung"],
+      "quelle": { "id": "q1", "stelle": "Abschnitt 3" }
+    }
+  ],
+  "karten": [
+    { "id": "k1", "unterthema": "u1", "vorne": "Glykolyse – Ort?", "hinten": "Zellplasma (Cytoplasma)", "quelle": { "id": "q1", "stelle": "Abschnitt 1" } },
+    { "id": "k2", "unterthema": "u1", "vorne": "Glykolyse – Ausgangsstoff?", "hinten": "Glucose (C6H12O6)" },
+    { "id": "k3", "unterthema": "u1", "vorne": "Glykolyse – Endprodukt?", "hinten": "2 Pyruvat mit je drei Kohlenstoffatomen" },
+    { "id": "k4", "unterthema": "u1", "vorne": "Glykolyse – Nettogewinn an ATP?", "hinten": "2 ATP pro Glucose (4 gebildet, 2 investiert)" },
+    { "id": "k5", "unterthema": "u1", "vorne": "Glykolyse – wie viele NADH pro Glucose?", "hinten": "2 NADH" },
+    { "id": "k6", "unterthema": "u1", "vorne": "Braucht die Glykolyse Sauerstoff?", "hinten": "Nein, sie läuft auch anaerob ab." },
+    { "id": "k7", "unterthema": "u1", "vorne": "Gärung – wozu?", "hinten": "Sie gewinnt NAD+ zurück, damit die Glykolyse ohne Sauerstoff weiterlaufen kann." },
+    { "id": "k8", "unterthema": "u1", "vorne": "Milchsäuregärung – Produkt?", "hinten": "Lactat (Milchsäure), z. B. im Muskel bei Sauerstoffmangel" },
+    { "id": "k9", "unterthema": "u2", "vorne": "Oxidative Decarboxylierung – Ort?", "hinten": "Mitochondrienmatrix" },
+    { "id": "k10", "unterthema": "u2", "vorne": "Oxidative Decarboxylierung – was entsteht aus einem Pyruvat?", "hinten": "Acetyl-CoA, 1 CO2 und 1 NADH" },
+    { "id": "k11", "unterthema": "u2", "vorne": "Citratzyklus – Ort?", "hinten": "Mitochondrienmatrix", "quelle": { "id": "q1", "stelle": "Abschnitt 2" } },
+    { "id": "k12", "unterthema": "u2", "vorne": "Citratzyklus – womit verbindet sich Acetyl-CoA?", "hinten": "Mit Oxalacetat (4 C) zu Citrat (6 C)" },
+    { "id": "k13", "unterthema": "u2", "vorne": "Citratzyklus – Produkte pro Durchlauf?", "hinten": "2 CO2, 3 NADH, 1 FADH2, 1 ATP (bzw. GTP)" },
+    { "id": "k14", "unterthema": "u2", "vorne": "Citratzyklus – Durchläufe pro Glucose?", "hinten": "2, weil aus einer Glucose zwei Pyruvat entstehen" },
+    { "id": "k15", "unterthema": "u2", "vorne": "Citratzyklus – andere Namen?", "hinten": "Krebs-Zyklus, Zitronensäurezyklus" },
+    { "id": "k16", "unterthema": "u2", "vorne": "Warum ist der Citratzyklus ein Kreislauf?", "hinten": "Oxalacetat wird am Ende wieder gebildet." },
+    { "id": "k17", "unterthema": "u3", "vorne": "Atmungskette – Ort?", "hinten": "Innere Mitochondrienmembran", "quelle": { "id": "q1", "stelle": "Abschnitt 3" } },
+    { "id": "k18", "unterthema": "u3", "vorne": "Atmungskette – wer liefert die Elektronen?", "hinten": "NADH und FADH2" },
+    { "id": "k19", "unterthema": "u3", "vorne": "Atmungskette – letzter Elektronenempfänger?", "hinten": "Sauerstoff; dabei entsteht Wasser" },
+    { "id": "k20", "unterthema": "u3", "vorne": "Protonengradient", "hinten": "Im Intermembranraum sind viel mehr Protonen (H+) als in der Matrix." },
+    { "id": "k21", "unterthema": "u3", "vorne": "ATP-Synthase", "hinten": "Enzym, das mit dem Rückstrom der Protonen ATP aus ADP und Phosphat bildet" },
+    { "id": "k22", "unterthema": "u3", "vorne": "Oxidative Phosphorylierung", "hinten": "ATP-Bildung in der Atmungskette mithilfe des Protonengradienten" },
+    { "id": "k23", "unterthema": "u3", "vorne": "Zellatmung – ATP-Gewinn pro Glucose?", "hinten": "Etwa 30 bis 38 ATP (je nach Lehrbuch)" },
+    { "id": "k24", "unterthema": "u3", "vorne": "Zellatmung – Summengleichung?", "hinten": "C6H12O6 + 6 O2 → 6 CO2 + 6 H2O + Energie" }
+  ],
+  "videos": [
+    {
+      "id": "v1",
+      "unterthema": "u1",
+      "titel": "Was passiert bei der Glykolyse?",
+      "folien": [
+        {
+          "layout": "titel",
+          "titel": "Die Glykolyse",
+          "untertitel": "Der erste Schritt der Zellatmung",
+          "sprechertext": "In diesem Video geht es um die Glykolyse, den ersten Schritt der Zellatmung. Sie läuft in jeder unserer Zellen ab."
+        },
+        {
+          "layout": "stichpunkte",
+          "titel": "Glykolyse im Überblick",
+          "punkte": ["findet im Zellplasma statt", "Glucose → 2 Pyruvat", "braucht keinen Sauerstoff"],
+          "sprechertext": "Die Glykolyse findet im Zellplasma statt. Aus einem Molekül Glucose entstehen zwei Moleküle Pyruvat. Dafür braucht die Zelle keinen Sauerstoff."
+        },
+        {
+          "layout": "ablauf",
+          "titel": "Die Abschnitte der Glykolyse",
+          "schritte": ["Aktivierung: 2 ATP werden investiert", "Spaltung in zwei Bruchstücke mit je 3 C", "Oxidation: NADH und 4 ATP entstehen", "Ergebnis: 2 Pyruvat"],
+          "sprechertext": "Zuerst wird die Glucose mit zwei ATP aktiviert. Dann wird sie in zwei Bruchstücke mit je drei Kohlenstoffatomen gespalten. Diese werden oxidiert, dabei entstehen N A D H und vier ATP. Am Ende stehen zwei Moleküle Pyruvat."
+        },
+        {
+          "layout": "zahl",
+          "zahl": "2",
+          "einheit": "ATP",
+          "bedeutung": "Nettogewinn der Glykolyse pro Glucose",
+          "sprechertext": "Vier ATP werden gebildet, zwei wurden am Anfang investiert. Netto bleiben also zwei ATP pro Glucose übrig."
+        },
+        {
+          "layout": "merke",
+          "text": "Fehlt Sauerstoff, hält die Gärung die Glykolyse am Laufen: Sie gewinnt NAD+ zurück.",
+          "sprechertext": "Merke: Fehlt Sauerstoff, gewinnt die Zelle über eine Gärung das nötige N A D plus zurück. So kann die Glykolyse weiterlaufen."
+        }
+      ]
+    },
+    {
+      "id": "v2",
+      "unterthema": "u2",
+      "titel": "Vom Pyruvat zum Citratzyklus",
+      "folien": [
+        {
+          "layout": "titel",
+          "titel": "Der Citratzyklus",
+          "untertitel": "Abbau in der Mitochondrienmatrix",
+          "sprechertext": "Jetzt verfolgen wir das Pyruvat in die Mitochondrien. Dort wird es im Citratzyklus vollständig abgebaut."
+        },
+        {
+          "layout": "begriff",
+          "begriff": "Oxidative Decarboxylierung",
+          "definition": "Pyruvat verliert ein CO2 und wird zu Acetyl-CoA; dabei entsteht NADH.",
+          "sprechertext": "Zuerst kommt die oxidative Decarboxylierung. Vom Pyruvat wird Kohlenstoffdioxid abgespalten, und es entsteht Acetyl-Coenzym-A. Dabei wird außerdem N A D H gebildet."
+        },
+        {
+          "layout": "ablauf",
+          "titel": "Ein Durchlauf des Citratzyklus",
+          "schritte": ["Acetyl-CoA + Oxalacetat → Citrat", "2 CO2 werden abgespalten", "3 NADH, 1 FADH2 und 1 ATP entstehen", "Oxalacetat liegt wieder vor"],
+          "sprechertext": "Acetyl-Coenzym-A verbindet sich mit Oxalacetat zu Citrat. Danach werden zwei Moleküle Kohlenstoffdioxid abgespalten. Dabei entstehen drei N A D H, ein F A D H 2 und ein ATP. Am Ende liegt wieder Oxalacetat vor, und der Kreislauf beginnt von vorne."
+        },
+        {
+          "layout": "quiz",
+          "frage": "Wie oft läuft der Citratzyklus pro Glucose?",
+          "optionen": ["Einmal", "Zweimal", "Viermal"],
+          "richtig": 1,
+          "sprechertext": "Kurze Frage: Wie oft läuft der Citratzyklus pro Glucosemolekül? Denk kurz nach."
+        }
+      ]
+    },
+    {
+      "id": "v3",
+      "unterthema": "u3",
+      "titel": "Die Atmungskette – das Kraftwerk der Zelle",
+      "folien": [
+        {
+          "layout": "titel",
+          "titel": "Die Atmungskette",
+          "untertitel": "Hier entsteht das meiste ATP",
+          "sprechertext": "Im letzten Abschnitt der Zellatmung entsteht der größte Teil der Energie. Schauen wir uns die Atmungskette an."
+        },
+        {
+          "layout": "stichpunkte",
+          "titel": "So funktioniert sie",
+          "punkte": ["NADH und FADH2 geben Elektronen ab", "Protonen werden in den Intermembranraum gepumpt", "die ATP-Synthase bildet ATP", "Sauerstoff nimmt die Elektronen auf → Wasser"],
+          "sprechertext": "N A D H und F A D H 2 geben ihre Elektronen an die Atmungskette ab. Mit der frei werdenden Energie werden Protonen in den Intermembranraum gepumpt. Strömen sie durch die ATP-Synthase zurück, entsteht ATP. Am Ende nimmt Sauerstoff die Elektronen auf, und es entsteht Wasser."
+        },
+        {
+          "layout": "vergleich",
+          "titel": "Mit und ohne Sauerstoff",
+          "links": {
+            "ueberschrift": "Zellatmung mit Sauerstoff",
+            "punkte": ["Glykolyse, Citratzyklus und Atmungskette", "etwa 30 bis 38 ATP pro Glucose", "Endprodukte: CO2 und Wasser"]
+          },
+          "rechts": {
+            "ueberschrift": "Gärung ohne Sauerstoff",
+            "punkte": ["nur Glykolyse und Gärung", "2 ATP pro Glucose", "Endprodukte: Lactat oder Ethanol"]
+          },
+          "sprechertext": "Mit Sauerstoff laufen alle drei Abschnitte ab, und die Zelle gewinnt etwa dreißig bis achtunddreißig ATP pro Glucose. Ohne Sauerstoff bleibt nur die Gärung mit zwei ATP. Die Zellatmung mit Sauerstoff ist also viel ergiebiger."
+        },
+        {
+          "layout": "formel",
+          "formel": "C6H12O6 + 6 O2 → 6 CO2 + 6 H2O + Energie",
+          "teile": [
+            { "zeichen": "C6H12O6", "bedeutung": "Glucose" },
+            { "zeichen": "O2", "bedeutung": "Sauerstoff" },
+            { "zeichen": "CO2", "bedeutung": "Kohlenstoffdioxid" },
+            { "zeichen": "H2O", "bedeutung": "Wasser" }
+          ],
+          "sprechertext": "Die Summengleichung der Zellatmung lautet: Glucose und sechs Sauerstoff ergeben sechs Kohlenstoffdioxid, sechs Wasser und Energie."
+        },
+        {
+          "layout": "merke",
+          "text": "Sauerstoff ist der letzte Elektronenempfänger der Atmungskette. Ohne ihn steht die Atmungskette still.",
+          "sprechertext": "Merke: Sauerstoff nimmt am Ende der Atmungskette die Elektronen auf. Ohne Sauerstoff steht die Atmungskette still."
+        }
+      ]
+    }
+  ],
+  "fragen": [
+    {
+      "id": "f1", "unterthema": "u1", "typ": "mc", "schwierigkeit": 1,
+      "frage": "Wo findet die Glykolyse statt?",
+      "optionen": ["Im Zellplasma", "In der Mitochondrienmatrix", "An der inneren Mitochondrienmembran", "Im Zellkern"],
+      "richtig": [0],
+      "erklaerung": "Die Glykolyse läuft im Zellplasma ab. Erst das Pyruvat wird anschließend in die Mitochondrien transportiert.",
+      "quelle": { "id": "q1", "stelle": "Abschnitt 1" },
+      "nurTest": false
+    },
+    {
+      "id": "f2", "unterthema": "u1", "typ": "mc", "schwierigkeit": 1,
+      "frage": "Was entsteht am Ende der Glykolyse aus einem Molekül Glucose?",
+      "optionen": ["Zwei Moleküle Pyruvat", "Zwei Moleküle Acetyl-CoA", "Sechs Moleküle Kohlenstoffdioxid", "Ein Molekül Citrat"],
+      "richtig": [0],
+      "erklaerung": "Die Glucose mit sechs Kohlenstoffatomen wird in zwei Moleküle Pyruvat mit je drei Kohlenstoffatomen zerlegt. Acetyl-CoA entsteht erst danach in den Mitochondrien.",
+      "nurTest": false
+    },
+    {
+      "id": "f3", "unterthema": "u1", "typ": "wahrfalsch", "schwierigkeit": 1,
+      "frage": "Die Glykolyse kann nur ablaufen, wenn Sauerstoff vorhanden ist.",
+      "richtig": false,
+      "erklaerung": "Die Glykolyse braucht keinen Sauerstoff. Deshalb kann die Zelle auch bei Sauerstoffmangel über Glykolyse und Gärung etwas ATP gewinnen.",
+      "nurTest": false
+    },
+    {
+      "id": "f4", "unterthema": "u1", "typ": "lueckentext", "schwierigkeit": 2,
+      "frage": "Ergänze den Satz zur Glykolyse.",
+      "text": "In der Glykolyse wird Glucose mit {{1}} Kohlenstoffatomen in zwei Moleküle {{2}} gespalten.",
+      "luecken": [["6", "sechs"], ["Pyruvat", "Brenztraubensäure"]],
+      "erklaerung": "Glucose hat sechs Kohlenstoffatome. Am Ende der Glykolyse stehen zwei Moleküle Pyruvat mit je drei Kohlenstoffatomen.",
+      "nurTest": false
+    },
+    {
+      "id": "f5", "unterthema": "u1", "typ": "zahl", "schwierigkeit": 2,
+      "frage": "Wie viele ATP gewinnt die Zelle in der Glykolyse netto pro Glucosemolekül?",
+      "loesung": 2, "toleranz": 0, "einheit": "ATP",
+      "erklaerung": "Es werden 4 ATP gebildet, aber 2 ATP wurden am Anfang für die Aktivierung der Glucose investiert. Netto bleiben 2 ATP.",
+      "quelle": { "id": "q1", "stelle": "Abschnitt 1" },
+      "nurTest": false
+    },
+    {
+      "id": "f6", "unterthema": "u1", "typ": "reihenfolge", "schwierigkeit": 2,
+      "frage": "Bringe die Abschnitte der Glykolyse in die richtige Reihenfolge.",
+      "schritte": [
+        "Glucose wird unter ATP-Verbrauch aktiviert",
+        "Das aktivierte Zuckermolekül wird in zwei Bruchstücke gespalten",
+        "Die Bruchstücke werden oxidiert, dabei entsteht NADH",
+        "ATP wird gebildet und es entsteht Pyruvat"
+      ],
+      "erklaerung": "Zuerst wird Energie investiert, dann wird gespalten, und erst im letzten Teil gewinnt die Zelle NADH und ATP.",
+      "nurTest": false
+    },
+    {
+      "id": "f7", "unterthema": "u1", "typ": "mehrfach", "schwierigkeit": 2,
+      "frage": "Welche Aussagen zur Bilanz der Glykolyse pro Glucose stimmen?",
+      "optionen": ["Netto entstehen 2 ATP", "Es entstehen 2 NADH", "Es wird Sauerstoff verbraucht", "Es entstehen 2 Pyruvat", "Es wird Kohlenstoffdioxid freigesetzt"],
+      "richtig": [0, 1, 3],
+      "erklaerung": "Die Glykolyse liefert netto 2 ATP, 2 NADH und 2 Pyruvat. Sie verbraucht keinen Sauerstoff, und Kohlenstoffdioxid wird erst später in den Mitochondrien abgespalten.",
+      "nurTest": false
+    },
+    {
+      "id": "f8", "unterthema": "u1", "typ": "freitext", "schwierigkeit": 3,
+      "frage": "Erkläre, warum die Glykolyse auch ohne Sauerstoff ablaufen kann und welche Rolle die Gärung dabei spielt.",
+      "musterloesung": "Die Glykolyse selbst verbraucht keinen Sauerstoff. Sie braucht aber NAD+, das dabei zu NADH wird. Ohne Sauerstoff kann NADH nicht in der Atmungskette abgegeben werden, deshalb gewinnt die Zelle das NAD+ über eine Gärung zurück, zum Beispiel über die Milchsäuregärung.",
+      "maxPunkte": 2,
+      "bewertungspunkte": [
+        { "text": "nennt, dass die Glykolyse keinen Sauerstoff verbraucht", "woerter": ["ohne sauerstoff", "kein sauerstoff", "keinen sauerstoff", "anaerob"] },
+        { "text": "nennt, dass die Gärung NAD+ zurückgewinnt", "woerter": ["nad", "regeneriert", "zurückgewonnen", "zurückgewinnt"] }
+      ],
+      "erklaerung": "Entscheidend ist nicht der Sauerstoff, sondern der Nachschub an NAD+. Diesen liefert ohne Sauerstoff die Gärung.",
+      "quelle": { "id": "q1", "stelle": "Abschnitt 1" },
+      "nurTest": true
+    },
+    {
+      "id": "f9", "unterthema": "u1", "typ": "mc", "schwierigkeit": 2,
+      "frage": "Welcher Stoff entsteht bei der Milchsäuregärung im Muskel aus Pyruvat?",
+      "optionen": ["Lactat", "Ethanol", "Acetyl-CoA", "Citrat"],
+      "richtig": [0],
+      "erklaerung": "Bei der Milchsäuregärung wird Pyruvat zu Lactat umgewandelt. Ethanol entsteht bei der alkoholischen Gärung, etwa bei Hefe.",
+      "nurTest": true
+    },
+    {
+      "id": "f10", "unterthema": "u1", "typ": "wahrfalsch", "schwierigkeit": 2,
+      "frage": "In der Glykolyse wird zu Beginn ATP verbraucht, um die Glucose zu aktivieren.",
+      "richtig": true,
+      "erklaerung": "Am Anfang investiert die Zelle 2 ATP, um die Glucose zu aktivieren. Diese Investition holt sie später mit 4 gebildeten ATP wieder herein.",
+      "nurTest": true
+    },
+    {
+      "id": "f11", "unterthema": "u2", "typ": "mc", "schwierigkeit": 1,
+      "frage": "Wo läuft der Citratzyklus ab?",
+      "optionen": ["In der Mitochondrienmatrix", "Im Zellplasma", "An der inneren Mitochondrienmembran", "Im Intermembranraum"],
+      "richtig": [0],
+      "erklaerung": "Der Citratzyklus findet in der Matrix, also im Inneren der Mitochondrien, statt. An der inneren Membran sitzt die Atmungskette.",
+      "quelle": { "id": "q1", "stelle": "Abschnitt 2" },
+      "nurTest": false
+    },
+    {
+      "id": "f12", "unterthema": "u2", "typ": "mc", "schwierigkeit": 1,
+      "frage": "Welches Molekül entsteht bei der oxidativen Decarboxylierung aus Pyruvat?",
+      "optionen": ["Acetyl-CoA", "Oxalacetat", "Lactat", "Glucose"],
+      "richtig": [0],
+      "erklaerung": "Vom Pyruvat wird Kohlenstoffdioxid abgespalten, und der Rest mit zwei Kohlenstoffatomen wird an Coenzym A gebunden. So entsteht Acetyl-CoA.",
+      "nurTest": false
+    },
+    {
+      "id": "f13", "unterthema": "u2", "typ": "wahrfalsch", "schwierigkeit": 1,
+      "frage": "Bei der oxidativen Decarboxylierung wird von jedem Pyruvat ein Molekül Kohlenstoffdioxid abgespalten.",
+      "richtig": true,
+      "erklaerung": "Decarboxylierung bedeutet, dass Kohlenstoffdioxid abgespalten wird – pro Pyruvat genau ein Molekül.",
+      "nurTest": false
+    },
+    {
+      "id": "f14", "unterthema": "u2", "typ": "lueckentext", "schwierigkeit": 2,
+      "frage": "Ergänze den Satz zum Citratzyklus.",
+      "text": "Im Citratzyklus verbindet sich Acetyl-CoA mit {{1}} zu {{2}}.",
+      "luecken": [["Oxalacetat", "Oxalessigsäure"], ["Citrat", "Zitrat", "Citronensäure", "Zitronensäure"]],
+      "erklaerung": "Der Acetylrest mit zwei Kohlenstoffatomen und Oxalacetat mit vier Kohlenstoffatomen ergeben Citrat mit sechs Kohlenstoffatomen.",
+      "nurTest": false
+    },
+    {
+      "id": "f15", "unterthema": "u2", "typ": "zuordnen", "schwierigkeit": 2,
+      "frage": "Ordne jedem Stoff die Anzahl seiner Kohlenstoffatome zu.",
+      "paare": [
+        { "links": "Citrat", "rechts": "6 Kohlenstoffatome" },
+        { "links": "Oxalacetat", "rechts": "4 Kohlenstoffatome" },
+        { "links": "Pyruvat", "rechts": "3 Kohlenstoffatome" },
+        { "links": "Acetylrest von Acetyl-CoA", "rechts": "2 Kohlenstoffatome" }
+      ],
+      "erklaerung": "Pyruvat (3 C) verliert ein CO2 und wird zum Acetylrest (2 C). Dieser verbindet sich mit Oxalacetat (4 C) zu Citrat (6 C).",
+      "nurTest": false
+    },
+    {
+      "id": "f16", "unterthema": "u2", "typ": "zahl", "schwierigkeit": 2,
+      "frage": "Wie oft läuft der Citratzyklus pro Glucosemolekül ab?",
+      "loesung": 2, "toleranz": 0,
+      "erklaerung": "Aus einer Glucose entstehen zwei Pyruvat und damit zwei Acetyl-CoA. Jedes Acetyl-CoA wird in einem eigenen Durchlauf abgebaut.",
+      "nurTest": false
+    },
+    {
+      "id": "f17", "unterthema": "u2", "typ": "mehrfach", "schwierigkeit": 3,
+      "frage": "Welche Produkte entstehen bei einem Durchlauf des Citratzyklus?",
+      "optionen": ["2 Kohlenstoffdioxid", "3 NADH", "1 FADH2", "1 ATP bzw. GTP", "1 Glucose", "6 Sauerstoff"],
+      "richtig": [0, 1, 2, 3],
+      "erklaerung": "Pro Durchlauf entstehen 2 Kohlenstoffdioxid, 3 NADH, 1 FADH2 und 1 ATP. Glucose wird abgebaut und nicht gebildet, Sauerstoff wird erst in der Atmungskette verbraucht.",
+      "quelle": { "id": "q1", "stelle": "Abschnitt 2" },
+      "nurTest": false
+    },
+    {
+      "id": "f18", "unterthema": "u2", "typ": "freitext", "schwierigkeit": 2,
+      "frage": "Warum spricht man beim Citratzyklus von einem Kreislauf? Begründe kurz.",
+      "musterloesung": "Am Ende eines Durchlaufs wird Oxalacetat wieder gebildet. Es kann sofort das nächste Acetyl-CoA aufnehmen, deshalb beginnt der Zyklus immer wieder von vorne.",
+      "maxPunkte": 1,
+      "bewertungspunkte": [
+        { "text": "nennt, dass Oxalacetat am Ende wieder gebildet wird", "woerter": ["oxalacetat", "oxalessigsäure", "wieder gebildet", "regeneriert"] }
+      ],
+      "erklaerung": "Das Ausgangsmolekül Oxalacetat steht am Ende wieder zur Verfügung – das macht den Citratzyklus zu einem Kreislauf.",
+      "nurTest": true
+    },
+    {
+      "id": "f19", "unterthema": "u2", "typ": "zahl", "schwierigkeit": 3,
+      "frage": "Wie viele Moleküle Kohlenstoffdioxid entstehen insgesamt beim vollständigen Abbau eines Glucosemoleküls?",
+      "loesung": 6, "toleranz": 0,
+      "erklaerung": "2 Moleküle entstehen bei der oxidativen Decarboxylierung (eines pro Pyruvat) und 4 im Citratzyklus (2 pro Durchlauf, zwei Durchläufe). Zusammen sind das 6 – so viele, wie Glucose Kohlenstoffatome hat.",
+      "nurTest": true
+    },
+    {
+      "id": "f20", "unterthema": "u2", "typ": "mc", "schwierigkeit": 2,
+      "frage": "Welche Aufgabe haben NADH und FADH2, die im Citratzyklus entstehen?",
+      "optionen": [
+        "Sie liefern Elektronen für die Atmungskette",
+        "Sie werden in der Glykolyse wieder zu Glucose aufgebaut",
+        "Sie geben ihre Energie direkt als Wärme ab",
+        "Sie transportieren Sauerstoff in die Mitochondrien"
+      ],
+      "richtig": [0],
+      "erklaerung": "NADH und FADH2 sind Elektronenüberträger. Sie bringen energiereiche Elektronen zur Atmungskette, wo daraus der Großteil des ATP entsteht.",
+      "nurTest": true
+    },
+    {
+      "id": "f21", "unterthema": "u3", "typ": "mc", "schwierigkeit": 1,
+      "frage": "Wo befindet sich die Atmungskette?",
+      "optionen": ["An der inneren Mitochondrienmembran", "In der Mitochondrienmatrix", "Im Zellplasma", "An der äußeren Zellmembran"],
+      "richtig": [0],
+      "erklaerung": "Die Enzymkomplexe der Atmungskette und die ATP-Synthase sitzen in der inneren Mitochondrienmembran.",
+      "quelle": { "id": "q1", "stelle": "Abschnitt 3" },
+      "nurTest": false
+    },
+    {
+      "id": "f22", "unterthema": "u3", "typ": "wahrfalsch", "schwierigkeit": 1,
+      "frage": "In der Atmungskette entsteht der größte Teil des ATP der Zellatmung.",
+      "richtig": true,
+      "erklaerung": "Glykolyse und Citratzyklus liefern zusammen nur 4 ATP pro Glucose. Der weitaus größte Teil entsteht in der Atmungskette.",
+      "nurTest": false
+    },
+    {
+      "id": "f23", "unterthema": "u3", "typ": "mc", "schwierigkeit": 2,
+      "frage": "Welcher Stoff nimmt am Ende der Atmungskette die Elektronen auf?",
+      "optionen": ["Sauerstoff", "Kohlenstoffdioxid", "Glucose", "Wasser"],
+      "richtig": [0],
+      "erklaerung": "Sauerstoff ist der letzte Elektronenempfänger. Er reagiert mit Elektronen und Protonen zu Wasser – Wasser ist also das Produkt, nicht der Empfänger.",
+      "nurTest": false
+    },
+    {
+      "id": "f24", "unterthema": "u3", "typ": "reihenfolge", "schwierigkeit": 2,
+      "frage": "Bringe die Vorgänge an der inneren Mitochondrienmembran in die richtige Reihenfolge.",
+      "schritte": [
+        "NADH gibt Elektronen an die Atmungskette ab",
+        "Mit der Energie der Elektronen werden Protonen in den Intermembranraum gepumpt",
+        "Protonen strömen durch die ATP-Synthase zurück in die Matrix",
+        "Aus ADP und Phosphat entsteht ATP"
+      ],
+      "erklaerung": "Die Elektronen liefern die Energie für das Pumpen der Protonen. Erst der so entstandene Protonengradient treibt die ATP-Synthase an.",
+      "nurTest": false
+    },
+    {
+      "id": "f25", "unterthema": "u3", "typ": "zuordnen", "schwierigkeit": 2,
+      "frage": "Ordne jedem Begriff die passende Beschreibung zu.",
+      "paare": [
+        { "links": "ATP-Synthase", "rechts": "Enzym, das ATP aus ADP und Phosphat bildet" },
+        { "links": "Protonengradient", "rechts": "Unterschied der Protonenmenge auf beiden Seiten der Membran" },
+        { "links": "Sauerstoff", "rechts": "nimmt am Ende der Kette die Elektronen auf" },
+        { "links": "NADH", "rechts": "liefert Elektronen an die Atmungskette" }
+      ],
+      "erklaerung": "NADH liefert die Elektronen, ihre Energie baut den Protonengradienten auf, die ATP-Synthase nutzt ihn, und Sauerstoff nimmt die Elektronen am Ende auf.",
+      "nurTest": false
+    },
+    {
+      "id": "f26", "unterthema": "u3", "typ": "lueckentext", "schwierigkeit": 2,
+      "frage": "Ergänze den Satz zum Ende der Atmungskette.",
+      "text": "Am Ende der Atmungskette reagiert {{1}} mit Elektronen und Protonen zu {{2}}.",
+      "luecken": [["Sauerstoff", "O2"], ["Wasser", "H2O"]],
+      "erklaerung": "Sauerstoff nimmt die Elektronen auf und bildet zusammen mit Protonen Wasser.",
+      "nurTest": false
+    },
+    {
+      "id": "f27", "unterthema": "u3", "typ": "zahl", "schwierigkeit": 3,
+      "frage": "Wie viele ATP gewinnt eine Zelle bei der vollständigen Zellatmung ungefähr aus einem Glucosemolekül?",
+      "loesung": 34, "toleranz": 4, "einheit": "ATP",
+      "erklaerung": "Je nach Lehrbuch werden 30 bis 38 ATP pro Glucose angegeben. Jede Antwort in diesem Bereich zählt als richtig.",
+      "quelle": { "id": "q1", "stelle": "Abschnitt 3" },
+      "nurTest": false
+    },
+    {
+      "id": "f28", "unterthema": "u3", "typ": "freitext", "schwierigkeit": 3,
+      "frage": "Erkläre, wie die ATP-Synthase ATP herstellt.",
+      "musterloesung": "In der Atmungskette werden Protonen in den Intermembranraum gepumpt, so entsteht ein Protonengradient. Die Protonen strömen durch die ATP-Synthase zurück in die Matrix. Mit dieser Energie bildet das Enzym ATP aus ADP und Phosphat.",
+      "maxPunkte": 2,
+      "bewertungspunkte": [
+        { "text": "nennt den Protonengradienten bzw. das Zurückströmen der Protonen", "woerter": ["protonen", "protonengradient", "h+", "konzentrationsunterschied"] },
+        { "text": "nennt die Bildung von ATP aus ADP und Phosphat", "woerter": ["adp", "phosphat", "aus adp"] }
+      ],
+      "erklaerung": "Die ATP-Synthase nutzt den Protonenstrom wie eine Turbine. Diese Art der ATP-Bildung heißt oxidative Phosphorylierung.",
+      "nurTest": true
+    },
+    {
+      "id": "f29", "unterthema": "u3", "typ": "mehrfach", "schwierigkeit": 3,
+      "frage": "Was passiert, wenn in einer Zelle kein Sauerstoff mehr vorhanden ist?",
+      "optionen": [
+        "Die Atmungskette kommt zum Stillstand",
+        "Die Zelle kann nur noch über Glykolyse und Gärung ATP gewinnen",
+        "Der Citratzyklus läuft schneller ab",
+        "Es entsteht mehr Wasser",
+        "Die ATP-Ausbeute pro Glucose steigt stark an"
+      ],
+      "richtig": [0, 1],
+      "erklaerung": "Ohne Sauerstoff fehlt der letzte Elektronenempfänger, die Atmungskette steht still. Dann bleiben nur Glykolyse und Gärung mit 2 ATP pro Glucose.",
+      "nurTest": true
+    },
+    {
+      "id": "f30", "unterthema": "u3", "typ": "mc", "schwierigkeit": 3,
+      "frage": "Wie heißt die ATP-Bildung mithilfe des Protonengradienten in der Atmungskette?",
+      "optionen": ["Oxidative Phosphorylierung", "Substratkettenphosphorylierung", "Oxidative Decarboxylierung", "Milchsäuregärung"],
+      "richtig": [0],
+      "erklaerung": "Bei der oxidativen Phosphorylierung wird ATP mithilfe des Protonengradienten gebildet. Die Substratkettenphosphorylierung bildet ATP dagegen direkt bei einzelnen Reaktionen, etwa in der Glykolyse.",
+      "nurTest": true
+    }
+  ]
+}

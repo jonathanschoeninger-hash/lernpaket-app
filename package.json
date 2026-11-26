@@ -1,0 +1,9 @@
+{
+  "name": "lernpaket-app",
+  "private": true,
+  "type": "module",
+  "description": "Kostenlose Lern-App für Lernpakete – keine Abhängigkeiten.",
+  "scripts": {
+    "test": "node --test"
+  }
+}
