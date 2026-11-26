@@ -1,4 +1,4 @@
-# Lern-App – Design-Dokument (v6 – Rückfragen vor Phase 1 eingearbeitet)
+# Lern-App – Design-Dokument (v7 – zweite Runde Rückfragen vor Phase 1 eingearbeitet)
 
 > Status: **freigegeben zur Umsetzung**. Umsetzung nach `ANLEITUNG.md`.
 
@@ -369,6 +369,23 @@ Geklärt am 26. 11. 2026 (Rückfragen vor Phase 1) – zusätzlich zu den Änder
 7. **Quellenangaben** pro Frage, Karte und Zusammenfassung sind optional („wenn bekannt“) – SKILL.md ist verbindlich.
 8. **Code-Namen** auf Deutsch (paket, frage, karte, unterthema …), passend zum Paketformat.
 9. **Verschoben:** mündliche Prüfung → Phase 5 (braucht die Vorlese-Funktion); Paket per Link → Phase 6; eigene Karteikarten → Abschnitt 11.
+
+Geklärt am 26. 11. 2026 (zweite Runde vor Phase 1):
+
+10. **Beispielpaket** `beispiele/zellatmung.lernpaket.json`: aus allgemeinem Schulwissen (AHS 10. Stufe) in eigenen Worten geschrieben. Einzige Quelle: „Beispielpaket – eigene Zusammenstellung“ (klar als Demo markiert), damit die Quellenanzeige testbar ist.
+11. **HTML/Markdown in Texten:** eindeutige HTML-Tags (z. B. `<b>`, `<br>`, `<script …>`) = **Fehler**; Markdown-Muster (`**fett**`, `# Titel`, `[Link](…)`) = **Hinweis**. Grund: Erkennung nur per Faustregel, Mathe-Texte wie `x < 5` oder `2 * 3` dürfen nicht abgelehnt werden; die App zeigt ohnehin nur Text an.
+12. **Pflichtfelder in Unterobjekten:** alles aus den Beispielen in SKILL.md Abschnitt 3 ist Pflicht, außer den ausdrücklich optionalen Feldern `ersteller`, `quelle`/`stelle`, `begriffe`, `teil`, `untertitel`, `einheit`. Listen dürfen nie leer sein (außer `quellen` und `begriffe`). Optionale Texte dürfen, wenn vorhanden, ebenfalls nicht leer sein.
+13. **Erlaubte Werte:** unbekannter `schultyp` / `pruefungsart` oder `schulstufe` außerhalb 1–13 (ganze Zahl) = Fehler. `teil` mit anderem Wert als `"1"`/`"2"` = Fehler; `teil` bei `pruefungsart` ≠ `Matura` = Hinweis.
+14. **Fragenanzahl:** Hinweis bei weniger als 8 oder mehr als 15 Fragen pro Unterthema, und wenn ein Unterthema weniger als 5 Übungsfragen (`nurTest: false`) hat.
+15. **Unbekannte Felder** (z. B. Tippfehler `begrife`): Hinweis „Feld wird ignoriert“.
+16. **Code-Namen:** Datei- und Funktionsnamen genau wie in `CLAUDE.md` und `ANLEITUNG.md` (z. B. `validate.js`, `validatePaket`); alles andere (Variablen, Felder, Meldungen) auf Deutsch.
+17. **Technik-Kleinigkeiten:** `package.json` nur mit `"type": "module"` (keine Pakete), damit `node --test` ES-Module ab Node 20 lädt. `quiz.richtig` bei Folien ist eine Zahl, `richtig` bei `mc`/`mehrfach` eine Liste. Doppelte `richtig`-Indizes, doppelte `zuordnen`-Seiten und doppelte `reihenfolge`-Schritte = Fehler. Die 5-MB-Grenze prüft eine eigene Funktion am Dateitext; `validatePaket(obj)` prüft das Objekt.
+
+**Noch offen – vor der jeweiligen Phase klären:**
+- **Phase 2/4:** Abschnitt 8 fehlt Speicher für falsch beantwortete Testfragen (Fehlerheft), einen laufenden Test (Neuladen → Test geht weiter) und „wann war eine Frage zuletzt dran“. Vorschlag: in `db.js` ergänzen und Abschnitt 8 nachziehen.
+- **Phase 4:** Kompensationsprüfung „zuletzt negativ“ = letzter Test pro Unterthema unter der Genügend-Grenze oder rote Beherrschung (Abschnitt 7)? Matura-Schlüssel: Punktegrenzen + Höchstpunkte selbst eingeben oder feste Vorlagen? Lückentext mit 1 Punkt pro Lücke gewichtet lange Lückentexte stark – gewollt?
+- **Phase 5:** Mündliche Prüfung – nur Freitext-Fragen (haben eine Musterlösung) oder auch MC & Co. mit vorgelesenen Optionen?
+- **Phase 6:** Link-Beispiel nennt `pakete/`, das Beispielpaket liegt in `beispiele/` – beide Ordner erlauben oder Beispiel kopieren?
 
 **Verbindliche Quelle für das Paketformat ist `SKILL.md`.** Das Beispiel in Abschnitt 4 ist nur zur Veranschaulichung.
 

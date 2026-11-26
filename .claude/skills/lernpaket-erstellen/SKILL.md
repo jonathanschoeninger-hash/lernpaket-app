@@ -61,12 +61,17 @@ Das Paket selbst hat ebenfalls eine `id` (gleiches Muster), Schema `<fach>-<them
   "fragen": [ ]
 }
 ```
-`ersteller` ist optional. Alle anderen Felder sind Pflicht. Listen dürfen nicht leer sein (Ausnahme: `quellen`). `erstellt` ist ein Datum im Format `JJJJ-MM-TT`.
+`ersteller` ist optional. Alle anderen Felder sind Pflicht. Listen dürfen nicht leer sein (Ausnahme: `quellen`). `erstellt` ist ein gültiges Datum im Format `JJJJ-MM-TT`.
+
+Erlaubte Werte: `schultyp` aus `VS`, `MS`, `AHS`, `BHS`, `BMS`, `PTS`, `BS`, `BRP`; `pruefungsart` aus `Schularbeit`, `Test`, `Matura`, `Muendlich`, `LAP`, `Sonstiges`; `schulstufe` ganze Zahl 1–13. Andere Werte sind Fehler.
+
+**Pflichtfelder überall:** Jedes Feld, das in den Beispielen dieses Abschnitts vorkommt, ist Pflicht – außer den ausdrücklich optionalen: `ersteller`, `quelle` (und darin `stelle`), `begriffe`, `teil`, `untertitel`, `einheit`. Keine Liste darf leer sein (Ausnahmen: `quellen`, `begriffe`). Felder, die hier nicht beschrieben sind, ignoriert die App (Hinweis).
 
 `quelle` ist bei Zusammenfassungen, Karten und Fragen **optional** (nur wenn bekannt). Wenn vorhanden, muss `quelle.id` in `quellen` existieren; `stelle` darf fehlen.
 
 ### Grenzen
-- Kein Text darf leer sein (nur Leerzeichen zählt als leer).
+- Kein Text darf leer sein (nur Leerzeichen zählt als leer) – auch optionale Texte nicht, wenn sie vorhanden sind.
+- Kein HTML in Texten (z. B. `<b>`, `<br>`) – das ist ein Fehler. Auch kein Markdown (`**fett**`, `# Titel`, `[Link](…)`) – das ergibt einen Hinweis.
 - Jeder Text höchstens **2000 Zeichen** – Ausnahme `ausfuehrlich`: höchstens **4000 Zeichen**.
 - Die ganze Datei höchstens **5 MB**.
 
@@ -101,7 +106,7 @@ Jede Folie hat `layout` und `sprechertext`, dazu je nach Layout:
 | `formel` | `formel` (Klartext, z. B. "C6H12O6 + 6 O2 → 6 CO2 + 6 H2O"), `teile` [{`zeichen`, `bedeutung`}] |
 | `zahl` | `zahl` (Text), `einheit` (optional), `bedeutung` |
 | `merke` | `text` |
-| `quiz` | `frage`, `optionen` (2–4), `richtig` (Index ab 0) |
+| `quiz` | `frage`, `optionen` (2–4), `richtig` (**eine Zahl**, Index ab 0 – anders als bei Fragen keine Liste) |
 
 ### Frage – gemeinsame Felder
 ```json
@@ -110,7 +115,9 @@ Jede Folie hat `layout` und `sprechertext`, dazu je nach Layout:
   "erklaerung": "…", "quelle": { "id": "q1", "stelle": "S. 3" },
   "nurTest": false, "teil": "1" }
 ```
-`teil` nur bei Matura, Wert `"1"` oder `"2"` (als Text). `schwierigkeit`: 1, 2 oder 3.
+`teil` nur bei Matura, Wert `"1"` oder `"2"` (als Text). `schwierigkeit`: 1, 2 oder 3. `nurTest`: `true` oder `false` (Pflicht).
+
+Indizes in `richtig` dürfen nicht doppelt vorkommen. Bei `zuordnen` darf kein `links` und kein `rechts` doppelt vorkommen, bei `reihenfolge` kein Schritt.
 
 ### Frage – Felder je `typ`
 
@@ -144,7 +151,7 @@ Freitext-Beispiel:
 ## 4. Prüfen vor der Ausgabe
 Die Prüfung kennt zwei Stufen:
 - **Fehler** – alles aus Abschnitt 3 und die Checkliste unten. Ein Paket mit Fehlern lehnt die App ab.
-- **Hinweise** – die Mengen- und Stilregeln aus Abschnitt 2 und die Empfehlungen in Abschnitt 3: Anzahl Unterthemen, Karten, Fragen, Videos und Folien pro Unterthema, mindestens 3 Fragetypen pro Unterthema, höchstens 2 Freitext pro Unterthema, erste Folie `titel` und letzte `merke`/`quiz`, 2–5 `merke`-Punkte, 2–5 klein geschriebene `woerter` pro Bewertungspunkt, `begriffe`, die nicht im Text vorkommen. Das Paket gilt trotzdem als OK – Hinweise aber möglichst beheben.
+- **Hinweise** – die Mengen- und Stilregeln aus Abschnitt 2 und die Empfehlungen in Abschnitt 3: Anzahl Unterthemen (2–8), Karten (8–15), Fragen (8–15, davon mind. 5 ohne `nurTest`), Videos (1) und Folien (3–8) pro Unterthema, mindestens 3 Fragetypen pro Unterthema, Markdown in Texten, unbekannte Felder, `teil` bei einem Paket, das keine Matura ist, höchstens 2 Freitext pro Unterthema, erste Folie `titel` und letzte `merke`/`quiz`, 2–5 `merke`-Punkte, 2–5 klein geschriebene `woerter` pro Bewertungspunkt, `begriffe`, die nicht im Text vorkommen. Das Paket gilt trotzdem als OK – Hinweise aber möglichst beheben.
 
 - Wenn du Code ausführen kannst und `tools/pruefen.js` existiert: `node tools/pruefen.js <datei>` ausführen und alle Fehler beheben.
 - Sonst prüfe selbst:
