@@ -1801,3 +1801,533 @@ textarea:focus-visible {
 .grenze-eingabe {
   width: 5rem;
 }
+
+/* ---------- Videos ---------- */
+
+.video-liste {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.video-eintrag {
+  display: grid;
+  grid-template-columns: 2.25rem 1fr;
+  gap: 0 0.75rem;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--linie);
+  border-radius: var(--radius);
+  background: var(--flaeche);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.video-eintrag .klein {
+  grid-column: 2;
+}
+
+.video-symbol {
+  grid-row: span 2;
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background: var(--tinte-hell);
+  color: var(--tinte);
+  font-size: 0.95rem;
+}
+
+.video-eintrag.gesehen .video-symbol {
+  background: var(--gruen-hell);
+  color: var(--gruen);
+  font-weight: 800;
+}
+
+.video-titel {
+  font-weight: 600;
+}
+
+.video-eintrag:hover .video-titel {
+  color: var(--tinte);
+  text-decoration: underline;
+}
+
+.player:focus {
+  outline: none;
+}
+
+/* Die Bühne: 16:9, Schrift wächst mit der Breite (Container-Einheiten). */
+.buehne {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  overflow: hidden;
+  container-type: inline-size;
+  border-radius: 12px;
+  border: 1px solid var(--linie);
+  background: var(--flaeche);
+  box-shadow: 0 10px 30px -18px rgba(20, 30, 60, 0.45);
+}
+
+.folie-platz {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  padding: 5cqw 6cqw 9cqw;
+}
+
+.folie {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.2cqw;
+  min-width: 0;
+  font-size: 2.6cqw;
+  line-height: 1.35;
+  animation: folie-ein 0.35s ease-out;
+}
+
+@keyframes folie-ein {
+  from {
+    opacity: 0;
+    transform: translateY(1cqw);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.folie h2,
+.folie h3,
+.folie p,
+.folie ul,
+.folie ol {
+  margin: 0;
+}
+
+.folie-titel-gross {
+  font-family: var(--schrift-lesen);
+  font-size: 6.2cqw;
+  line-height: 1.1;
+  color: var(--tinte);
+}
+
+.folie-untertitel {
+  font-size: 3cqw;
+  color: var(--text-leise);
+}
+
+.layout-titel .folie-titel-gross {
+  padding-bottom: 1.5cqw;
+  border-bottom: 0.4cqw solid var(--rot);
+  align-self: flex-start;
+}
+
+.folie-ueberschrift {
+  font-family: var(--schrift-lesen);
+  font-size: 4cqw;
+  line-height: 1.15;
+}
+
+.folie-punkte {
+  display: grid;
+  gap: 1.4cqw;
+  padding-left: 3.5cqw;
+  font-size: 3cqw;
+}
+
+.folie-punkte li::marker {
+  color: var(--tinte);
+}
+
+.aufdecken {
+  opacity: 0;
+  transform: translateY(0.8cqw);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.aufdecken.sichtbar {
+  opacity: 1;
+  transform: none;
+}
+
+.folie-begriff {
+  font-family: var(--schrift-lesen);
+  font-size: 5.4cqw;
+  font-weight: 700;
+  color: var(--tinte);
+  line-height: 1.15;
+}
+
+.folie-definition {
+  font-size: 3.2cqw;
+  max-width: 60cqw;
+  padding-left: 2cqw;
+  border-left: 0.5cqw solid var(--marker);
+}
+
+.folie-ablauf {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 2.6cqw;
+  padding: 0;
+  list-style: none;
+  font-size: 2.3cqw;
+}
+
+.folie-ablauf li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1cqw;
+  padding: 1.6cqw;
+  border-radius: 1cqw;
+  background: var(--flaeche-2);
+}
+
+.folie-ablauf li:not(:last-child)::after {
+  content: '\2192';
+  position: absolute;
+  right: -2.4cqw;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--tinte);
+  font-size: 2.6cqw;
+}
+
+.ablauf-nr {
+  display: grid;
+  place-items: center;
+  width: 3.6cqw;
+  height: 3.6cqw;
+  border-radius: 50%;
+  background: var(--tinte);
+  color: var(--auf-tinte);
+  font-weight: 800;
+}
+
+.folie-vergleich {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3cqw;
+}
+
+.vergleich-spalte {
+  padding: 2cqw;
+  border-radius: 1cqw;
+  background: var(--flaeche-2);
+  font-size: 2.4cqw;
+}
+
+.vergleich-spalte:first-child {
+  border-top: 0.5cqw solid var(--tinte);
+}
+
+.vergleich-spalte:last-child {
+  border-top: 0.5cqw solid var(--rot);
+}
+
+.vergleich-spalte h3 {
+  font-size: 2.8cqw;
+  margin-bottom: 1cqw;
+}
+
+.vergleich-spalte ul {
+  display: grid;
+  gap: 0.8cqw;
+  padding-left: 2.6cqw;
+}
+
+.folie-formel {
+  font-family: var(--schrift-lesen);
+  font-size: 4.4cqw;
+  font-weight: 700;
+  text-align: center;
+  padding: 2cqw;
+  border-radius: 1cqw;
+  background: var(--tinte-hell);
+  color: var(--tinte);
+}
+
+.folie-teile {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(22cqw, 1fr));
+  gap: 1.2cqw 3cqw;
+  padding: 0;
+  list-style: none;
+  font-size: 2.6cqw;
+}
+
+.folie-teile li {
+  display: flex;
+  gap: 1.5cqw;
+}
+
+.folie-teile strong {
+  color: var(--tinte);
+}
+
+.folie-zahl {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 2cqw;
+  font-family: var(--schrift-lesen);
+  font-size: 15cqw;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--tinte);
+}
+
+.folie-einheit {
+  font-size: 5cqw;
+}
+
+.folie-bedeutung {
+  text-align: center;
+  font-size: 3.2cqw;
+}
+
+.folie-merke {
+  padding: 3cqw 3.5cqw;
+  border-radius: 1.2cqw;
+  background: var(--marker);
+  font-size: 3.4cqw;
+  font-family: var(--schrift-lesen);
+}
+
+.folie .folie-merke-titel {
+  font-family: var(--schrift-ui);
+  font-weight: 800;
+  font-size: 2.6cqw;
+  margin-bottom: 1cqw;
+}
+
+.folie-quiz-marke {
+  font-size: 2.2cqw;
+  font-weight: 700;
+  color: var(--tinte);
+}
+
+.folie-frage {
+  font-family: var(--schrift-lesen);
+  font-size: 4cqw;
+}
+
+.quiz-optionen {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5cqw;
+}
+
+.quiz-option {
+  min-height: 44px;
+  padding: 1.2cqw 2.4cqw;
+  border: 0.25cqw solid var(--linie);
+  border-radius: 1cqw;
+  background: var(--flaeche);
+  color: var(--text);
+  font: inherit;
+  font-size: max(14px, 2.6cqw);
+  cursor: pointer;
+}
+
+.quiz-option:disabled {
+  cursor: default;
+}
+
+.quiz-rueckmeldung {
+  min-height: 1.4em;
+  font-weight: 700;
+}
+
+.untertitel {
+  position: absolute;
+  left: 50%;
+  bottom: 2.2cqw;
+  transform: translateX(-50%);
+  max-width: 90%;
+  margin: 0;
+  padding: 0.6cqw 1.6cqw;
+  border-radius: 0.8cqw;
+  background: rgba(15, 20, 35, 0.82);
+  color: #fff;
+  font-size: max(13px, 2.2cqw);
+  text-align: center;
+}
+
+.untertitel:empty {
+  display: none;
+}
+
+.start-schicht {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: rgba(15, 20, 35, 0.18);
+  cursor: pointer;
+}
+
+.start-symbol {
+  display: grid;
+  place-items: center;
+  width: max(56px, 11cqw);
+  height: max(56px, 11cqw);
+  border-radius: 50%;
+  background: var(--tinte);
+  color: var(--auf-tinte);
+  font-size: max(22px, 4.4cqw);
+  padding-left: 0.6cqw;
+  box-shadow: 0 6px 20px -6px rgba(0, 0, 0, 0.5);
+}
+
+.start-schicht:focus-visible .start-symbol {
+  outline: 3px solid var(--auf-tinte);
+  outline-offset: 3px;
+}
+
+.ende-schicht {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2cqw;
+  padding: 4cqw;
+  background: color-mix(in srgb, var(--flaeche) 94%, transparent);
+  text-align: center;
+}
+
+.ende-titel {
+  margin: 0;
+  font-family: var(--schrift-lesen);
+  font-size: max(20px, 4.4cqw);
+  font-weight: 700;
+}
+
+.player-leiste {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.player-knopf {
+  padding: 0.4rem 0.8rem;
+  font-size: 1.1rem;
+}
+
+.player-knopf[aria-pressed='true'] {
+  background: var(--tinte-hell);
+  border-color: var(--tinte);
+  color: var(--tinte);
+}
+
+.folien-zaehler {
+  font-variant-numeric: tabular-nums;
+  color: var(--text-leise);
+  font-size: 0.95rem;
+}
+
+.tempo-wahl {
+  margin-left: auto;
+}
+
+.folien-punkte {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.folien-punkt {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.folien-punkt::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0.7rem;
+  height: 0.7rem;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: var(--linie);
+}
+
+.folien-punkt[aria-current='step']::before {
+  width: 1rem;
+  height: 1rem;
+  background: var(--tinte);
+}
+
+.player:fullscreen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  background: var(--papier);
+}
+
+.player:fullscreen .buehne,
+.player:fullscreen .player-leiste,
+.player:fullscreen .folien-punkte {
+  width: min(100%, calc((100vh - 9rem) * 16 / 9));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.feld {
+  display: grid;
+  gap: 0.3rem;
+  max-width: 28rem;
+}
+
+.feld label {
+  font-weight: 600;
+}
+
+/* Mündliche Prüfung */
+.vorlesen-leiste {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 0.75rem;
+}
+
+.mikro.aktiv {
+  background: var(--rot-hell);
+  border-color: var(--rot);
+  color: var(--rot);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .folie {
+    animation: none;
+  }
+
+  .aufdecken {
+    transition: none;
+    transform: none;
+  }
+}

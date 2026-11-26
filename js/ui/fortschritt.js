@@ -79,11 +79,15 @@ function unterthemaZeile(paket, b) {
   ].filter(Boolean);
 
   const link = (seite, text) => el('a', { href: baueRoute(seite, paket.id, u.id), text });
+  const video = paket.videos.find((v) => v.unterthema === u.id);
+  const videoLink = video ? el('a', { href: baueRoute('videos', paket.id, video.id), text: 'Video ansehen' }) : null;
   const empfehlung = {
     gruen: ['Nur wiederholen: ', link('karten', 'Karten')],
     gelb: ['Empfehlung: ', link('zusammenfassung', 'Zusammenfassung lesen'), ', dann ', link('ueben', 'gezielt üben'), '.'],
     rot: [
-      'Empfehlung: Video (kommt bald) → ',
+      'Empfehlung: ',
+      videoLink ?? 'Video',
+      ' → ',
       link('zusammenfassung', 'Zusammenfassung'),
       ' → ',
       link('karten', 'Karten'),

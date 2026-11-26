@@ -1,6 +1,6 @@
 // Paket-Übersicht: Eckdaten, Unterthemen, Wege zu Lesen und Karten.
 
-import { el, kommtBald } from './dom.js';
+import { el } from './dom.js';
 import { baueRoute } from '../logic/route.js';
 import { faelligeKarten, heutigesDatum } from '../logic/leitner.js';
 import { paketStatistik } from '../logic/validate.js';
@@ -80,7 +80,7 @@ export async function zeige(wurzel, route, paket) {
       { 'aria-labelledby': 'bald-titel' },
       el('h2', { id: 'bald-titel', text: 'Außerdem im Paket' }),
       el('p', { text: `${s.videos} Videos und ${s.fragen} Fragen (davon ${s.nurTest} nur im Test).` }),
-      el('div', { class: 'aktionen' }, kommtBald('Videos ansehen')),
+      el('div', { class: 'aktionen' }, el('a', { class: 'knopf', href: baueRoute('videos', paket.id), text: 'Videos ansehen' })),
     ),
     quellenAbschnitt(paket) ?? '',
   );

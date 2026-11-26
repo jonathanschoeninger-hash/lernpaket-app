@@ -12,6 +12,7 @@ import * as fehlerheft from './ui/fehlerheft.js';
 import * as test from './ui/testen.js';
 import * as fortschrittSeite from './ui/fortschritt.js';
 import * as einstellungen from './ui/einstellungen.js';
+import * as videos from './ui/videos.js';
 
 const SEITEN = {
   start,
@@ -23,6 +24,7 @@ const SEITEN = {
   fehlerheft,
   test,
   fortschritt: fortschrittSeite,
+  videos,
 };
 
 const haupt = document.getElementById('haupt');
@@ -36,7 +38,7 @@ function tabLeiste(route) {
   const eintraege = [
     { text: 'Lesen', seite: 'zusammenfassung' },
     { text: 'Karten', seite: 'karten' },
-    { text: 'Videos' },
+    { text: 'Videos', seite: 'videos' },
     { text: 'Üben', seite: 'ueben' },
     { text: 'Test', seite: 'test' },
   ];

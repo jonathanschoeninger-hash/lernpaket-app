@@ -1,7 +1,7 @@
 import { test, describe } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { MODI, stelleTestZusammen, maturaTeile, zeitText } from '../js/logic/pruefung.js';
+import { MODI, stelleTestZusammen, stelleMuendlichZusammen, maturaTeile, zeitText } from '../js/logic/pruefung.js';
 
 const BEISPIEL = JSON.parse(
   readFileSync(new URL('../beispiele/zellatmung.lernpaket.json', import.meta.url), 'utf8'),
@@ -86,6 +86,24 @@ describe('stelleTestZusammen', () => {
     const c = stelleTestZusammen(BEISPIEL.fragen, { anzahl: 10, zufall: zufallMitSamen(8) }).map((f) => f.id);
     assert.deepEqual(a, b);
     assert.notDeepEqual(a, c);
+  });
+});
+
+describe('stelleMuendlichZusammen', () => {
+  test('bis zu 6 Fragen, zuerst alle Freitext-Fragen, dann andere Typen', () => {
+    const t = stelleMuendlichZusammen(BEISPIEL.fragen, { zufall: zufallMitSamen(9) });
+    assert.equal(MODI.muendlich.anzahl, 6);
+    assert.equal(t.length, 6);
+    assert.deepEqual(t.slice(0, 3).map((f) => f.typ), ['freitext', 'freitext', 'freitext']);
+    assert.ok(t.slice(3).every((f) => f.typ !== 'freitext'));
+    assert.equal(new Set(t.map((f) => f.id)).size, 6);
+  });
+
+  test('mehr Freitext als Platz: nur Freitext', () => {
+    const viele = Array.from({ length: 9 }, (_, i) => ({ id: 'x' + i, unterthema: 'u1', typ: 'freitext', nurTest: false }));
+    const t = stelleMuendlichZusammen([...viele, ...BEISPIEL.fragen.filter((f) => f.typ !== 'freitext')], { zufall: zufallMitSamen(1) });
+    assert.equal(t.length, 6);
+    assert.ok(t.every((f) => f.typ === 'freitext'));
   });
 });
 

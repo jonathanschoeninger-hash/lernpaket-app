@@ -1,6 +1,6 @@
 // Zusammenfassung (DESIGN.md 5.3): pro Unterthema, Länge umschaltbar, Begriffe markiert.
 
-import { el, leeren, kommtBald } from './dom.js';
+import { el, leeren } from './dom.js';
 import { absaetze, markiereBegriffe } from '../logic/text.js';
 import { baueRoute } from '../logic/route.js';
 import { ladeEinstellungen, speichereEinstellung } from '../store/db.js';
@@ -105,9 +105,14 @@ function abschnitt(paket, unterthema, laenge, mitUeberschrift) {
     el(
       'div',
       { class: 'aktionen nicht-drucken' },
-      kommtBald('Video ansehen'),
+      videoLink(paket, unterthema),
       el('a', { class: 'knopf', href: baueRoute('karten', paket.id, unterthema.id), text: 'Karten lernen' }),
       el('a', { class: 'knopf', href: baueRoute('ueben', paket.id, unterthema.id), text: 'Fragen üben' }),
     ),
   );
+}
+
+function videoLink(paket, unterthema) {
+  const video = paket.videos.find((v) => v.unterthema === unterthema.id);
+  return video ? el('a', { class: 'knopf', href: baueRoute('videos', paket.id, video.id), text: 'Video ansehen' }) : '';
 }

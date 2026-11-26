@@ -16,7 +16,9 @@ import {
   prozentText,
   NOTEN,
 } from '../logic/grading.js';
-import { MODI, stelleTestZusammen, maturaTeile, zeitText } from '../logic/pruefung.js';
+import { MODI, stelleTestZusammen, stelleMuendlichZusammen, maturaTeile, zeitText } from '../logic/pruefung.js';
+import { saetze } from '../logic/sprache.js';
+import { erstelleSprecher } from '../video/speech.js';
 import { schwacheUnterthemen, ampel } from '../logic/mastery.js';
 import { antwortMerken } from '../logic/fortschritt.js';
 import { standVon } from '../logic/adaptive.js';
@@ -63,6 +65,11 @@ export async function zeige(wurzel, route, paket) {
         teil,
         anzahl: Math.min(MODI.matura.anzahl, verfuegbar({ teil })),
       })),
+      {
+        id: 'muendlich',
+        ...MODI.muendlich,
+        anzahl: Math.min(MODI.muendlich.anzahl, verfuegbar({})),
+      },
       {
         id: 'kompensation',
         ...MODI.kompensation,
@@ -142,12 +149,15 @@ export async function zeige(wurzel, route, paket) {
   }
 
   async function testStarten(modus, minuten) {
-    const fragen = stelleTestZusammen(paket.fragen, {
-      anzahl: modus.anzahl,
-      unterthemen: modus.unterthemen ?? null,
-      teil: modus.teil ?? null,
-      uebungsstand: fortschritt.uebungsstand,
-    });
+    const fragen =
+      modus.id === 'muendlich'
+        ? stelleMuendlichZusammen(paket.fragen, { anzahl: modus.anzahl, uebungsstand: fortschritt.uebungsstand })
+        : stelleTestZusammen(paket.fragen, {
+            anzahl: modus.anzahl,
+            unterthemen: modus.unterthemen ?? null,
+            teil: modus.teil ?? null,
+            uebungsstand: fortschritt.uebungsstand,
+          });
     const jetzt = Date.now();
     fortschritt = {
       ...fortschritt,
@@ -192,6 +202,34 @@ export async function zeige(wurzel, route, paket) {
     const flaeche = el('div', { class: 'test-flaeche' });
     let speicherTimer = null;
     let uhrTimer = null;
+    const muendlich = lt.modus === 'muendlich';
+    let sprecher = null;
+    let vorleseLauf = 0;
+    let erkennung = null;
+    let aktuelleVorlesung = null; // liest die gerade gezeigte Frage vor
+    if (muendlich) {
+      erstelleSprecher(einstellungen.stimme).then((s) => {
+        sprecher = s;
+        aktuelleVorlesung?.();
+      });
+    }
+
+    function sprechenStoppen() {
+      vorleseLauf++;
+      sprecher?.stopp();
+      erkennung?.abort?.();
+      erkennung = null;
+    }
+
+    async function vorlesen(text) {
+      if (!sprecher?.stimme) return;
+      const meinLauf = ++vorleseLauf;
+      sprecher.stopp();
+      for (const satz of saetze(text)) {
+        await sprecher.sprich(satz, einstellungen.tempo ?? 1);
+        if (meinLauf !== vorleseLauf) return;
+      }
+    }
     let angesagt = new Set();
 
     const speichernBald = () => {
@@ -244,12 +282,15 @@ export async function zeige(wurzel, route, paket) {
       });
 
       const letzte = lt.index === fragen.length - 1;
+      sprechenStoppen();
+      const leiste = muendlich ? muendlichLeiste(frage, eingabe) : '';
       leeren(flaeche).append(
         el(
           'div',
           { class: 'frage-karte' },
           el('p', { class: 'frage-meta', text: `Frage ${lt.index + 1} von ${fragen.length}: ${typHinweis(frage)}` }),
           el('h2', { class: 'frage-text', id: 'frage-text', tabindex: '-1', text: frage.frage }),
+          leiste,
           eingabe.element,
         ),
         el(
@@ -263,6 +304,77 @@ export async function zeige(wurzel, route, paket) {
       );
       nummernZeichnen();
       flaeche.querySelector('#frage-text').focus();
+      if (muendlich) {
+        aktuelleVorlesung = () => vorlesen(vorleseText(frage, eingabe.element));
+        aktuelleVorlesung();
+      }
+    }
+
+    function muendlichLeiste(frage, eingabe) {
+      const leiste = el(
+        'div',
+        { class: 'vorlesen-leiste' },
+        el('button', {
+          type: 'button',
+          class: 'knopf',
+          text: 'Nochmal vorlesen',
+          on: { click: () => vorlesen(vorleseText(frage, eingabe.element)) },
+        }),
+      );
+      if (sprecher && !sprecher.stimme) {
+        leiste.append(el('p', { class: 'klein', text: 'Keine deutsche Vorlese-Stimme gefunden – bitte selbst lesen.' }));
+      }
+      if (frage.typ !== 'freitext') return leiste;
+
+      const Erkennung = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!Erkennung) {
+        leiste.append(el('p', { class: 'klein', text: 'Spracheingabe gibt es in diesem Browser nicht – bitte tippen.' }));
+        return leiste;
+      }
+      const mikro = el('button', { type: 'button', class: 'knopf mikro', text: 'Antwort sprechen', 'aria-pressed': 'false' });
+      const stellen = (an) => {
+        mikro.classList.toggle('aktiv', an);
+        mikro.setAttribute('aria-pressed', String(an));
+        mikro.textContent = an ? 'Aufnahme beenden' : 'Antwort sprechen';
+      };
+      mikro.addEventListener('click', () => {
+        if (erkennung) {
+          erkennung.stop();
+          return;
+        }
+        sprechenStoppen();
+        const feld = eingabe.element.querySelector('textarea');
+        const r = new Erkennung();
+        r.lang = 'de-AT';
+        r.continuous = true;
+        r.interimResults = false;
+        r.onresult = (e) => {
+          for (let i = e.resultIndex; i < e.results.length; i++) {
+            if (!e.results[i].isFinal) continue;
+            const text = e.results[i][0].transcript.trim();
+            feld.value = feld.value.trim() ? `${feld.value.trim()} ${text}` : text;
+            feld.dispatchEvent(new Event('input', { bubbles: true }));
+          }
+        };
+        r.onerror = (e) => {
+          ansage(e.error === 'not-allowed' ? 'Das Mikrofon ist nicht erlaubt – bitte tippen.' : 'Die Spracheingabe hat nicht geklappt – bitte tippen.');
+        };
+        r.onend = () => {
+          erkennung = null;
+          stellen(false);
+        };
+        erkennung = r;
+        stellen(true);
+        r.start();
+      });
+      leiste.append(
+        mikro,
+        el('p', {
+          class: 'klein',
+          text: 'Hinweis: Für die Spracheingabe schickt dein Browser die Aufnahme eventuell an seinen Anbieter (bei Chrome an Google). Tippen geht immer.',
+        }),
+      );
+      return leiste;
     }
 
     async function abgebenFragen() {
@@ -298,6 +410,7 @@ export async function zeige(wurzel, route, paket) {
     }
 
     aufraeumen = () => {
+      sprechenStoppen();
       clearInterval(uhrTimer);
       clearTimeout(speicherTimer);
       speichern();
@@ -496,4 +609,25 @@ export async function zeige(wurzel, route, paket) {
   else startSeite();
 
   return () => aufraeumen?.();
+}
+
+/** Was bei der mündlichen Prüfung vorgelesen wird – Antworten in der angezeigten Reihenfolge. */
+function vorleseText(frage, element) {
+  const optionen = [...element.querySelectorAll('.option span')].map((o) => o.textContent);
+  switch (frage.typ) {
+    case 'mc':
+      return `${frage.frage} Die Antworten: ${optionen.join('; ')}.`;
+    case 'mehrfach':
+      return `${frage.frage} Mehrere Antworten sind richtig: ${optionen.join('; ')}.`;
+    case 'wahrfalsch':
+      return `${frage.frage} Stimmt das – richtig oder falsch?`;
+    case 'lueckentext':
+      return `${frage.frage} ${frage.text.replace(/\{\{(\d+)\}\}/g, (_, n) => `Lücke ${n}`)}`;
+    case 'zuordnen':
+      return `${frage.frage} Die Begriffe: ${frage.paare.map((p) => p.links).join('; ')}.`;
+    case 'zahl':
+      return `${frage.frage} Gib eine Zahl an${frage.einheit ? ` in ${frage.einheit}` : ''}.`;
+    default:
+      return frage.frage;
+  }
 }

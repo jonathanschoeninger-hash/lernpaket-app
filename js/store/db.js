@@ -96,6 +96,7 @@ const STANDARD_EINSTELLUNGEN = {
   stimme: null,
   tempo: 1,
   zusammenfassungLaenge: 'normal',
+  untertitel: false,
 };
 
 export async function ladeEinstellungen() {

@@ -1,7 +1,7 @@
 // Hash-Adressen der App (DESIGN.md 10, Punkt 6) – mit / getrennt, Teile URL-kodiert.
 // Optionaler Filter: "#/paket/<id>/ueben/<unterthema>?nur=fehler"
 
-const UNTERSEITEN = ['zusammenfassung', 'karten', 'ueben', 'fehlerheft', 'test', 'fortschritt'];
+const UNTERSEITEN = ['zusammenfassung', 'karten', 'ueben', 'fehlerheft', 'test', 'fortschritt', 'videos'];
 const FILTER = ['fehler', 'schwaechen'];
 
 /** "#/paket/<id>/karten/<unterthema>" → { seite, paketId, unterthema, nur? } */

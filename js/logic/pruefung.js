@@ -19,6 +19,12 @@ export const MODI = Object.freeze({
     anzahl: 24,
     minuten: 120,
   },
+  muendlich: {
+    name: 'Mündliche Prüfung',
+    beschreibung: 'Bis zu 6 Fragen werden vorgelesen; Freitext sprichst oder tippst du.',
+    anzahl: 6,
+    minuten: 0,
+  },
   kompensation: {
     name: 'Kompensationsprüfung',
     beschreibung: 'Nur die Unterthemen, die gerade rot (negativ) sind.',
@@ -74,6 +80,24 @@ export function stelleTestZusammen(
     [gewaehlt[i], gewaehlt[j]] = [gewaehlt[j], gewaehlt[i]];
   }
   return gewaehlt.map((k) => k.f);
+}
+
+/**
+ * Mündliche Prüfung (DESIGN.md 10, Punkt 22): zuerst Freitext-Fragen (zufällig), dann andere Typen
+ * nach den Regeln von stelleTestZusammen.
+ */
+export function stelleMuendlichZusammen(fragen, { anzahl = MODI.muendlich.anzahl, uebungsstand = {}, zufall = Math.random } = {}) {
+  const frei = fragen
+    .filter((f) => f.typ === 'freitext')
+    .map((f) => ({ f, los: zufall() }))
+    .sort((a, b) => a.los - b.los)
+    .map(({ f }) => f)
+    .slice(0, anzahl);
+  const rest = stelleTestZusammen(
+    fragen.filter((f) => f.typ !== 'freitext'),
+    { anzahl: anzahl - frei.length, uebungsstand, zufall },
+  );
+  return [...frei, ...rest];
 }
 
 /** Sekunden → "12:05" */

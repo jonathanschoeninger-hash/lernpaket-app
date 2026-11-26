@@ -392,8 +392,12 @@ Geklärt am 26. 11. 2026 (vor Phase 4):
 20. **Lückentext:** bleibt **1 Punkt pro Lücke** (wie 4.2).
 21. **Laufender Test:** wird im Fortschritt gespeichert (`laufenderTest`, siehe Abschnitt 8); Neuladen → Test geht weiter, abgelaufene Zeit → automatisch abgeben.
 
+Geklärt am 26. 11. 2026 (vor Phase 5):
+
+22. **Mündliche Prüfung:** bis zu 6 Fragen – zuerst Freitext-Fragen, dann andere Typen. Jede Frage wird vorgelesen (bei MC auch die Antworten). Freitext sprechen oder tippen, andere Typen wie im Test beantworten; am Ende Musterlösung + Selbstbewertung, Note wie bei den anderen Modi.
+23. **Datenschutz bei Stimme:** Vorlese-Stimmen, die offline laufen, werden bevorzugt. Spracheingabe nur auf Knopfdruck und mit Hinweis, dass der Browser (z. B. Chrome) die Aufnahme dafür an seinen Anbieter schicken kann.
+
 **Noch offen – vor der jeweiligen Phase klären:**
-- **Phase 5:** Mündliche Prüfung – nur Freitext-Fragen (haben eine Musterlösung) oder auch MC & Co. mit vorgelesenen Optionen?
 - **Phase 6:** Link-Beispiel nennt `pakete/`, das Beispielpaket liegt in `beispiele/` – beide Ordner erlauben oder Beispiel kopieren?
 
 **Verbindliche Quelle für das Paketformat ist `SKILL.md`.** Das Beispiel in Abschnitt 4 ist nur zur Veranschaulichung.

@@ -90,6 +90,13 @@ describe('Phase 4: Test, Fortschritt, Einstellungen', () => {
   });
 });
 
+describe('Phase 5: Videos', () => {
+  test('Videoliste und einzelnes Video', () => {
+    assert.deepEqual(leseRoute('#/paket/p-1/videos'), { seite: 'videos', paketId: 'p-1', unterthema: null });
+    assert.deepEqual(leseRoute('#/paket/p-1/videos/v2'), { seite: 'videos', paketId: 'p-1', unterthema: 'v2' });
+  });
+});
+
 describe('baueRoute', () => {
   test('baut die Adressen, Rundweg mit leseRoute', () => {
     assert.equal(baueRoute('start'), '#/start');
