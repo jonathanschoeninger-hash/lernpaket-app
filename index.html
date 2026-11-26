@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="de-AT">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#fbfcfe" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#141925" media="(prefers-color-scheme: dark)" />
+    <meta name="description" content="Kostenlose Lern-App für Lernpakete: Zusammenfassung, Karteikarten, Üben und Test." />
+    <meta http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' blob: data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'" />
+    <title>Lernpaket</title>
+    <link rel="stylesheet" href="css/app.css" />
+    <script type="module" src="js/main.js"></script>
+  </head>
+  <body>
+    <button type="button" class="springen" id="springen">Zum Inhalt springen</button>
+    <header class="kopf">
+      <a class="marke" href="#/start">Lernpaket</a>
+      <span class="kopf-titel" id="kopf-titel"></span>
+    </header>
+    <nav class="tabs" id="tabs" aria-label="Bereiche des Pakets" hidden></nav>
+    <main id="haupt" class="haupt" tabindex="-1">
+      <noscript>
+        <p>Die App braucht JavaScript. Bitte aktiviere es im Browser.</p>
+      </noscript>
+    </main>
+    <div id="ansage" class="ansage" role="status" aria-live="polite"></div>
+  </body>
+</html>

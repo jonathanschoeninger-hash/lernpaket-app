@@ -1,0 +1,1007 @@
+/* Lernpaket-App – ruhig, gut lesbar, eine Akzentfarbe (Füllfeder-Königsblau).
+   Handy zuerst, Hell/Dunkel nach Systemeinstellung. */
+
+:root {
+  --papier: #fbfcfe;
+  --flaeche: #ffffff;
+  --flaeche-2: #eef1f7;
+  --linie: #d6dce8;
+  --text: #1b2130;
+  --text-leise: #566076;
+  --tinte: #2340b8;          /* Akzent */
+  --tinte-hell: #e6eafb;
+  --auf-tinte: #ffffff;
+  --marker: #fff0a0;          /* Textmarker */
+  --rot: #c4303a;             /* Kopflinie der Karteikarte, Fehler */
+  --rot-hell: #fdecee;
+  --gruen: #1f7a4a;
+  --gruen-hell: #e7f5ec;
+  --karte-linie: #cfdcf3;
+
+  --schrift-ui: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif;
+  --schrift-lesen: Charter, 'Bitstream Charter', 'Iowan Old Style', 'Sitka Text', Cambria, Georgia, serif;
+
+  --radius: 10px;
+  --abstand: 1rem;
+  --tab-hoehe: 4rem;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --papier: #141925;
+    --flaeche: #1b2131;
+    --flaeche-2: #232a3d;
+    --linie: #333c54;
+    --text: #e4e7ee;
+    --text-leise: #a3abc0;
+    --tinte: #9aabff;
+    --tinte-hell: #262f52;
+    --auf-tinte: #10162a;
+    --marker: rgba(255, 214, 0, 0.24);
+    --rot: #ff8a8f;
+    --rot-hell: #3a1f26;
+    --gruen: #79d6a1;
+    --gruen-hell: #18332a;
+    --karte-linie: #2b3654;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--papier);
+  color: var(--text);
+  font-family: var(--schrift-ui);
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  min-width: 320px;
+}
+
+h1,
+h2 {
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: 1.75rem;
+  margin: 0.5rem 0 1rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+  margin: 2rem 0 0.75rem;
+}
+
+a {
+  color: var(--tinte);
+  text-underline-offset: 0.15em;
+}
+
+code {
+  font-size: 0.85em;
+  background: var(--flaeche-2);
+  padding: 0.05em 0.35em;
+  border-radius: 4px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--tinte);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.nur-sr {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.klein {
+  font-size: 0.9rem;
+  color: var(--text-leise);
+}
+
+.mitte {
+  text-align: center;
+}
+
+/* ---------- Gerüst ---------- */
+
+.springen {
+  position: absolute;
+  left: 0.5rem;
+  top: -4rem;
+  z-index: 20;
+  min-height: 44px;
+  padding: 0 1rem;
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--tinte);
+  color: var(--auf-tinte);
+  font: inherit;
+}
+
+.springen:focus {
+  top: 0.5rem;
+}
+
+.kopf {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 3.5rem;
+  padding: 0 var(--abstand);
+  border-bottom: 1px solid var(--linie);
+  background: var(--papier);
+}
+
+.marke {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: 800;
+  color: var(--tinte);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+.kopf-titel {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text-leise);
+}
+
+.kopf-titel:not(:empty)::before {
+  content: '/';
+  margin-right: 0.75rem;
+  color: var(--linie);
+}
+
+.haupt {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: var(--abstand) var(--abstand) calc(var(--tab-hoehe) + 2rem);
+}
+
+.haupt:focus {
+  outline: none;
+}
+
+/* Tab-Leiste: unten am Handy, oben unter dem Kopf ab Tablet */
+.tabs {
+  position: fixed;
+  inset: auto 0 0 0;
+  z-index: 10;
+  background: var(--flaeche);
+  border-top: 1px solid var(--linie);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.tabs ul {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.tabs a,
+.tabs button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: var(--tab-hoehe);
+  padding: 0 0.25rem;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--text-leise);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.tabs a[aria-current='page'] {
+  color: var(--tinte);
+  font-weight: 700;
+  box-shadow: inset 0 3px 0 var(--tinte);
+}
+
+.tabs button[aria-disabled='true'] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+@media (min-width: 48rem) {
+  .tabs {
+    position: sticky;
+    top: 0;
+    border-top: 0;
+    border-bottom: 1px solid var(--linie);
+  }
+
+  .tabs ul {
+    display: flex;
+    gap: 0.25rem;
+    padding: 0 var(--abstand);
+  }
+
+  .tabs a,
+  .tabs button {
+    width: auto;
+    min-height: 3rem;
+    padding: 0 1rem;
+  }
+
+  .tabs a[aria-current='page'] {
+    box-shadow: inset 0 -3px 0 var(--tinte);
+  }
+
+  .haupt {
+    padding-bottom: 3rem;
+  }
+}
+
+.tabs[hidden] {
+  display: none;
+}
+
+/* ---------- Knöpfe ---------- */
+
+.knopf {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.5rem 1.1rem;
+  border: 1.5px solid var(--linie);
+  border-radius: var(--radius);
+  background: var(--flaeche);
+  color: var(--text);
+  font: inherit;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.knopf:hover {
+  border-color: var(--tinte);
+}
+
+.knopf.haupt {
+  background: var(--tinte);
+  border-color: var(--tinte);
+  color: var(--auf-tinte);
+}
+
+.knopf.haupt:hover {
+  filter: brightness(1.1);
+}
+
+.knopf.leise {
+  border-color: transparent;
+  background: none;
+  color: var(--tinte);
+}
+
+.knopf.gefahr {
+  background: var(--rot);
+  border-color: var(--rot);
+  color: var(--flaeche);
+}
+
+.knopf.gross {
+  width: 100%;
+  min-height: 3.25rem;
+  font-size: 1.1rem;
+}
+
+.knopf:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.aktionen {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.kommt-bald {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.15rem;
+}
+
+.kommt-bald small {
+  font-size: 0.8rem;
+  color: var(--text-leise);
+}
+
+/* Chips zur Auswahl des Unterthemas */
+.chips {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.25rem 0.1rem 0.75rem;
+  margin: 0 -0.1rem 0.5rem;
+  scrollbar-width: thin;
+}
+
+.chips a {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 1rem;
+  border: 1.5px solid var(--linie);
+  border-radius: 999px;
+  color: var(--text);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.chips a[aria-current='page'] {
+  background: var(--tinte-hell);
+  border-color: var(--tinte);
+  color: var(--tinte);
+  font-weight: 700;
+}
+
+/* ---------- Meldungen ---------- */
+
+.meldung {
+  margin: 1rem 0;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius);
+  border-left: 4px solid var(--linie);
+  background: var(--flaeche-2);
+}
+
+.meldung p {
+  margin: 0.25rem 0;
+}
+
+.meldung.erfolg {
+  border-left-color: var(--gruen);
+  background: var(--gruen-hell);
+}
+
+.meldung.fehler {
+  border-left-color: var(--rot);
+  background: var(--rot-hell);
+}
+
+.meldung-titel {
+  font-weight: 700;
+}
+
+.meldung ul {
+  margin: 0.5rem 0;
+  padding-left: 1.2rem;
+}
+
+.meldung li {
+  margin: 0.3rem 0;
+}
+
+.meldung .rest {
+  list-style: none;
+  margin-left: -1.2rem;
+  color: var(--text-leise);
+}
+
+.hinweise {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-leise);
+}
+
+.hinweise summary {
+  cursor: pointer;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.ansage {
+  position: fixed;
+  left: 50%;
+  bottom: calc(var(--tab-hoehe) + 1rem);
+  transform: translateX(-50%);
+  z-index: 30;
+  max-width: calc(100% - 2rem);
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius);
+  background: var(--text);
+  color: var(--papier);
+  font-size: 0.95rem;
+}
+
+.ansage:empty {
+  display: none;
+}
+
+/* Dialog */
+.dialog {
+  width: min(28rem, calc(100% - 2rem));
+  padding: 1.25rem;
+  border: 1px solid var(--linie);
+  border-radius: 14px;
+  background: var(--flaeche);
+  color: var(--text);
+}
+
+.dialog::backdrop {
+  background: rgba(10, 14, 25, 0.55);
+}
+
+.dialog h2 {
+  margin-top: 0;
+}
+
+.dialog-knoepfe {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+/* ---------- Start ---------- */
+
+.ablage {
+  display: grid;
+  justify-items: center;
+  gap: 0.25rem;
+  padding: 1.5rem 1rem;
+  border: 2px dashed var(--linie);
+  border-radius: 14px;
+  background: var(--flaeche);
+  text-align: center;
+}
+
+.ablage p {
+  margin: 0.25rem 0;
+}
+
+.ablage-text {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.ablage-oder {
+  color: var(--text-leise);
+}
+
+.ablage.aktiv {
+  border-color: var(--tinte);
+  background: var(--tinte-hell);
+}
+
+.paket-liste {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.paket-eintrag {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 0.25rem 0.75rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--linie);
+  border-radius: var(--radius);
+  background: var(--flaeche);
+}
+
+.paket-link {
+  display: grid;
+  gap: 0.1rem;
+  grid-column: 1 / -1;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.paket-link:hover .paket-titel {
+  color: var(--tinte);
+  text-decoration: underline;
+}
+
+.paket-fach {
+  font-size: 0.9rem;
+  color: var(--text-leise);
+  margin: 0;
+}
+
+.paket-titel {
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.paket-faellig {
+  font-size: 0.95rem;
+  color: var(--tinte);
+}
+
+.fortschritt {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.balken {
+  display: block;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: var(--flaeche-2);
+  overflow: hidden;
+}
+
+.balken-fuellung {
+  display: block;
+  height: 100%;
+  background: var(--tinte);
+  border-radius: inherit;
+}
+
+.leer {
+  color: var(--text-leise);
+}
+
+/* ---------- Paket ---------- */
+
+.paket-kopf h1 {
+  margin-top: 0.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.unterthemen {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: ut;
+}
+
+.unterthemen li {
+  counter-increment: ut;
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  gap: 0 0.5rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--linie);
+}
+
+.unterthemen li::before {
+  content: counter(ut) '.';
+  grid-row: span 2;
+  color: var(--text-leise);
+  font-variant-numeric: tabular-nums;
+}
+
+.unterthema-name {
+  font-weight: 600;
+}
+
+.unterthema-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1rem;
+}
+
+.unterthema-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.quellen {
+  padding-left: 1.2rem;
+  color: var(--text-leise);
+}
+
+/* ---------- Zusammenfassung ---------- */
+
+.werkzeuge {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.umschalter {
+  display: inline-flex;
+  margin: 0;
+  padding: 3px;
+  border: 1.5px solid var(--linie);
+  border-radius: var(--radius);
+  background: var(--flaeche);
+}
+
+.umschalter legend {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.umschalter label {
+  position: relative;
+}
+
+.umschalter input {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.umschalter span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 0.9rem;
+  border-radius: 7px;
+  font-weight: 600;
+  color: var(--text-leise);
+}
+
+.umschalter input:checked + span {
+  background: var(--tinte);
+  color: var(--auf-tinte);
+}
+
+.umschalter input:focus-visible + span {
+  outline: 3px solid var(--tinte);
+  outline-offset: 2px;
+}
+
+.zf-abschnitt {
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--linie);
+}
+
+.zf-abschnitt h2 {
+  margin-top: 0.5rem;
+}
+
+.lesetext {
+  font-family: var(--schrift-lesen);
+  font-size: 1.15rem;
+  line-height: 1.7;
+  max-width: 38em;
+  white-space: pre-line;
+  hyphens: auto;
+}
+
+mark.begriff {
+  background: linear-gradient(transparent 45%, var(--marker) 45%);
+  color: inherit;
+  font-weight: 600;
+  padding: 0 0.05em;
+}
+
+.merke {
+  margin: 1.25rem 0;
+  padding: 0.9rem 1.1rem;
+  border-radius: var(--radius);
+  background: var(--marker);
+}
+
+.merke-titel {
+  margin: 0 0 0.25rem;
+  font-weight: 800;
+}
+
+.merke ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.merke li {
+  margin: 0.2rem 0;
+}
+
+.quelle {
+  font-size: 0.9rem;
+  color: var(--text-leise);
+}
+
+/* ---------- Karteikarten ---------- */
+
+.faellig-gross {
+  font-size: 1.1rem;
+  margin: 0.5rem 0 1rem;
+}
+
+.faellig-gross strong {
+  font-size: 2.5rem;
+  color: var(--tinte);
+  margin-right: 0.25rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.fach-liste {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fach {
+  display: grid;
+  grid-template-rows: auto 5rem auto auto;
+  justify-items: center;
+  text-align: center;
+}
+
+.fach-zahl {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.fach-saeule {
+  align-self: end;
+  width: 70%;
+  height: calc(var(--hoehe, 0) * 100%);
+  min-height: 3px;
+  border-radius: 4px 4px 0 0;
+  background: var(--tinte);
+  opacity: calc(0.35 + var(--stufe, 0) * 0.16);
+}
+
+.fach-1 .fach-saeule { --stufe: 0; }
+.fach-2 .fach-saeule { --stufe: 1; }
+.fach-3 .fach-saeule { --stufe: 2; }
+.fach-4 .fach-saeule { --stufe: 3; }
+.fach-5 .fach-saeule { --stufe: 4; }
+
+.fach-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-top: 2px solid var(--linie);
+  width: 100%;
+  padding-top: 0.25rem;
+}
+
+.fach-tage {
+  font-size: 0.75rem;
+  color: var(--text-leise);
+}
+
+.export {
+  margin-top: 1rem;
+}
+
+.runde-kopf {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.zaehler {
+  margin: 0;
+  color: var(--text-leise);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Die Karte: echte Karteikarte – rote Kopflinie, linierte Rückseite. */
+.karte {
+  --wisch: 0px;
+  display: block;
+  width: 100%;
+  margin: 0.75rem 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  perspective: 1400px;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.karte-innen {
+  display: grid;
+  min-height: 15rem;
+  transform: translateX(var(--wisch)) rotateY(0deg);
+  transform-style: preserve-3d;
+  transition: transform 0.45s cubic-bezier(0.3, 0.7, 0.2, 1);
+}
+
+.karte.umgedreht .karte-innen {
+  transform: translateX(var(--wisch)) rotateY(180deg);
+}
+
+.karte-seite {
+  grid-area: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0 1.25rem 1.25rem;
+  border-radius: 6px;
+  background: var(--flaeche);
+  border: 1px solid var(--linie);
+  box-shadow: 0 1px 0 var(--linie), 0 8px 24px -12px rgba(20, 30, 60, 0.35);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.karte-kopf {
+  display: block;
+  padding: 0.85rem 0 0.5rem;
+  border-bottom: 2px solid var(--rot);
+  font-size: 0.9rem;
+  color: var(--text-leise);
+}
+
+.karte-text {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--schrift-lesen);
+  font-size: 1.4rem;
+  line-height: 1.4;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+.karte-hinten {
+  transform: rotateY(180deg);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent calc(1.9rem - 1px),
+    var(--karte-linie) calc(1.9rem - 1px),
+    var(--karte-linie) 1.9rem
+  );
+  background-color: var(--flaeche);
+}
+
+.karte-hinten .karte-text {
+  font-size: 1.25rem;
+}
+
+.karte-fuss {
+  font-size: 0.85rem;
+  color: var(--text-leise);
+}
+
+.karte:focus-visible {
+  outline: none;
+}
+
+.karte:focus-visible .karte-seite {
+  outline: 3px solid var(--tinte);
+  outline-offset: 3px;
+}
+
+.antworten {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.antworten[hidden] {
+  display: none;
+}
+
+.antworten .knopf {
+  min-height: 3.25rem;
+}
+
+.knopf.ja {
+  background: var(--gruen-hell);
+  border-color: var(--gruen);
+  color: var(--gruen);
+}
+
+.knopf.nein {
+  background: var(--rot-hell);
+  border-color: var(--rot);
+  color: var(--rot);
+}
+
+.tasten-hinweis {
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tasten-hinweis {
+    display: block;
+  }
+}
+
+/* ---------- Bewegung reduzieren ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .karte-innen {
+    transition: none;
+  }
+}
+
+/* ---------- Druck ---------- */
+
+@media print {
+  :root {
+    --papier: #fff;
+    --flaeche: #fff;
+    --text: #000;
+    --text-leise: #333;
+    --marker: #fff3a8;
+  }
+
+  .kopf,
+  .tabs,
+  .chips,
+  .werkzeuge,
+  .aktionen,
+  .nicht-drucken,
+  .ansage,
+  .springen {
+    display: none !important;
+  }
+
+  .haupt {
+    max-width: none;
+    padding: 0;
+  }
+
+  .lesetext {
+    font-size: 11pt;
+    max-width: none;
+  }
+
+  .zf-abschnitt {
+    break-inside: auto;
+  }
+
+  .merke {
+    break-inside: avoid;
+    border: 1px solid #999;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  mark.begriff {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}
