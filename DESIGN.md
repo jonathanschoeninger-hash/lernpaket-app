@@ -339,7 +339,8 @@ pro Paket:
 uebungsstand    { frageId, gewicht, serie, gemeistert, richtig, falsch, zuletzt }   // zuletzt = Zeitpunkt der letzten Antwort
 antworten       { frageId, richtig, zeitpunkt }          // für Trefferquote, nur die letzten 500
 fehlerheft      { frageId, anzahl, zuletzt, ueben, test } // jede falsche Antwort aus Üben und Test
-tests           { datum, modus, punkte, max, note, proUnterthema{} }
+tests           { datum, modus, teil, punkte, max, prozent, note, proUnterthema{}, fragen[{ frageId, antwort, punkte, max }] }
+laufenderTest   { modus, teil, fragenIds, antworten{}, beginn, ende, phase, freitextPunkte{} }   // null, wenn kein Test läuft
 karten          { karteId, fach, faelligAm }
 videos          { videoId, gesehen }
 notenschluessel                                          // optional, überschreibt den globalen
@@ -384,9 +385,14 @@ Geklärt am 26. 11. 2026 (zweite Runde vor Phase 1):
 16. **Code-Namen:** Datei- und Funktionsnamen genau wie in `CLAUDE.md` und `ANLEITUNG.md` (z. B. `validate.js`, `validatePaket`); alles andere (Variablen, Felder, Meldungen) auf Deutsch.
 17. **Technik-Kleinigkeiten:** `package.json` nur mit `"type": "module"` (keine Pakete), damit `node --test` ES-Module ab Node 20 lädt. `quiz.richtig` bei Folien ist eine Zahl, `richtig` bei `mc`/`mehrfach` eine Liste. Doppelte `richtig`-Indizes, doppelte `zuordnen`-Seiten und doppelte `reihenfolge`-Schritte = Fehler. Die 5-MB-Grenze prüft eine eigene Funktion am Dateitext; `validatePaket(obj)` prüft das Objekt.
 
+Geklärt am 26. 11. 2026 (vor Phase 4):
+
+18. **Kompensationsprüfung:** „zuletzt negativ“ = Unterthemen mit **roter Beherrschung** (Abschnitt 7). Gibt es keine, ist der Modus gesperrt.
+19. **Matura-Schlüssel:** Höchstpunkte und die 4 Punktegrenzen **selbst eingeben** (vorausgefüllt mit 32/27/22/17 von 36); die App rechnet in Prozent um.
+20. **Lückentext:** bleibt **1 Punkt pro Lücke** (wie 4.2).
+21. **Laufender Test:** wird im Fortschritt gespeichert (`laufenderTest`, siehe Abschnitt 8); Neuladen → Test geht weiter, abgelaufene Zeit → automatisch abgeben.
+
 **Noch offen – vor der jeweiligen Phase klären:**
-- **Phase 4:** Speicher für einen laufenden Test (Neuladen → Test geht weiter) fehlt noch in Abschnitt 8. (Fehlerheft und „zuletzt dran“ sind seit Phase 3 eingetragen.)
-- **Phase 4:** Kompensationsprüfung „zuletzt negativ“ = letzter Test pro Unterthema unter der Genügend-Grenze oder rote Beherrschung (Abschnitt 7)? Matura-Schlüssel: Punktegrenzen + Höchstpunkte selbst eingeben oder feste Vorlagen? Lückentext mit 1 Punkt pro Lücke gewichtet lange Lückentexte stark – gewollt?
 - **Phase 5:** Mündliche Prüfung – nur Freitext-Fragen (haben eine Musterlösung) oder auch MC & Co. mit vorgelesenen Optionen?
 - **Phase 6:** Link-Beispiel nennt `pakete/`, das Beispielpaket liegt in `beispiele/` – beide Ordner erlauben oder Beispiel kopieren?
 

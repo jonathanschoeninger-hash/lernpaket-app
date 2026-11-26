@@ -9,8 +9,21 @@ import * as zusammenfassung from './ui/zusammenfassung.js';
 import * as karten from './ui/karten.js';
 import * as ueben from './ui/ueben.js';
 import * as fehlerheft from './ui/fehlerheft.js';
+import * as test from './ui/testen.js';
+import * as fortschrittSeite from './ui/fortschritt.js';
+import * as einstellungen from './ui/einstellungen.js';
 
-const SEITEN = { start, paket: paketSeite, zusammenfassung, karten, ueben, fehlerheft };
+const SEITEN = {
+  start,
+  einstellungen,
+  paket: paketSeite,
+  zusammenfassung,
+  karten,
+  ueben,
+  fehlerheft,
+  test,
+  fortschritt: fortschrittSeite,
+};
 
 const haupt = document.getElementById('haupt');
 const tabs = document.getElementById('tabs');
@@ -25,7 +38,7 @@ function tabLeiste(route) {
     { text: 'Karten', seite: 'karten' },
     { text: 'Videos' },
     { text: 'Üben', seite: 'ueben' },
-    { text: 'Test' },
+    { text: 'Test', seite: 'test' },
   ];
   leeren(tabs).append(
     el(

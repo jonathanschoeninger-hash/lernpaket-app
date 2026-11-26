@@ -39,6 +39,12 @@ export async function zeige(wurzel, route, paket) {
       }),
       el('a', { class: 'knopf', href: baueRoute('ueben', paket.id), text: 'Üben' }),
       el('a', {
+        class: 'knopf',
+        href: baueRoute('test', paket.id),
+        text: fortschritt.laufenderTest ? 'Test fortsetzen' : 'Test machen',
+      }),
+      el('a', { class: 'knopf leise', href: baueRoute('fortschritt', paket.id), text: 'Fortschritt' }),
+      el('a', {
         class: 'knopf leise',
         href: baueRoute('fehlerheft', paket.id),
         text: fehlerAnzahl > 0 ? `Fehlerheft (${fehlerAnzahl})` : 'Fehlerheft',
@@ -74,7 +80,7 @@ export async function zeige(wurzel, route, paket) {
       { 'aria-labelledby': 'bald-titel' },
       el('h2', { id: 'bald-titel', text: 'Außerdem im Paket' }),
       el('p', { text: `${s.videos} Videos und ${s.fragen} Fragen (davon ${s.nurTest} nur im Test).` }),
-      el('div', { class: 'aktionen' }, kommtBald('Videos ansehen'), kommtBald('Test machen')),
+      el('div', { class: 'aktionen' }, kommtBald('Videos ansehen')),
     ),
     quellenAbschnitt(paket) ?? '',
   );

@@ -68,6 +68,28 @@ describe('Üben und Fehlerheft', () => {
   });
 });
 
+describe('Phase 4: Test, Fortschritt, Einstellungen', () => {
+  test('Test, Ergebnis und Fortschritt', () => {
+    assert.deepEqual(leseRoute('#/paket/p-1/test'), { seite: 'test', paketId: 'p-1', unterthema: null });
+    assert.deepEqual(leseRoute('#/paket/p-1/test/ergebnis'), { seite: 'test', paketId: 'p-1', unterthema: 'ergebnis' });
+    assert.deepEqual(leseRoute('#/paket/p-1/fortschritt'), { seite: 'fortschritt', paketId: 'p-1', unterthema: null });
+  });
+
+  test('Schwächen-Filter beim Üben', () => {
+    assert.deepEqual(leseRoute('#/paket/p-1/ueben?nur=schwaechen'), {
+      seite: 'ueben',
+      paketId: 'p-1',
+      unterthema: null,
+      nur: 'schwaechen',
+    });
+  });
+
+  test('Einstellungen (ohne Paket)', () => {
+    assert.deepEqual(leseRoute('#/einstellungen'), { seite: 'einstellungen' });
+    assert.equal(baueRoute('einstellungen'), '#/einstellungen');
+  });
+});
+
 describe('baueRoute', () => {
   test('baut die Adressen, Rundweg mit leseRoute', () => {
     assert.equal(baueRoute('start'), '#/start');

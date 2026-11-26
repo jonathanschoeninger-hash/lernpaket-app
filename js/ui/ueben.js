@@ -16,13 +16,24 @@ import {
 } from '../logic/adaptive.js';
 import { antwortMerken } from '../logic/fortschritt.js';
 import { baueRoute } from '../logic/route.js';
-import { ladeFortschritt, speichereFortschritt } from '../store/db.js';
+import { ladeFortschritt, speichereFortschritt, ladeEinstellungen } from '../store/db.js';
+import { schwacheUnterthemen } from '../logic/mastery.js';
+import { schluesselGrenzen } from '../logic/grading.js';
+import { aktiverSchluessel } from './notenschluessel.js';
 
 export async function zeige(wurzel, route, paket) {
   let fortschritt = await ladeFortschritt(paket.id);
   const unterthema = paket.unterthemen.find((u) => u.id === route.unterthema) ?? null;
   const nurFehler = route.nur === 'fehler';
-  const nurIds = nurFehler ? Object.keys(fortschritt.fehlerheft ?? {}) : null;
+  const nurSchwaechen = route.nur === 'schwaechen';
+  const grenzen = schluesselGrenzen(aktiverSchluessel(fortschritt, await ladeEinstellungen()));
+  // Schwächen = rote Unterthemen; sie werden beim Start festgelegt und bleiben für diese Runde gleich.
+  const schwach = nurSchwaechen ? new Set(schwacheUnterthemen(paket, fortschritt, grenzen)) : null;
+  const nurIds = nurFehler
+    ? Object.keys(fortschritt.fehlerheft ?? {})
+    : nurSchwaechen
+      ? paket.fragen.filter((f) => schwach.has(f.unterthema)).map((f) => f.id)
+      : null;
   const auswahl = { unterthema: unterthema?.id ?? null, nurIds };
 
   // Alle Übungsfragen im gewählten Bereich (gemeistert oder nicht) – für Balken und „Neue Runde“.
@@ -156,7 +167,9 @@ export async function zeige(wurzel, route, paket) {
           class: 'meldung',
           text: nurFehler
             ? 'Im Fehlerheft gibt es hier keine Übungsfragen. Falsch beantwortete Fragen landen automatisch dort.'
-            : 'Hier gibt es keine Übungsfragen.',
+            : nurSchwaechen
+              ? 'Gerade ist hier kein Unterthema rot – keine Schwächen zum Üben.'
+              : 'Hier gibt es keine Übungsfragen.',
         }),
       );
       return;
@@ -201,7 +214,7 @@ export async function zeige(wurzel, route, paket) {
 
   // ---------- Kopf ----------
   wurzel.append(
-    el('h1', { text: nurFehler ? 'Fehler üben' : unterthema ? `Üben: ${unterthema.name}` : 'Üben' }),
+    el('h1', { text: nurFehler ? 'Fehler üben' : nurSchwaechen ? 'Schwächen üben' : unterthema ? `Üben: ${unterthema.name}` : 'Üben' }),
     el(
       'nav',
       { class: 'chips', 'aria-label': 'Unterthema wählen' },
@@ -217,17 +230,17 @@ export async function zeige(wurzel, route, paket) {
     nurFehler
       ? el('p', { class: 'klein' }, 'Nur Fragen aus deinem Fehlerheft, die noch nicht gemeistert sind. ',
           el('a', { href: baueRoute('ueben', paket.id, unterthema?.id), text: 'Alle Fragen üben' }))
-      : '',
+      : nurSchwaechen
+        ? el('p', { class: 'klein' }, `Nur Fragen aus deinen roten Unterthemen: ${paket.unterthemen.filter((u) => schwach.has(u.id)).map((u) => u.name).join(', ') || 'keine'}. `,
+            el('a', { href: baueRoute('ueben', paket.id, unterthema?.id), text: 'Alle Fragen üben' }))
+        : '',
     balkenPlatz,
     el(
       'div',
       { class: 'aktionen' },
-      el(
-        'span',
-        { class: 'kommt-bald' },
-        el('button', { type: 'button', class: 'knopf', disabled: true, text: 'Nur meine Schwächen üben' }),
-        el('small', { text: 'kommt mit dem Test (Auswertung nach Unterthemen)' }),
-      ),
+      nurSchwaechen
+        ? ''
+        : el('a', { class: 'knopf', href: baueRoute('ueben', paket.id, null, { nur: 'schwaechen' }), text: 'Nur meine Schwächen üben' }),
       el('a', { class: 'knopf leise', href: baueRoute('fehlerheft', paket.id), text: 'Fehlerheft' }),
     ),
     flaeche,

@@ -16,6 +16,8 @@
   --rot-hell: #fdecee;
   --gruen: #1f7a4a;
   --gruen-hell: #e7f5ec;
+  --gelb: #a86b00;
+  --gelb-hell: #fdf3dc;
   --karte-linie: #cfdcf3;
 
   --schrift-ui: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif;
@@ -43,6 +45,8 @@
     --rot-hell: #3a1f26;
     --gruen: #79d6a1;
     --gruen-hell: #18332a;
+    --gelb: #f0c24f;
+    --gelb-hell: #3a3018;
     --karte-linie: #2b3654;
   }
 }
@@ -1237,7 +1241,7 @@ textarea:focus-visible {
 }
 
 .rueckmeldung.teils {
-  border-left-color: #c58a00;
+  border-left-color: var(--gelb);
 }
 
 .rueckmeldung.schlecht {
@@ -1408,4 +1412,392 @@ textarea:focus-visible {
   border-color: var(--gruen);
   color: var(--gruen);
   background: var(--gruen-hell);
+}
+
+/* ---------- Kopf: Einstellungen ---------- */
+
+.kopf-link {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 0.25rem;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+/* ---------- Test ---------- */
+
+.modus-option {
+  align-items: flex-start;
+}
+
+.modus-option input {
+  margin-top: 0.2rem;
+}
+
+.modus-text {
+  display: grid;
+  gap: 0.1rem;
+}
+
+.modus-option.gesperrt {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.minuten-eingabe {
+  width: 5.5rem;
+  min-height: 44px;
+  padding: 0.4rem 0.6rem;
+  border: 1.5px solid var(--linie);
+  border-radius: 8px;
+  background: var(--papier);
+  color: var(--text);
+  font: inherit;
+}
+
+.test-kopf {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.25rem 0;
+  background: var(--papier);
+}
+
+@media (min-width: 48rem) {
+  .test-kopf {
+    top: 3rem; /* unter der Tab-Leiste */
+  }
+}
+
+.uhr {
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  color: var(--text-leise);
+}
+
+.uhr.knapp {
+  color: var(--rot);
+}
+
+.nummern ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.5rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nummer {
+  min-width: 44px;
+  min-height: 44px;
+  border: 1.5px solid var(--linie);
+  border-radius: 8px;
+  background: var(--flaeche);
+  color: var(--text);
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+}
+
+.nummer.beantwortet {
+  background: var(--tinte-hell);
+  border-color: var(--tinte);
+}
+
+.nummer[aria-current='step'] {
+  background: var(--tinte);
+  border-color: var(--tinte);
+  color: var(--auf-tinte);
+  font-weight: 700;
+}
+
+.test-navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.deine-antwort {
+  white-space: pre-line;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--linie);
+  border-radius: 8px;
+  background: var(--flaeche);
+}
+
+.note-kasten {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1rem 1.25rem;
+  border-radius: 14px;
+  border: 1px solid var(--linie);
+  background: var(--flaeche);
+}
+
+.note-zahl {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  margin: 0;
+  border-radius: 50%;
+  border: 3px solid currentColor;
+  font-family: var(--schrift-lesen);
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--tinte);
+}
+
+.note-5 .note-zahl {
+  color: var(--rot);
+}
+
+.note-text {
+  margin: 0 0 0.25rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.ut-ergebnis {
+  display: grid;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ut-ergebnis li {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.2rem;
+}
+
+.ut-wert {
+  font-size: 0.9rem;
+  color: var(--text-leise);
+  font-variant-numeric: tabular-nums;
+}
+
+.farbe-gruen .balken-fuellung { background: var(--gruen); }
+.farbe-gelb .balken-fuellung { background: var(--gelb); }
+.farbe-rot .balken-fuellung { background: var(--rot); }
+
+.test-fragen {
+  display: grid;
+  gap: 0.75rem;
+  padding-left: 1.4rem;
+}
+
+.test-frage {
+  padding: 0.5rem 0.9rem;
+  border-left: 4px solid var(--linie);
+  border-radius: 0 8px 8px 0;
+  background: var(--flaeche);
+}
+
+.test-frage.gut { border-left-color: var(--gruen); }
+.test-frage.teils { border-left-color: var(--gelb); }
+.test-frage.schlecht { border-left-color: var(--rot); }
+
+.test-frage p {
+  margin: 0.35rem 0;
+}
+
+.punkte {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+/* ---------- Fortschritt ---------- */
+
+.beherrschung-liste {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.beherrschung {
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--linie);
+  border-left: 5px solid var(--linie);
+  border-radius: var(--radius);
+  background: var(--flaeche);
+}
+
+.beherrschung.farbe-gruen { border-left-color: var(--gruen); }
+.beherrschung.farbe-gelb { border-left-color: var(--gelb); }
+.beherrschung.farbe-rot { border-left-color: var(--rot); }
+
+.beherrschung p {
+  margin: 0.35rem 0 0;
+}
+
+.beherrschung-kopf {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.25rem 0.75rem;
+  margin-bottom: 0.4rem;
+}
+
+.ut-name {
+  font-weight: 700;
+}
+
+.ampel-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.ampel-punkt {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background: var(--linie);
+}
+
+.farbe-gruen .ampel-punkt { background: var(--gruen); }
+.farbe-gelb .ampel-punkt { background: var(--gelb); }
+.farbe-rot .ampel-punkt { background: var(--rot); }
+
+.empfehlung {
+  font-size: 0.95rem;
+}
+
+.verlauf-rahmen {
+  position: relative;
+}
+
+.verlauf-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.verlauf-svg .raster {
+  stroke: var(--linie);
+  stroke-width: 1;
+}
+
+.verlauf-svg .achse {
+  fill: var(--text-leise);
+  font-size: 12px;
+  font-family: var(--schrift-ui);
+}
+
+.verlauf-svg .linie {
+  fill: none;
+  stroke: var(--tinte);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.verlauf-svg .punkt {
+  fill: var(--tinte);
+  stroke: var(--flaeche);
+  stroke-width: 2;
+}
+
+.verlauf-svg .treffer {
+  fill: transparent;
+  cursor: pointer;
+}
+
+.verlauf-svg .treffer:focus-visible {
+  outline: none;
+  stroke: var(--tinte);
+  stroke-width: 2;
+}
+
+.tipp {
+  position: absolute;
+  transform: translate(-50%, calc(-100% - 12px));
+  max-width: 16rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+  background: var(--text);
+  color: var(--papier);
+  font-size: 0.85rem;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.verlauf-tabelle table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.verlauf-tabelle th,
+.verlauf-tabelle td {
+  padding: 0.4rem 0.5rem;
+  border-bottom: 1px solid var(--linie);
+  text-align: left;
+}
+
+.verlauf-tabelle summary,
+.schluessel-details summary {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(--tinte);
+}
+
+.schluessel-details {
+  margin-top: 2rem;
+}
+
+/* ---------- Notenschlüssel-Editor ---------- */
+
+.schluessel-wahl {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0 0 0.75rem;
+  padding: 0;
+  border: 0;
+}
+
+.schluessel-wahl legend {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.grenzen {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
+  gap: 0.5rem 0.75rem;
+  margin: 0.5rem 0 0.25rem 2.2rem;
+}
+
+.grenze {
+  display: grid;
+  gap: 0.2rem;
+  font-size: 0.9rem;
+}
+
+.grenze-feld {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.grenze-eingabe {
+  width: 5rem;
 }

@@ -33,7 +33,21 @@ export function typHinweis(frage) {
   return TYP_HINWEIS[frage.typ] ?? '';
 }
 
+/**
+ * Baustein für eine Frage. Zusätzlich zu den Typ-Funktionen:
+ * setzeAntwort(antwort) – gespeicherte Antwort wiederherstellen (Test nach Neuladen)
+ * beiAenderung(fn)      – fn wird bei jeder Änderung aufgerufen
+ */
 export function frageEingabe(frage) {
+  const baustein = typBaustein(frage);
+  baustein.beiAenderung = (fn) => {
+    baustein.element.addEventListener('input', fn);
+    baustein.element.addEventListener('change', fn);
+  };
+  return baustein;
+}
+
+function typBaustein(frage) {
   switch (frage.typ) {
     case 'mc':
       return auswahl(frage, frage.optionen.map((text, i) => ({ text, wert: i })), false);
@@ -82,6 +96,10 @@ function auswahl(frage, optionen, mehrere, mischen = true) {
       return mehrere ? gewaehlt : (gewaehlt[0] ?? null);
     },
     beantwortet: () => felder.some((f) => f.input.checked),
+    setzeAntwort: (antwort) => {
+      const werte = mehrere ? (Array.isArray(antwort) ? antwort : []) : [antwort];
+      for (const f of felder) f.input.checked = werte.includes(f.o.wert);
+    },
     sperren: () => felder.forEach((f) => (f.input.disabled = true)),
     zeigeAuswertung: () => {
       const richtig = new Set(richtigeWerte());
@@ -117,6 +135,7 @@ function lueckentext(frage) {
     element,
     antwort: () => eingaben.map((e) => e.value),
     beantwortet: () => eingaben.some((e) => e.value.trim() !== ''),
+    setzeAntwort: (antwort) => eingaben.forEach((e, i) => (e.value = Array.isArray(antwort) ? String(antwort[i] ?? '') : '')),
     sperren: () => eingaben.forEach((e) => (e.readOnly = true)),
     zeigeAuswertung: (ergebnis) =>
       eingaben.forEach((e, i) => e.classList.add(ergebnis.teile?.[i] ? 'ist-richtig' : 'ist-falsch')),
@@ -142,6 +161,8 @@ function zuordnen(frage) {
     element: el('div', { class: 'zuordnen' }, zeilen.map((z) => z.zeile)),
     antwort: () => zeilen.map((z) => z.select.value),
     beantwortet: () => zeilen.some((z) => z.select.value !== ''),
+    setzeAntwort: (antwort) =>
+      zeilen.forEach((z, i) => (z.select.value = Array.isArray(antwort) && rechts.includes(antwort[i]) ? antwort[i] : '')),
     sperren: () => zeilen.forEach((z) => (z.select.disabled = true)),
     zeigeAuswertung: (ergebnis) =>
       zeilen.forEach((z, i) => z.zeile.classList.add(ergebnis.teile?.[i] ? 'ist-richtig' : 'ist-falsch')),
@@ -205,6 +226,7 @@ function reihenfolge(frage) {
     const schritt = reihe[i];
     [reihe[i], reihe[j]] = [reihe[j], reihe[i]];
     zeichnen(schritt, d < 0 ? 'hoch' : 'runter');
+    liste.dispatchEvent(new Event('change', { bubbles: true }));
     ansage(`„${schritt}“ ist jetzt an Stelle ${j + 1}.`);
   }
 
@@ -213,6 +235,15 @@ function reihenfolge(frage) {
     element: liste,
     antwort: () => [...reihe],
     beantwortet: () => true,
+    setzeAntwort: (antwort) => {
+      // Nur übernehmen, wenn es genau dieselben Schritte sind.
+      const gleich = Array.isArray(antwort) && antwort.length === frage.schritte.length &&
+        [...antwort].sort().join('|') === [...frage.schritte].sort().join('|');
+      if (gleich) {
+        reihe = [...antwort];
+        zeichnen();
+      }
+    },
     sperren: () => {
       gesperrt = true;
       zeichnen();
@@ -240,6 +271,7 @@ function zahl(frage) {
     ),
     antwort: () => input.value,
     beantwortet: () => input.value.trim() !== '',
+    setzeAntwort: (antwort) => (input.value = typeof antwort === 'string' ? antwort : ''),
     sperren: () => (input.readOnly = true),
     zeigeAuswertung: (ergebnis) => input.classList.add(ergebnis.richtig ? 'ist-richtig' : 'ist-falsch'),
     fokus: () => input.focus(),
@@ -255,6 +287,7 @@ function freitext() {
     element: el('div', {}, el('label', { for: id, class: 'nur-sr', text: 'Deine Antwort' }), feld),
     antwort: () => feld.value,
     beantwortet: () => feld.value.trim() !== '',
+    setzeAntwort: (antwort) => (feld.value = typeof antwort === 'string' ? antwort : ''),
     sperren: () => (feld.readOnly = true),
     zeigeAuswertung: () => {},
     fokus: () => feld.focus(),

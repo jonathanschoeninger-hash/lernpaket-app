@@ -2,7 +2,8 @@
 
 import { el, leeren, ansage, frageDialog } from './dom.js';
 import { pruefeDateiText, MAX_DATEI_BYTES } from '../logic/validate.js';
-import { leererFortschritt, fortschrittUebernehmen, paketFortschritt } from '../logic/fortschritt.js';
+import { leererFortschritt, fortschrittUebernehmen } from '../logic/fortschritt.js';
+import { paketBeherrschung } from '../logic/mastery.js';
 import { faelligeKarten, heutigesDatum } from '../logic/leitner.js';
 import { baueRoute } from '../logic/route.js';
 import { allePakete, ladePaket, speicherePaket, loeschePaket, ladeFortschritt } from '../store/db.js';
@@ -206,7 +207,7 @@ async function listeZeigen(liste) {
   const ul = el('ul', { class: 'paket-liste' });
   for (const { paket } of eintraege) {
     const fortschritt = await ladeFortschritt(paket.id);
-    const prozent = paketFortschritt(paket, fortschritt);
+    const prozent = paketBeherrschung(paket, fortschritt);
     const faellig = faelligeKarten(paket.karten, fortschritt.karten, heute).length;
     ul.append(
       el(
@@ -219,7 +220,7 @@ async function listeZeigen(liste) {
           el('span', { class: 'paket-titel', text: paket.titel }),
           el('span', { class: 'paket-faellig', text: faellig === 1 ? 'Heute fällig: 1 Karte' : `Heute fällig: ${faellig} Karten` }),
         ),
-        fortschrittsBalken(prozent, `${prozent} % der Karten sitzen`),
+        fortschrittsBalken(prozent, `${prozent} % beherrscht`),
         el('button', {
           type: 'button',
           class: 'knopf leise',

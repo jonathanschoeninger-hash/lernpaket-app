@@ -1,7 +1,5 @@
 // Fortschritt pro Paket (Aufbau nach DESIGN.md 8) – reine Logik ohne DOM.
 
-import { kartenWissen } from './leitner.js';
-
 export function leererFortschritt(paketId) {
   return {
     paketId,
@@ -12,6 +10,7 @@ export function leererFortschritt(paketId) {
     videos: {},
     fehlerheft: {},
     notenschluessel: null,
+    laufenderTest: null,
   };
 }
 
@@ -26,6 +25,7 @@ function nurBekannte(eintraege, ids) {
  * Fortschritt beim Ersetzen eines Pakets mit gleicher id übernehmen (DESIGN.md 10, Punkt 5):
  * Einträge zu Fragen (auch Fehlerheft), Karten und Videos bleiben nur, wenn es die ID im neuen Paket noch gibt.
  * Testverlauf und eigener Notenschlüssel gehören zum ganzen Paket und bleiben.
+ * Ein laufender Test wird verworfen (seine Fragen passen evtl. nicht mehr).
  */
 export function fortschrittUebernehmen(alt, neuesPaket) {
   const neu = leererFortschritt(neuesPaket.id);
@@ -47,25 +47,19 @@ export function fortschrittUebernehmen(alt, neuesPaket) {
   return neu;
 }
 
-/**
- * Fortschritt in Prozent für die Liste „Meine Pakete“.
- * Bis Üben und Test fertig sind (Phase 3/4): Anteil der Karten in Fach 3–5.
- */
-export function paketFortschritt(paket, fortschritt) {
-  const anteil = kartenWissen(paket.karten, fortschritt?.karten ?? {});
-  return anteil === null ? 0 : Math.round(anteil * 100);
-}
-
 /** So viele Antworten bleiben gespeichert (für die Trefferquote reichen die letzten). */
 export const MAX_ANTWORTEN = 500;
 
 /**
- * Eine beantwortete Frage merken (Üben oder Test): in `antworten` und – wenn falsch – im Fehlerheft.
+ * Eine beantwortete Frage merken: Übungsantworten kommen in `antworten` (für die Übungs-Trefferquote),
+ * falsche Antworten aus Üben und Test ins Fehlerheft.
  * Liefert einen neuen Fortschritt; der alte bleibt unverändert.
  */
 export function antwortMerken(fortschritt, { frageId, richtig, zeitpunkt, herkunft }) {
   const neu = { ...fortschritt };
-  neu.antworten = [...(fortschritt.antworten ?? []), { frageId, richtig, zeitpunkt }].slice(-MAX_ANTWORTEN);
+  if (herkunft !== 'test') {
+    neu.antworten = [...(fortschritt.antworten ?? []), { frageId, richtig, zeitpunkt }].slice(-MAX_ANTWORTEN);
+  }
   if (!richtig) {
     const alt = fortschritt.fehlerheft?.[frageId] ?? { anzahl: 0, zuletzt: null, ueben: 0, test: 0 };
     neu.fehlerheft = {

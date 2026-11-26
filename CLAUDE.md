@@ -28,7 +28,7 @@ js/logic/leitner.js        Karteikarten-Fächer
 js/logic/grading.js        Punkte, Notenschlüssel, Note 1–5
 js/logic/freitext.js       Freitext-Bewertung über Bewertungspunkte
 js/logic/mastery.js        Beherrschung pro Unterthema
-js/ui/*.js                 Bildschirme (start, paket, zusammenfassung, karten, ueben, test, fortschritt, fehlerheft, einstellungen)
+js/ui/*.js                 Bildschirme (start, paket, zusammenfassung, karten, ueben, testen, fortschritt, fehlerheft, einstellungen) – „testen“, weil `node --test` jede Datei namens test.js als Test ausführt
 js/video/layouts.js        Folien-Layouts (DOM, kein HTML-String aus Paketdaten)
 js/video/player.js         Abspielen, Steuerung
 js/video/speech.js         speechSynthesis-Wrapper

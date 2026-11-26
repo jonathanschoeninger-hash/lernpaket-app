@@ -4,7 +4,6 @@ import { readFileSync } from 'node:fs';
 import {
   leererFortschritt,
   fortschrittUebernehmen,
-  paketFortschritt,
   antwortMerken,
   MAX_ANTWORTEN,
 } from '../js/logic/fortschritt.js';
@@ -24,6 +23,7 @@ describe('Fortschritt', () => {
       videos: {},
       fehlerheft: {},
       notenschluessel: null,
+      laufenderTest: null,
     });
   });
 
@@ -49,6 +49,7 @@ describe('Fortschritt', () => {
     assert.deepEqual(neu.tests, alt.tests);
     assert.deepEqual(Object.keys(neu.fehlerheft), ['f1']);
     assert.deepEqual(neu.notenschluessel, { gut: 80 });
+    assert.equal(neu.laufenderTest, null); // Paket geändert → laufender Test verworfen
     assert.equal(neu.paketId, BEISPIEL.id);
   });
 
@@ -60,19 +61,6 @@ describe('Fortschritt', () => {
     );
   });
 
-  test('paketFortschritt: gerundeter Prozentsatz der Karten in Fach 3–5', () => {
-    const f = {
-      ...leererFortschritt(BEISPIEL.id),
-      karten: {
-        k1: { fach: 3, faelligAm: '2026-12-01' },
-        k2: { fach: 4, faelligAm: '2026-12-01' },
-        k3: { fach: 5, faelligAm: '2026-12-01' },
-        k4: { fach: 2, faelligAm: '2026-12-01' },
-      },
-    };
-    assert.equal(paketFortschritt(BEISPIEL, f), 13); // 3 von 24 = 12,5 %
-    assert.equal(paketFortschritt(BEISPIEL, undefined), 0);
-  });
 });
 
 describe('antwortMerken', () => {
@@ -86,6 +74,8 @@ describe('antwortMerken', () => {
     let f = antwortMerken(leererFortschritt('p'), { frageId: 'f1', richtig: false, zeitpunkt: 5, herkunft: 'ueben' });
     f = antwortMerken(f, { frageId: 'f1', richtig: false, zeitpunkt: 9, herkunft: 'test' });
     assert.deepEqual(f.fehlerheft.f1, { anzahl: 2, zuletzt: 9, ueben: 1, test: 1 });
+    // Testantworten zählen nicht zur Übungs-Trefferquote
+    assert.equal(f.antworten.length, 1);
   });
 
   test('antworten werden auf die neuesten MAX_ANTWORTEN gekürzt', () => {
