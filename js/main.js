@@ -7,8 +7,10 @@ import * as start from './ui/start.js';
 import * as paketSeite from './ui/paket.js';
 import * as zusammenfassung from './ui/zusammenfassung.js';
 import * as karten from './ui/karten.js';
+import * as ueben from './ui/ueben.js';
+import * as fehlerheft from './ui/fehlerheft.js';
 
-const SEITEN = { start, paket: paketSeite, zusammenfassung, karten };
+const SEITEN = { start, paket: paketSeite, zusammenfassung, karten, ueben, fehlerheft };
 
 const haupt = document.getElementById('haupt');
 const tabs = document.getElementById('tabs');
@@ -22,7 +24,7 @@ function tabLeiste(route) {
     { text: 'Lesen', seite: 'zusammenfassung' },
     { text: 'Karten', seite: 'karten' },
     { text: 'Videos' },
-    { text: 'Üben' },
+    { text: 'Üben', seite: 'ueben' },
     { text: 'Test' },
   ];
   leeren(tabs).append(

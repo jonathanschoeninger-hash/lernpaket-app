@@ -107,7 +107,7 @@ function abschnitt(paket, unterthema, laenge, mitUeberschrift) {
       { class: 'aktionen nicht-drucken' },
       kommtBald('Video ansehen'),
       el('a', { class: 'knopf', href: baueRoute('karten', paket.id, unterthema.id), text: 'Karten lernen' }),
-      kommtBald('Fragen üben'),
+      el('a', { class: 'knopf', href: baueRoute('ueben', paket.id, unterthema.id), text: 'Fragen üben' }),
     ),
   );
 }

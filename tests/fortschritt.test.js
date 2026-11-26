@@ -5,6 +5,8 @@ import {
   leererFortschritt,
   fortschrittUebernehmen,
   paketFortschritt,
+  antwortMerken,
+  MAX_ANTWORTEN,
 } from '../js/logic/fortschritt.js';
 
 const BEISPIEL = JSON.parse(
@@ -20,6 +22,7 @@ describe('Fortschritt', () => {
       tests: [],
       karten: {},
       videos: {},
+      fehlerheft: {},
       notenschluessel: null,
     });
   });
@@ -35,6 +38,7 @@ describe('Fortschritt', () => {
         { frageId: 'f50', richtig: false, zeitpunkt: 2 },
       ],
       tests: [{ datum: '2026-11-20', note: 2 }],
+      fehlerheft: { f1: { anzahl: 1, zuletzt: 1, ueben: 1, test: 0 }, f50: { anzahl: 2, zuletzt: 2, ueben: 2, test: 0 } },
       notenschluessel: { gut: 80 },
     };
     const neu = fortschrittUebernehmen(alt, BEISPIEL);
@@ -43,6 +47,7 @@ describe('Fortschritt', () => {
     assert.deepEqual(Object.keys(neu.uebungsstand), ['f1']);
     assert.deepEqual(neu.antworten, [{ frageId: 'f1', richtig: true, zeitpunkt: 1 }]);
     assert.deepEqual(neu.tests, alt.tests);
+    assert.deepEqual(Object.keys(neu.fehlerheft), ['f1']);
     assert.deepEqual(neu.notenschluessel, { gut: 80 });
     assert.equal(neu.paketId, BEISPIEL.id);
   });
@@ -67,5 +72,26 @@ describe('Fortschritt', () => {
     };
     assert.equal(paketFortschritt(BEISPIEL, f), 13); // 3 von 24 = 12,5 %
     assert.equal(paketFortschritt(BEISPIEL, undefined), 0);
+  });
+});
+
+describe('antwortMerken', () => {
+  test('richtige Antwort: nur in antworten', () => {
+    const f = antwortMerken(leererFortschritt('p'), { frageId: 'f1', richtig: true, zeitpunkt: 5, herkunft: 'ueben' });
+    assert.deepEqual(f.antworten, [{ frageId: 'f1', richtig: true, zeitpunkt: 5 }]);
+    assert.deepEqual(f.fehlerheft, {});
+  });
+
+  test('falsche Antwort: zusätzlich ins Fehlerheft, Zähler nach Herkunft', () => {
+    let f = antwortMerken(leererFortschritt('p'), { frageId: 'f1', richtig: false, zeitpunkt: 5, herkunft: 'ueben' });
+    f = antwortMerken(f, { frageId: 'f1', richtig: false, zeitpunkt: 9, herkunft: 'test' });
+    assert.deepEqual(f.fehlerheft.f1, { anzahl: 2, zuletzt: 9, ueben: 1, test: 1 });
+  });
+
+  test('antworten werden auf die neuesten MAX_ANTWORTEN gekürzt', () => {
+    let f = leererFortschritt('p');
+    for (let i = 0; i < MAX_ANTWORTEN + 5; i++) f = antwortMerken(f, { frageId: 'f1', richtig: true, zeitpunkt: i, herkunft: 'ueben' });
+    assert.equal(f.antworten.length, MAX_ANTWORTEN);
+    assert.equal(f.antworten[0].zeitpunkt, 5);
   });
 });

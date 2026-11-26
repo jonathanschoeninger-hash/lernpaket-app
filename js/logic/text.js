@@ -59,3 +59,17 @@ export function datumLesbar(datum, heute) {
   const jahr = j === Number(heute.slice(0, 4)) ? '' : ` ${j}`;
   return `${t}. ${MONATE[m - 1]}${jahr}`;
 }
+
+/** Lückentext zerlegen: "Die {{1}} läuft." → [{ text: 'Die ' }, { luecke: 0 }, { text: ' läuft.' }] */
+export function lueckenTeile(text) {
+  const teile = [];
+  const muster = /\{\{(\d+)\}\}/g;
+  let start = 0;
+  for (const treffer of text.matchAll(muster)) {
+    if (treffer.index > start) teile.push({ text: text.slice(start, treffer.index) });
+    teile.push({ luecke: Number(treffer[1]) - 1 });
+    start = treffer.index + treffer[0].length;
+  }
+  if (start < text.length) teile.push({ text: text.slice(start) });
+  return teile;
+}

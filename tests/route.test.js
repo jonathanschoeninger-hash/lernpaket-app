@@ -40,6 +40,34 @@ describe('leseRoute', () => {
   });
 });
 
+describe('Üben und Fehlerheft', () => {
+  test('ueben mit Unterthema und Filter', () => {
+    assert.deepEqual(leseRoute('#/paket/p-1/ueben'), { seite: 'ueben', paketId: 'p-1', unterthema: null });
+    assert.deepEqual(leseRoute('#/paket/p-1/ueben/u2?nur=fehler'), {
+      seite: 'ueben',
+      paketId: 'p-1',
+      unterthema: 'u2',
+      nur: 'fehler',
+    });
+    assert.deepEqual(leseRoute('#/paket/p-1/ueben?nur=fehler'), {
+      seite: 'ueben',
+      paketId: 'p-1',
+      unterthema: null,
+      nur: 'fehler',
+    });
+    assert.deepEqual(leseRoute('#/paket/p-1/fehlerheft'), { seite: 'fehlerheft', paketId: 'p-1', unterthema: null });
+  });
+
+  test('unbekannter Filter wird ignoriert', () => {
+    assert.deepEqual(leseRoute('#/paket/p-1/ueben?nur=quatsch'), { seite: 'ueben', paketId: 'p-1', unterthema: null });
+  });
+
+  test('baueRoute mit Filter', () => {
+    assert.equal(baueRoute('ueben', 'p-1', 'u2', { nur: 'fehler' }), '#/paket/p-1/ueben/u2?nur=fehler');
+    assert.equal(baueRoute('ueben', 'p-1', null, { nur: 'fehler' }), '#/paket/p-1/ueben?nur=fehler');
+  });
+});
+
 describe('baueRoute', () => {
   test('baut die Adressen, Rundweg mit leseRoute', () => {
     assert.equal(baueRoute('start'), '#/start');

@@ -1,6 +1,6 @@
 import { test, describe } from 'node:test';
 import assert from 'node:assert/strict';
-import { absaetze, markiereBegriffe, datumLesbar } from '../js/logic/text.js';
+import { absaetze, markiereBegriffe, datumLesbar, lueckenTeile } from '../js/logic/text.js';
 
 describe('absaetze', () => {
   test('trennt an Leerzeilen, entfernt leere Absätze', () => {
@@ -56,5 +56,21 @@ describe('datumLesbar', () => {
     assert.equal(datumLesbar('2027-01-01', '2026-12-31'), 'morgen');
     assert.equal(datumLesbar('2026-11-29', '2026-11-26'), '29. November');
     assert.equal(datumLesbar('2027-01-03', '2026-12-31'), '3. Jänner 2027');
+  });
+});
+
+describe('lueckenTeile', () => {
+  test('zerlegt den Lückentext in Text und Lücken (Index ab 0)', () => {
+    assert.deepEqual(lueckenTeile('Die {{1}} läuft im {{2}}.'), [
+      { text: 'Die ' },
+      { luecke: 0 },
+      { text: ' läuft im ' },
+      { luecke: 1 },
+      { text: '.' },
+    ]);
+  });
+
+  test('Lücke am Anfang und am Ende, zweistellige Nummern', () => {
+    assert.deepEqual(lueckenTeile('{{10}} und {{1}}'), [{ luecke: 9 }, { text: ' und ' }, { luecke: 0 }]);
   });
 });

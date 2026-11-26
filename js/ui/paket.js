@@ -12,6 +12,7 @@ export async function zeige(wurzel, route, paket) {
   const fortschritt = await ladeFortschritt(paket.id);
   const heute = heutigesDatum();
   const s = paketStatistik(paket);
+  const fehlerAnzahl = Object.keys(fortschritt.fehlerheft ?? {}).length;
   const faelligGesamt = faelligeKarten(paket.karten, fortschritt.karten, heute).length;
 
   const pruefung = [
@@ -36,6 +37,12 @@ export async function zeige(wurzel, route, paket) {
         href: baueRoute('karten', paket.id),
         text: faelligGesamt > 0 ? `Karten lernen (${faelligGesamt} fällig)` : 'Karten ansehen',
       }),
+      el('a', { class: 'knopf', href: baueRoute('ueben', paket.id), text: 'Üben' }),
+      el('a', {
+        class: 'knopf leise',
+        href: baueRoute('fehlerheft', paket.id),
+        text: fehlerAnzahl > 0 ? `Fehlerheft (${fehlerAnzahl})` : 'Fehlerheft',
+      }),
     ),
     el(
       'section',
@@ -56,6 +63,7 @@ export async function zeige(wurzel, route, paket) {
               { class: 'unterthema-links' },
               el('a', { href: baueRoute('zusammenfassung', paket.id, u.id), text: 'Lesen' }),
               el('a', { href: baueRoute('karten', paket.id, u.id), text: `${anzahl} Karten, ${faellig} fällig` }),
+              el('a', { href: baueRoute('ueben', paket.id, u.id), text: 'Üben' }),
             ),
           );
         }),
@@ -66,7 +74,7 @@ export async function zeige(wurzel, route, paket) {
       { 'aria-labelledby': 'bald-titel' },
       el('h2', { id: 'bald-titel', text: 'Außerdem im Paket' }),
       el('p', { text: `${s.videos} Videos und ${s.fragen} Fragen (davon ${s.nurTest} nur im Test).` }),
-      el('div', { class: 'aktionen' }, kommtBald('Videos ansehen'), kommtBald('Üben'), kommtBald('Test machen')),
+      el('div', { class: 'aktionen' }, kommtBald('Videos ansehen'), kommtBald('Test machen')),
     ),
     quellenAbschnitt(paket) ?? '',
   );

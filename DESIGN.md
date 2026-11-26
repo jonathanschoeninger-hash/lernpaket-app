@@ -334,8 +334,9 @@ Dazu: Notenverlauf aller Tests als Kurve.
 **Gespeicherter Fortschritt:**
 ```
 pro Paket:
-uebungsstand    { frageId, gewicht, serie, gemeistert, richtig, falsch }
-antworten       { frageId, richtig, zeitpunkt }          // für Trefferquote
+uebungsstand    { frageId, gewicht, serie, gemeistert, richtig, falsch, zuletzt }   // zuletzt = Zeitpunkt der letzten Antwort
+antworten       { frageId, richtig, zeitpunkt }          // für Trefferquote, nur die letzten 500
+fehlerheft      { frageId, anzahl, zuletzt, ueben, test } // jede falsche Antwort aus Üben und Test
 tests           { datum, modus, punkte, max, note, proUnterthema{} }
 karten          { karteId, fach, faelligAm }
 videos          { videoId, gesehen }
@@ -382,7 +383,7 @@ Geklärt am 26. 11. 2026 (zweite Runde vor Phase 1):
 17. **Technik-Kleinigkeiten:** `package.json` nur mit `"type": "module"` (keine Pakete), damit `node --test` ES-Module ab Node 20 lädt. `quiz.richtig` bei Folien ist eine Zahl, `richtig` bei `mc`/`mehrfach` eine Liste. Doppelte `richtig`-Indizes, doppelte `zuordnen`-Seiten und doppelte `reihenfolge`-Schritte = Fehler. Die 5-MB-Grenze prüft eine eigene Funktion am Dateitext; `validatePaket(obj)` prüft das Objekt.
 
 **Noch offen – vor der jeweiligen Phase klären:**
-- **Phase 2/4:** Abschnitt 8 fehlt Speicher für falsch beantwortete Testfragen (Fehlerheft), einen laufenden Test (Neuladen → Test geht weiter) und „wann war eine Frage zuletzt dran“. Vorschlag: in `db.js` ergänzen und Abschnitt 8 nachziehen.
+- **Phase 4:** Speicher für einen laufenden Test (Neuladen → Test geht weiter) fehlt noch in Abschnitt 8. (Fehlerheft und „zuletzt dran“ sind seit Phase 3 eingetragen.)
 - **Phase 4:** Kompensationsprüfung „zuletzt negativ“ = letzter Test pro Unterthema unter der Genügend-Grenze oder rote Beherrschung (Abschnitt 7)? Matura-Schlüssel: Punktegrenzen + Höchstpunkte selbst eingeben oder feste Vorlagen? Lückentext mit 1 Punkt pro Lücke gewichtet lange Lückentexte stark – gewollt?
 - **Phase 5:** Mündliche Prüfung – nur Freitext-Fragen (haben eine Musterlösung) oder auch MC & Co. mit vorgelesenen Optionen?
 - **Phase 6:** Link-Beispiel nennt `pakete/`, das Beispielpaket liegt in `beispiele/` – beide Ordner erlauben oder Beispiel kopieren?

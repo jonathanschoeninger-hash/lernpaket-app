@@ -448,7 +448,7 @@
       "loesung": 34, "toleranz": 4, "einheit": "ATP",
       "erklaerung": "Je nach Lehrbuch werden 30 bis 38 ATP pro Glucose angegeben. Jede Antwort in diesem Bereich zählt als richtig.",
       "quelle": { "id": "q1", "stelle": "Abschnitt 3" },
-      "nurTest": false
+      "nurTest": true
     },
     {
       "id": "f28", "unterthema": "u3", "typ": "freitext", "schwierigkeit": 3,
@@ -460,7 +460,7 @@
         { "text": "nennt die Bildung von ATP aus ADP und Phosphat", "woerter": ["adp", "phosphat", "aus adp"] }
       ],
       "erklaerung": "Die ATP-Synthase nutzt den Protonenstrom wie eine Turbine. Diese Art der ATP-Bildung heißt oxidative Phosphorylierung.",
-      "nurTest": true
+      "nurTest": false
     },
     {
       "id": "f29", "unterthema": "u3", "typ": "mehrfach", "schwierigkeit": 3,
