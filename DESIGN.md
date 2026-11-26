@@ -246,6 +246,8 @@ Jede Frage hat `gewicht` (Start 1,0) und `serie` (richtig hintereinander).
 - „Gemeistert“ wird gespeichert und gilt auch nach dem Neuladen.
 - **Fehlerheft:** alle jemals falsch beantworteten Fragen aus Üben **und** Tests. Einträge bleiben; inzwischen gemeisterte bekommen den Hinweis „inzwischen gemeistert“.
 
+- **Bewusst so (geklärt in Phase 3):** Wer viele Fragen falsch beantwortet, bekommt vor allem diese wieder – neue Fragen kommen erst dazu, wenn welche richtig beantwortet werden. Es werden keine zusätzlichen Fragen eingemischt.
+
 Fortschrittsbalken: gemeistert / alle. Knopf **„Nur meine Schwächen üben“** (nur rote Unterthemen).
 
 ---
