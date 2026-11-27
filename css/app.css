@@ -392,6 +392,7 @@ code {
 
 .meldung p {
   margin: 0.25rem 0;
+  overflow-wrap: anywhere;
 }
 
 .meldung.erfolg {
@@ -2305,6 +2306,15 @@ textarea:focus-visible {
 
 .feld label {
   font-weight: 600;
+}
+
+.feld > * {
+  min-width: 0;
+}
+
+.feld select {
+  width: 100%;
+  text-overflow: ellipsis;
 }
 
 /* Mündliche Prüfung */

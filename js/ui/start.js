@@ -105,9 +105,16 @@ async function dateiOeffnen(datei) {
   } catch {
     return fehlerKasten(datei.name, [{ pfad: '', meldung: 'Die Datei konnte nicht gelesen werden.' }]);
   }
+  return paketTextImportieren(text, datei.name);
+}
 
+/**
+ * Paket-Text prüfen (validate.js), bei gleicher ID nachfragen, speichern.
+ * Gemeinsam für Datei öffnen, Reinziehen und Paket per Link. Liefert das Meldungs-Element.
+ */
+export async function paketTextImportieren(text, dateiname) {
   const ergebnis = pruefeDateiText(text);
-  if (!ergebnis.ok) return fehlerKasten(datei.name, ergebnis.fehler, ergebnis.hinweise);
+  if (!ergebnis.ok) return fehlerKasten(dateiname, ergebnis.fehler, ergebnis.hinweise);
 
   const paket = ergebnis.paket;
   let fortschritt = leererFortschritt(paket.id);
@@ -133,7 +140,7 @@ async function dateiOeffnen(datei) {
   try {
     await speicherePaket(paket, fortschritt);
   } catch (fehler) {
-    return fehlerKasten(datei.name, [{ pfad: '', meldung: `Speichern ging nicht (${fehler?.message ?? fehler}). Ist der Speicher voll?` }]);
+    return fehlerKasten(dateiname, [{ pfad: '', meldung: `Speichern ging nicht (${fehler?.message ?? fehler}). Ist der Speicher voll?` }]);
   }
 
   ansage(`„${paket.titel}“ ${vorhanden ? 'ersetzt' : 'geöffnet'}.`);

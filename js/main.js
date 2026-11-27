@@ -13,9 +13,11 @@ import * as test from './ui/testen.js';
 import * as fortschrittSeite from './ui/fortschritt.js';
 import * as einstellungen from './ui/einstellungen.js';
 import * as videos from './ui/videos.js';
+import * as oeffnen from './ui/oeffnen.js';
 
 const SEITEN = {
   start,
+  oeffnen,
   einstellungen,
   paket: paketSeite,
   zusammenfassung,
@@ -132,4 +134,13 @@ if (!('indexedDB' in window)) {
   window.addEventListener('hashchange', zeigen);
   if (!location.hash) history.replaceState(null, '', '#/start');
   zeigen();
+}
+
+// Offline-App: Service Worker registrieren (nur über http/https, nicht beim Öffnen als Datei).
+if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').catch(() => {
+      /* ohne Service Worker läuft die App trotzdem – nur nicht offline */
+    });
+  });
 }

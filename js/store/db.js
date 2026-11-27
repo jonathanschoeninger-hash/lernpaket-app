@@ -109,3 +109,26 @@ export async function speichereEinstellung(name, wert) {
   werte[name] = wert;
   return mitSpeicher('einstellungen', 'readwrite', (s) => alsPromise(s.put({ schluessel: 'global', werte })));
 }
+
+// ---------- Sicherung ----------
+
+export function alleFortschritte() {
+  return mitSpeicher('fortschritt', 'readonly', (s) => alsPromise(s.getAll()));
+}
+
+/**
+ * Sicherung zurückspielen (vorher mit pruefeBackupText geprüft!): Pakete mit gleicher ID werden
+ * samt Fortschritt überschrieben, andere bleiben. Einstellungen werden mit den vorhandenen zusammengeführt.
+ * Alles in einem Schritt – klappt etwas nicht, bleibt der alte Stand.
+ */
+export async function sicherungEinspielen(pakete, einstellungen) {
+  const vorhandene = await ladeEinstellungen();
+  return mitSpeicher(['pakete', 'fortschritt', 'einstellungen'], 'readwrite', (p, f, e) => {
+    const jetzt = new Date().toISOString();
+    for (const eintrag of pakete) {
+      p.put({ id: eintrag.paket.id, paket: eintrag.paket, importiertAm: jetzt });
+      f.put(eintrag.fortschritt);
+    }
+    e.put({ schluessel: 'global', werte: { ...vorhandene, ...(einstellungen ?? {}) } });
+  });
+}

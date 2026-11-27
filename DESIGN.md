@@ -397,8 +397,13 @@ Geklärt am 26. 11. 2026 (vor Phase 5):
 22. **Mündliche Prüfung:** bis zu 6 Fragen – zuerst Freitext-Fragen, dann andere Typen. Jede Frage wird vorgelesen (bei MC auch die Antworten). Freitext sprechen oder tippen, andere Typen wie im Test beantworten; am Ende Musterlösung + Selbstbewertung, Note wie bei den anderen Modi.
 23. **Datenschutz bei Stimme:** Vorlese-Stimmen, die offline laufen, werden bevorzugt. Spracheingabe nur auf Knopfdruck und mit Hinweis, dass der Browser (z. B. Chrome) die Aufnahme dafür an seinen Anbieter schicken kann.
 
+Geklärt am 27. 11. 2026 (vor Phase 6):
+
+24. **Paket per Link:** `#/oeffnen/pakete/<datei>.lernpaket.json` oder `#/oeffnen/beispiele/<datei>.lernpaket.json` – nur diese beiden Ordner, nur von derselben Adresse wie die App, danach dieselbe Prüfung wie beim Öffnen einer Datei.
+25. **Sicherung laden:** jedes Paket wird geprüft; Pakete mit gleicher ID werden samt Fortschritt überschrieben, andere Pakete am Gerät bleiben. Vorher Rückfrage mit Liste.
+
 **Noch offen – vor der jeweiligen Phase klären:**
-- **Phase 6:** Link-Beispiel nennt `pakete/`, das Beispielpaket liegt in `beispiele/` – beide Ordner erlauben oder Beispiel kopieren?
+- (derzeit nichts offen)
 
 **Verbindliche Quelle für das Paketformat ist `SKILL.md`.** Das Beispiel in Abschnitt 4 ist nur zur Veranschaulichung.
 

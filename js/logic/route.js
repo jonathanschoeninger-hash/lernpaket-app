@@ -19,6 +19,7 @@ export function leseRoute(hash) {
   }
 
   if (teile[0] === 'einstellungen') return { seite: 'einstellungen' };
+  if (teile[0] === 'oeffnen') return { seite: 'oeffnen', pfad: teile.slice(1).join('/') };
   if (teile[0] !== 'paket' || !teile[1]) return { seite: 'start' };
   const paketId = teile[1];
   if (!teile[2] || !UNTERSEITEN.includes(teile[2])) return { seite: 'paket', paketId };
@@ -36,4 +37,14 @@ export function baueRoute(seite, paketId, unterthema, { nur } = {}) {
   if (seite !== 'paket') teile.push(seite);
   if (seite !== 'paket' && unterthema) teile.push(encodeURIComponent(unterthema));
   return teile.join('/') + (nur ? `?nur=${encodeURIComponent(nur)}` : '');
+}
+
+const PAKET_PFAD = /^(pakete|beispiele)\/[A-Za-z0-9_-][A-Za-z0-9._-]*\.lernpaket\.json$/;
+
+/**
+ * Paket per Link (DESIGN.md 10, Punkt 24): nur Dateien in pakete/ oder beispiele/ derselben Adresse,
+ * keine Unterordner, kein „..“, keine fremden Adressen.
+ */
+export function erlaubterPaketPfad(pfad) {
+  return typeof pfad === 'string' && PAKET_PFAD.test(pfad) && !pfad.includes('..');
 }

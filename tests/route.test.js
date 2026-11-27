@@ -1,6 +1,6 @@
 import { test, describe } from 'node:test';
 import assert from 'node:assert/strict';
-import { leseRoute, baueRoute } from '../js/logic/route.js';
+import { leseRoute, baueRoute, erlaubterPaketPfad } from '../js/logic/route.js';
 
 describe('leseRoute', () => {
   test('leer oder unbekannt → Start', () => {
@@ -94,6 +94,41 @@ describe('Phase 5: Videos', () => {
   test('Videoliste und einzelnes Video', () => {
     assert.deepEqual(leseRoute('#/paket/p-1/videos'), { seite: 'videos', paketId: 'p-1', unterthema: null });
     assert.deepEqual(leseRoute('#/paket/p-1/videos/v2'), { seite: 'videos', paketId: 'p-1', unterthema: 'v2' });
+  });
+});
+
+describe('Phase 6: Paket per Link', () => {
+  test('#/oeffnen/<pfad> liest den ganzen Pfad', () => {
+    assert.deepEqual(leseRoute('#/oeffnen/pakete/zellatmung.lernpaket.json'), {
+      seite: 'oeffnen',
+      pfad: 'pakete/zellatmung.lernpaket.json',
+    });
+    assert.deepEqual(leseRoute('#/oeffnen'), { seite: 'oeffnen', pfad: '' });
+  });
+
+  test('erlaubt: nur pakete/ und beispiele/, nur .lernpaket.json, keine Unterordner', () => {
+    assert.equal(erlaubterPaketPfad('pakete/zellatmung.lernpaket.json'), true);
+    assert.equal(erlaubterPaketPfad('beispiele/zellatmung.lernpaket.json'), true);
+    assert.equal(erlaubterPaketPfad('pakete/Mathe_3-Klasse.lernpaket.json'), true);
+  });
+
+  test('abgelehnt: fremde Adressen, Ausbrüche, andere Ordner und Endungen', () => {
+    for (const pfad of [
+      '',
+      'https://boese.example/x.lernpaket.json',
+      '//boese.example/pakete/x.lernpaket.json',
+      '/pakete/x.lernpaket.json',
+      'pakete/../index.html',
+      'pakete/../../x.lernpaket.json',
+      'pakete/unter/x.lernpaket.json',
+      'js/x.lernpaket.json',
+      'pakete/x.json',
+      'pakete/x.lernpaket.json?y=1',
+      'pakete\\x.lernpaket.json',
+      'javascript:alert(1)',
+    ]) {
+      assert.equal(erlaubterPaketPfad(pfad), false, pfad);
+    }
   });
 });
 
