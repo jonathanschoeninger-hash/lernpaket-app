@@ -295,7 +295,7 @@ async function angebotZeigen(abschnitt) {
   }
   if (eintraege.length === 0) return;
 
-  const gespeichert = new Set((await allePakete()).map((e) => e.paket.id));
+  const gespeichert = new Map((await allePakete()).map((e) => [e.paket.id, e.paket]));
   leeren(abschnitt).append(
     el('h2', { id: 'angebot-titel', text: 'Auf dieser Website' }),
     el(
@@ -303,7 +303,7 @@ async function angebotZeigen(abschnitt) {
       { class: 'angebot-liste' },
       eintraege.map((e) => {
         const da = gespeichert.has(e.id);
-        return el(
+        const karte = el(
           'li',
           { class: 'angebot-karte' },
           e.fach ? el('p', { class: 'paket-fach', text: e.fach }) : '',
@@ -315,8 +315,26 @@ async function angebotZeigen(abschnitt) {
             text: da ? 'Weiterlernen' : 'Jetzt lernen',
           }),
         );
+        if (da) neueVersionPruefen(e, gespeichert.get(e.id), karte);
+        return karte;
       }),
     ),
   );
   abschnitt.hidden = false;
+}
+
+/** Hat die Website eine neuere Fassung als die gespeicherte? Dann „Neue Version laden“ anbieten (Fortschritt bleibt). */
+async function neueVersionPruefen(eintrag, gespeichert, karte) {
+  try {
+    const antwort = await fetch(eintrag.datei, { credentials: 'same-origin' });
+    if (!antwort.ok) return;
+    const online = await antwort.json();
+    if (JSON.stringify(online) === JSON.stringify(gespeichert)) return;
+  } catch {
+    return; // offline – dann bleibt es beim gespeicherten Paket
+  }
+  karte.append(
+    el('p', { class: 'angebot-neu', text: 'Es gibt eine neue Version dieses Pakets. Dein Fortschritt bleibt beim Laden erhalten.' }),
+    el('a', { class: 'knopf', href: `#/oeffnen/${eintrag.datei}`, text: 'Neue Version laden' }),
+  );
 }

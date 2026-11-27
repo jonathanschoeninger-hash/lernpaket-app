@@ -2,7 +2,7 @@
 // Strategie: zuerst übers Netz (immer aktuell), ohne Internet aus dem Zwischenspeicher.
 // Bei jeder Änderung an den App-Dateien VERSION erhöhen – dann wird der alte Speicher gelöscht.
 
-const VERSION = '5';
+const VERSION = '6';
 const SPEICHER = `lernpaket-app-v${VERSION}`;
 
 // Alle App-Dateien (tests/offline.test.js prüft, dass keine fehlt).

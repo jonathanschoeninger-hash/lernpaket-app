@@ -2376,3 +2376,8 @@ textarea:focus-visible {
 .angebot-text {
   color: var(--text-leise);
 }
+
+.angebot-neu {
+  font-weight: 600;
+  color: var(--tinte);
+}
