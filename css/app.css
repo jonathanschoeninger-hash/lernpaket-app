@@ -2341,3 +2341,38 @@ textarea:focus-visible {
     transform: none;
   }
 }
+
+/* ---------- Startseite: Angebot der Website ---------- */
+
+.angebot-liste {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.angebot-karte {
+  display: grid;
+  gap: 0.4rem;
+  justify-items: start;
+  padding: 1.1rem 1.2rem;
+  border: 1px solid var(--linie);
+  border-top: 4px solid var(--tinte);
+  border-radius: var(--radius);
+  background: var(--flaeche);
+}
+
+.angebot-karte p {
+  margin: 0;
+}
+
+.angebot-titel {
+  margin: 0;
+  font-family: var(--schrift-lesen);
+  font-size: 1.35rem;
+}
+
+.angebot-text {
+  color: var(--text-leise);
+}

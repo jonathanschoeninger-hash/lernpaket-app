@@ -45,6 +45,13 @@ export async function zeige(wurzel, route) {
 
   status.textContent = '';
   const dateiname = pfad.split('/').pop();
-  ergebnis.append(await paketTextImportieren(text, dateiname));
+  const meldung = await paketTextImportieren(text, dateiname);
+  // Geklappt und keine Hinweise → gleich ins Paket, ein Klick weniger.
+  const zumPaket = meldung.classList?.contains('erfolg') && !meldung.querySelector('.hinweise') ? meldung.querySelector('a[href^="#/paket/"]') : null;
+  if (zumPaket) {
+    location.replace(zumPaket.getAttribute('href'));
+    return;
+  }
+  ergebnis.append(meldung);
   ergebnis.append(el('p', {}, el('a', { class: 'knopf', href: '#/start', text: 'Zu meinen Paketen' })));
 }

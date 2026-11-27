@@ -6,6 +6,7 @@ import { leererFortschritt, fortschrittUebernehmen } from '../logic/fortschritt.
 import { paketBeherrschung } from '../logic/mastery.js';
 import { faelligeKarten, heutigesDatum } from '../logic/leitner.js';
 import { baueRoute } from '../logic/route.js';
+import { leseInhaltsliste } from '../logic/paketliste.js';
 import { allePakete, ladePaket, speicherePaket, loeschePaket, ladeFortschritt } from '../store/db.js';
 
 const MAX_FEHLER = 10;
@@ -68,13 +69,17 @@ export async function zeige(wurzel) {
   window.addEventListener('dragleave', hinaus);
   window.addEventListener('drop', fallen);
 
+  const angebot = el('section', { class: 'angebot', 'aria-labelledby': 'angebot-titel', hidden: true });
+
   wurzel.append(
-    el('h1', { text: 'Lernpaket öffnen' }),
+    el('h1', { text: 'Lernpakete' }),
+    angebot,
+    liste,
+    el('h2', { text: 'Eigene Datei öffnen' }),
     zone,
     meldungen,
-    liste,
   );
-  await listeZeigen(liste);
+  await Promise.all([listeZeigen(liste), angebotZeigen(angebot)]);
 
   return () => {
     window.removeEventListener('dragenter', hinein);
@@ -206,7 +211,7 @@ async function listeZeigen(liste) {
   leeren(liste).append(el('h2', { id: 'meine-pakete-titel', text: 'Meine Pakete' }));
   if (eintraege.length === 0) {
     liste.append(
-      el('p', { class: 'leer', text: 'Noch keine Pakete gespeichert. Öffne oben eine Lernpaket-Datei – zum Beispiel beispiele/zellatmung.lernpaket.json.' }),
+      el('p', { class: 'leer', text: 'Noch keine Pakete gespeichert. Starte mit einem Paket von dieser Website oder öffne unten eine eigene Lernpaket-Datei.' }),
     );
     return;
   }
@@ -277,4 +282,41 @@ async function loeschenFragen(paket, liste) {
   await listeZeigen(liste);
   liste.querySelector('h2')?.setAttribute('tabindex', '-1');
   liste.querySelector('h2')?.focus();
+}
+
+/** „Auf dieser Website“: Pakete aus pakete/liste.json – der Mittelpunkt der Startseite. */
+async function angebotZeigen(abschnitt) {
+  let eintraege = [];
+  try {
+    const antwort = await fetch('pakete/liste.json', { credentials: 'same-origin' });
+    if (antwort.ok) eintraege = leseInhaltsliste(await antwort.json());
+  } catch {
+    /* offline oder keine Liste – dann gibt es den Abschnitt eben nicht */
+  }
+  if (eintraege.length === 0) return;
+
+  const gespeichert = new Set((await allePakete()).map((e) => e.paket.id));
+  leeren(abschnitt).append(
+    el('h2', { id: 'angebot-titel', text: 'Auf dieser Website' }),
+    el(
+      'ul',
+      { class: 'angebot-liste' },
+      eintraege.map((e) => {
+        const da = gespeichert.has(e.id);
+        return el(
+          'li',
+          { class: 'angebot-karte' },
+          e.fach ? el('p', { class: 'paket-fach', text: e.fach }) : '',
+          el('h3', { class: 'angebot-titel', text: e.titel }),
+          e.beschreibung ? el('p', { class: 'angebot-text', text: e.beschreibung }) : '',
+          el('a', {
+            class: 'knopf haupt',
+            href: da ? baueRoute('paket', e.id) : `#/oeffnen/${e.datei}`,
+            text: da ? 'Weiterlernen' : 'Jetzt lernen',
+          }),
+        );
+      }),
+    ),
+  );
+  abschnitt.hidden = false;
 }

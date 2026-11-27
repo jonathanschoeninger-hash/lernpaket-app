@@ -2,7 +2,7 @@
 // Strategie: zuerst übers Netz (immer aktuell), ohne Internet aus dem Zwischenspeicher.
 // Bei jeder Änderung an den App-Dateien VERSION erhöhen – dann wird der alte Speicher gelöscht.
 
-const VERSION = '3';
+const VERSION = '4';
 const SPEICHER = `lernpaket-app-v${VERSION}`;
 
 // Alle App-Dateien (tests/offline.test.js prüft, dass keine fehlt).
@@ -24,6 +24,7 @@ const DATEIEN = [
   './js/logic/grading.js',
   './js/logic/leitner.js',
   './js/logic/mastery.js',
+  './js/logic/paketliste.js',
   './js/logic/pruefung.js',
   './js/logic/route.js',
   './js/logic/sprache.js',
@@ -49,6 +50,8 @@ const DATEIEN = [
   './js/video/player.js',
   './js/video/speech.js',
   './beispiele/zellatmung.lernpaket.json',
+  './pakete/liste.json',
+  './pakete/staedte.lernpaket.json',
 ];
 
 self.addEventListener('install', (ereignis) => {
