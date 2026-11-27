@@ -5,6 +5,7 @@ import { el, leeren, ansage } from '../ui/dom.js';
 import { zeichneFolie } from './layouts.js';
 import { saetze, lesezeit } from '../logic/sprache.js';
 import { aufdeckSchritte, sichtbarBis } from '../logic/video.js';
+import { satzZeitpunkte, satzBeiZeit } from '../logic/vertonung.js';
 
 const TEMPI = [0.75, 1, 1.25, 1.5];
 const QUIZ_WARTEN = 5000;
@@ -14,13 +15,17 @@ const ZWISCHEN_FOLIEN = 700;
 const warte = (ms) => new Promise((r) => setTimeout(r, ms));
 
 /**
- * erstellePlayer({ video, sprecher, tempo, untertitel, beiFolieGelaufen(i), beiEinstellung(name, wert), endeInhalt() })
+ * erstellePlayer({ video, sprecher, aufnahme(i) → URL|null, tempo, untertitel, beiFolieGelaufen(i), beiEinstellung(name, wert), endeInhalt() })
+ * aufnahme: vorab erzeugte MP3 pro Folie (z. B. ElevenLabs); ohne Aufnahme liest die Browser-Stimme.
  * → { element, aufraeumen }
  */
-export function erstellePlayer({ video, sprecher, tempo = 1, untertitel = false, beiFolieGelaufen, beiEinstellung, endeInhalt }) {
+export function erstellePlayer({ video, sprecher, aufnahme = () => null, tempo = 1, untertitel = false, beiFolieGelaufen, beiEinstellung, endeInhalt }) {
   const folien = video.folien;
   const satzListen = folien.map((f) => saetze(f.sprechertext));
-  const mitStimme = Boolean(sprecher?.stimme);
+  const mitAufnahmen = folien.some((_, i) => aufnahme(i));
+  const mitStimme = Boolean(sprecher?.stimme) || mitAufnahmen;
+  let audio = null; // Aufnahme der aktuellen Folie
+  let audioAbbruch = null; // beendet das Warten auf das Ende der Aufnahme
   let untertitelAn = untertitel || !mitStimme;
   let index = 0;
   let satz = 0;
@@ -51,6 +56,7 @@ export function erstellePlayer({ video, sprecher, tempo = 1, untertitel = false,
       on: {
         change: () => {
           tempo = Number(tempoWahl.value);
+          if (audio) audio.playbackRate = tempo;
           beiEinstellung?.('tempo', tempo);
         },
       },
@@ -159,6 +165,41 @@ export function erstellePlayer({ video, sprecher, tempo = 1, untertitel = false,
     await warte(NACH_QUIZ);
   }
 
+/** Aufnahme der Folie abspielen. → 'fertig' | 'abgebrochen' | 'fehler' */
+  function aufnahmeAbspielen(url, liste, schritte) {
+    if (!audio || audio.dataset.url !== url) {
+      audio = new Audio(url);
+      audio.dataset.url = url;
+      audio.preload = 'auto';
+    }
+    const a = audio;
+    a.playbackRate = tempo;
+    return new Promise((resolve) => {
+      let zeitpunkte = satzZeitpunkte(liste, a.duration);
+      const ende = (ergebnis) => {
+        a.onended = a.onerror = a.ontimeupdate = a.onloadedmetadata = null;
+        audioAbbruch = null;
+        resolve(ergebnis);
+      };
+      const zeigen = () => {
+        const i = satzBeiZeit(zeitpunkte, a.currentTime);
+        satz = i;
+        zeigeBis(sichtbarBis(i, liste.length, schritte));
+        untertitelZeile.textContent = liste[i] ?? '';
+      };
+      a.onloadedmetadata = () => {
+        zeitpunkte = satzZeitpunkte(liste, a.duration);
+        zeigen();
+      };
+      a.ontimeupdate = zeigen;
+      a.onended = () => ende('fertig');
+      a.onerror = () => ende('fehler');
+      audioAbbruch = () => ende('abgebrochen');
+      zeigen();
+      a.play().catch(() => ende('fehler'));
+    });
+  }
+
   async function abspielen() {
     if (index >= folien.length) index = 0;
     const meinLauf = ++lauf;
@@ -170,12 +211,22 @@ export function erstellePlayer({ video, sprecher, tempo = 1, untertitel = false,
     while (meinLauf === lauf) {
       const liste = satzListen[index];
       const schritte = aufdeckSchritte(folien[index]);
-      for (; satz < liste.length; satz++) {
-        zeigeBis(sichtbarBis(satz, liste.length, schritte));
-        untertitelZeile.textContent = liste[satz];
-        await sprechen(liste[satz], meinLauf);
+      const url = aufnahme(index);
+      let ergebnis = 'keine';
+      if (url) {
+        ergebnis = await aufnahmeAbspielen(url, liste, schritte);
         if (meinLauf !== lauf) return;
+        if (ergebnis === 'fehler') satz = 0; // Aufnahme kaputt oder offline → Browser-Stimme
       }
+      if (ergebnis !== 'fertig') {
+        for (; satz < liste.length; satz++) {
+          zeigeBis(sichtbarBis(satz, liste.length, schritte));
+          untertitelZeile.textContent = liste[satz];
+          await sprechen(liste[satz], meinLauf);
+          if (meinLauf !== lauf) return;
+        }
+      }
+      audio = null;
       allesZeigen();
       beiFolieGelaufen?.(index);
       if (folien[index].layout === 'quiz') {
@@ -194,6 +245,8 @@ export function erstellePlayer({ video, sprecher, tempo = 1, untertitel = false,
   function pause() {
     lauf++;
     sprecher?.stopp();
+    audio?.pause(); // Position bleibt – „Abspielen“ macht an derselben Stelle weiter
+    audioAbbruch?.();
     spielt = false;
     knoepfeStellen();
   }
@@ -202,6 +255,7 @@ export function erstellePlayer({ video, sprecher, tempo = 1, untertitel = false,
     if (neu < 0 || neu >= folien.length) return;
     const weiter = spielt;
     pause();
+    audio = null;
     index = neu;
     satz = 0;
     folieZeichnen();
@@ -267,6 +321,8 @@ export function erstellePlayer({ video, sprecher, tempo = 1, untertitel = false,
     aufraeumen() {
       lauf++;
       sprecher?.stopp();
+      audio?.pause();
+      audio = null;
       document.removeEventListener('keydown', tasten);
       if (document.fullscreenElement === element) document.exitFullscreen?.();
     },

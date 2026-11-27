@@ -4,6 +4,7 @@ import { el, ansage } from './dom.js';
 import { erstellePlayer } from '../video/player.js';
 import { erstelleSprecher } from '../video/speech.js';
 import { videoStand, folieGelaufen } from '../logic/video.js';
+import { leseVertonung, audioFuerFolie } from '../logic/vertonung.js';
 import { baueRoute } from '../logic/route.js';
 import { ladeFortschritt, speichereFortschritt, ladeEinstellungen, speichereEinstellung } from '../store/db.js';
 
@@ -18,13 +19,19 @@ export async function zeige(wurzel, route, paket) {
   }
 
   const einstellungen = await ladeEinstellungen();
-  const sprecher = await erstelleSprecher(einstellungen.stimme);
+  const [sprecher, vertonung] = await Promise.all([erstelleSprecher(einstellungen.stimme), vertonungLaden(paket.id)]);
+  const aufnahme = (i) => {
+    const datei = audioFuerFolie(vertonung, video.id, i, video.folien[i].sprechertext);
+    return datei ? `pakete/audio/${encodeURIComponent(paket.id)}/${datei}` : null;
+  };
+  const mitAufnahmen = video.folien.some((_, i) => aufnahme(i));
   const reihe = paket.videos;
   const naechstes = reihe[reihe.indexOf(video) + 1] ?? null;
 
   const player = erstellePlayer({
     video,
     sprecher,
+    aufnahme,
     tempo: einstellungen.tempo ?? 1,
     untertitel: einstellungen.untertitel === true,
     beiEinstellung: (name, wert) => speichereEinstellung(name, wert).catch(() => {}),
@@ -54,7 +61,9 @@ export async function zeige(wurzel, route, paket) {
       { class: 'klein tasten-hinweis' },
       'Tastatur: Leertaste = Abspielen/Pause, ← → = Folie zurück/vor.',
     ),
-    sprecher.stimme
+    mitAufnahmen
+      ? el('p', { class: 'klein', text: `Stimme: ${vertonung.stimme || 'Sprachaufnahme'} – vorab aufgenommen, es werden keine Daten an fremde Dienste geschickt.` })
+      : sprecher.stimme
       ? el('p', { class: 'klein', text: `Stimme: ${sprecher.stimme.name}${sprecher.stimme.localService === false ? ' (online – der Text geht an den Anbieter der Stimme)' : ''}. Ändern unter Einstellungen.` })
       : '',
     el(
@@ -93,5 +102,16 @@ function listeZeigen(wurzel, paket, fortschritt, namen) {
         }),
       ),
     );
+  }
+}
+
+/** Vorab erzeugte Aufnahmen zum Paket (pakete/audio/<id>/stimme.json) – fehlen sie, liest die Browser-Stimme. */
+async function vertonungLaden(paketId) {
+  if (!/^[a-z0-9_-]{1,40}$/.test(paketId)) return null;
+  try {
+    const antwort = await fetch(`pakete/audio/${paketId}/stimme.json`, { credentials: 'same-origin' });
+    return antwort.ok ? leseVertonung(await antwort.json()) : null;
+  } catch {
+    return null;
   }
 }

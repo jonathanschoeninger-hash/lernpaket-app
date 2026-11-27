@@ -2,7 +2,7 @@
 // Strategie: zuerst übers Netz (immer aktuell), ohne Internet aus dem Zwischenspeicher.
 // Bei jeder Änderung an den App-Dateien VERSION erhöhen – dann wird der alte Speicher gelöscht.
 
-const VERSION = '4';
+const VERSION = '5';
 const SPEICHER = `lernpaket-app-v${VERSION}`;
 
 // Alle App-Dateien (tests/offline.test.js prüft, dass keine fehlt).
@@ -30,6 +30,7 @@ const DATEIEN = [
   './js/logic/sprache.js',
   './js/logic/text.js',
   './js/logic/validate.js',
+  './js/logic/vertonung.js',
   './js/logic/video.js',
   './js/store/db.js',
   './js/ui/dom.js',
@@ -82,7 +83,8 @@ self.addEventListener('fetch', (ereignis) => {
     // Seitenaufrufe (mode navigate) dürfen nicht mit Zusatz-Optionen weitergereicht werden – dann nur die Adresse.
     fetch(anfrage.mode === 'navigate' ? anfrage.url : anfrage, { cache: 'no-cache' })
       .then((antwort) => {
-        if (antwort.ok) {
+        // Nur vollständige Antworten speichern (Audio kommt teils in Stücken, Status 206).
+        if (antwort.status === 200) {
           const kopie = antwort.clone();
           caches.open(SPEICHER).then((speicher) => speicher.put(anfrage, kopie));
         }

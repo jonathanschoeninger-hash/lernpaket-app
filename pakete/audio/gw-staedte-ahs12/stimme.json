@@ -1,0 +1,131 @@
+{
+  "stimme": "Adrian (ElevenLabs)",
+  "videos": {
+    "v1": [
+      {
+        "datei": "v1-0.mp3",
+        "text": "46de0003"
+      },
+      {
+        "datei": "v1-1.mp3",
+        "text": "0437df6b"
+      },
+      {
+        "datei": "v1-2.mp3",
+        "text": "fb33516e"
+      },
+      {
+        "datei": "v1-3.mp3",
+        "text": "f9b95fb1"
+      }
+    ],
+    "v2": [
+      {
+        "datei": "v2-0.mp3",
+        "text": "91ddb5fe"
+      },
+      {
+        "datei": "v2-1.mp3",
+        "text": "d0ada96f"
+      },
+      {
+        "datei": "v2-2.mp3",
+        "text": "15783031"
+      },
+      {
+        "datei": "v2-3.mp3",
+        "text": "c1902107"
+      },
+      {
+        "datei": "v2-4.mp3",
+        "text": "1fd341bc"
+      }
+    ],
+    "v3": [
+      {
+        "datei": "v3-0.mp3",
+        "text": "e5cfb2bd"
+      },
+      {
+        "datei": "v3-1.mp3",
+        "text": "0b7577a4"
+      },
+      {
+        "datei": "v3-2.mp3",
+        "text": "4a44d9e6"
+      },
+      {
+        "datei": "v3-3.mp3",
+        "text": "13ec7924"
+      },
+      {
+        "datei": "v3-4.mp3",
+        "text": "807a72ff"
+      },
+      {
+        "datei": "v3-5.mp3",
+        "text": "1bf53d64"
+      }
+    ],
+    "v4": [
+      {
+        "datei": "v4-0.mp3",
+        "text": "ffc8efb1"
+      },
+      {
+        "datei": "v4-1.mp3",
+        "text": "fd543fcc"
+      },
+      {
+        "datei": "v4-2.mp3",
+        "text": "a8ebf786"
+      },
+      {
+        "datei": "v4-3.mp3",
+        "text": "1263d2cf"
+      },
+      {
+        "datei": "v4-4.mp3",
+        "text": "5d13ee64"
+      },
+      {
+        "datei": "v4-5.mp3",
+        "text": "c0b2f08d"
+      },
+      {
+        "datei": "v4-6.mp3",
+        "text": "297e1aa8"
+      }
+    ],
+    "v5": [
+      {
+        "datei": "v5-0.mp3",
+        "text": "152ac2bc"
+      },
+      {
+        "datei": "v5-1.mp3",
+        "text": "69cc6098"
+      },
+      {
+        "datei": "v5-2.mp3",
+        "text": "48253fb5"
+      },
+      {
+        "datei": "v5-3.mp3",
+        "text": "5fa7e897"
+      },
+      {
+        "datei": "v5-4.mp3",
+        "text": "08b9b96f"
+      },
+      {
+        "datei": "v5-5.mp3",
+        "text": "93442a63"
+      },
+      {
+        "datei": "v5-6.mp3",
+        "text": "7500500e"
+      }
+    ]
+  }
+}

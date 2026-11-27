@@ -402,6 +402,11 @@ Geklärt am 27. 11. 2026 (vor Phase 6):
 24. **Paket per Link:** `#/oeffnen/pakete/<datei>.lernpaket.json` oder `#/oeffnen/beispiele/<datei>.lernpaket.json` – nur diese beiden Ordner, nur von derselben Adresse wie die App, danach dieselbe Prüfung wie beim Öffnen einer Datei.
 25. **Sicherung laden:** jedes Paket wird geprüft; Pakete mit gleicher ID werden samt Fortschritt überschrieben, andere Pakete am Gerät bleiben. Vorher Rückfrage mit Liste.
 
+Geklärt am 27. 11. 2026 (nach Phase 6):
+
+26. **Startseite:** `pakete/liste.json` listet die Pakete der Website; sie stehen oben unter „Auf dieser Website“ (Mittelpunkt der Website).
+27. **Stimmen aus ElevenLabs:** Sprechertexte werden **einmalig vorab** als MP3 erzeugt und liegen in `pakete/audio/<paket-id>/` mit `stimme.json` (Dateiname + Prüfwert des Sprechertexts pro Folie). Die Website spielt nur diese eigenen Dateien – kein API-Schlüssel, keine Anfrage an ElevenLabs. Passt der Prüfwert nicht mehr zum Text oder fehlt die Datei, liest die Browser-Stimme. Das Paketformat bleibt unverändert.
+
 **Noch offen – vor der jeweiligen Phase klären:**
 - (derzeit nichts offen)
 

@@ -48,6 +48,10 @@ node tools/pruefen.js pakete/mein-paket.lernpaket.json
 
 **Urheberrecht:** Pakete aus eigenen Mitschriften darfst du frei teilen. Pakete aus Schulbüchern oder Unterlagen deiner Lehrkräfte nur in der eigenen Klasse teilen, nicht öffentlich ins Internet stellen.
 
+## Videos mit natürlicher Stimme (optional)
+
+Für Pakete auf der Website können die Sprechertexte einmalig mit ElevenLabs als MP3 aufgenommen werden. Sie liegen in `pakete/audio/<paket-id>/` zusammen mit `stimme.json`. Die Website spielt nur diese Dateien ab – ohne Schlüssel und ohne Verbindung zu ElevenLabs. Wird ein Sprechertext später geändert, meldet `node --test` die betroffene Folie; bis zur neuen Aufnahme liest dort die Browser-Stimme.
+
 ## Datenschutz
 
 - **Alles bleibt auf deinem Gerät.** Pakete und Fortschritt liegen im Browser (IndexedDB). Es gibt keinen Server, kein Konto, keine Tracker.
