@@ -161,8 +161,8 @@
     {
       "id": "k1",
       "unterthema": "u1",
-      "vorne": "Lebensraum Stadt – Merkmale der Bebauung?",
-      "hinten": "dichte Verbauung, geschlossene Besiedlung",
+      "vorne": "Woran erkennst du an der Bebauung, dass ein Ort eine Stadt ist?",
+      "hinten": "dichte Verbauung und geschlossene Besiedlung – kaum Lücken zwischen den Häusern",
       "quelle": {
         "id": "q1",
         "stelle": "S. 1"
@@ -171,8 +171,8 @@
     {
       "id": "k2",
       "unterthema": "u1",
-      "vorne": "Wie ist die Wohnungsdichte in der Stadt?",
-      "hinten": "hoch",
+      "vorne": "Warum ist die Wohnungsdichte in der Stadt hoch?",
+      "hinten": "Weil dicht verbaut wird: viele Wohnungen auf kleiner Fläche.",
       "quelle": {
         "id": "q1",
         "stelle": "S. 1"
@@ -181,8 +181,8 @@
     {
       "id": "k3",
       "unterthema": "u1",
-      "vorne": "Wie ist die Verkehrsdichte in der Stadt?",
-      "hinten": "hoch",
+      "vorne": "Stau im Morgenverkehr – welches Merkmal der Stadt zeigt das?",
+      "hinten": "hohe Verkehrsdichte",
       "quelle": {
         "id": "q1",
         "stelle": "S. 1"
@@ -191,8 +191,8 @@
     {
       "id": "k4",
       "unterthema": "u1",
-      "vorne": "Merkmal Stadt: Was passiert mit der natürlichen Umwelt?",
-      "hinten": "Sie wird umgestaltet.",
+      "vorne": "Ein Bach wird in ein Rohr verlegt und überbaut. Welches Merkmal der Stadt ist das?",
+      "hinten": "Umgestaltung der natürlichen Umwelt",
       "quelle": {
         "id": "q1",
         "stelle": "S. 1"
@@ -201,7 +201,7 @@
     {
       "id": "k5",
       "unterthema": "u1",
-      "vorne": "Merkmal Stadt: Arbeit?",
+      "vorne": "Bürogebäude und viele Betriebe – welches Merkmal der Stadt zeigt das?",
       "hinten": "viele Arbeitsplätze",
       "quelle": {
         "id": "q1",
@@ -211,7 +211,7 @@
     {
       "id": "k6",
       "unterthema": "u1",
-      "vorne": "Merkmal Stadt: Versorgung?",
+      "vorne": "Geschäfte, Ärztinnen und Ärzte, Schulen für viele Menschen – welches Merkmal der Stadt ist das?",
       "hinten": "verschiedene Versorgungsfunktionen",
       "quelle": {
         "id": "q1",
@@ -221,8 +221,8 @@
     {
       "id": "k7",
       "unterthema": "u1",
-      "vorne": "Viertelbildung – was ist gemeint?",
-      "hinten": "Die Stadt gliedert sich in einzelne Viertel.",
+      "vorne": "Altstadt, Bahnhofsgegend, Wohngebiete – welches Merkmal zeigt diese Gliederung?",
+      "hinten": "Viertelbildung: Die Stadt gliedert sich in einzelne Viertel.",
       "quelle": {
         "id": "q1",
         "stelle": "S. 1"
@@ -231,8 +231,8 @@
     {
       "id": "k8",
       "unterthema": "u1",
-      "vorne": "Nenne mindestens fünf Merkmale des Lebensraums Stadt.",
-      "hinten": "dichte Verbauung, geschlossene Besiedlung, hohe Wohnungsdichte, hohe Verkehrsdichte, Viertelbildung, viele Arbeitsplätze, Versorgungsfunktionen, Umgestaltung der natürlichen Umwelt, Tauben",
+      "vorne": "Warum reicht „viele Häuser“ nicht, um eine Stadt zu beschreiben?",
+      "hinten": "Dazu gehören auch hohe Verkehrsdichte, Viertelbildung, viele Arbeitsplätze, Versorgungsfunktionen und eine umgestaltete Umwelt.",
       "quelle": {
         "id": "q1",
         "stelle": "S. 1"
@@ -241,8 +241,8 @@
     {
       "id": "k9",
       "unterthema": "u2",
-      "vorne": "Hydraulische Theorie – Ausgangspunkt?",
-      "hinten": "Verfügbarkeit von Wasser → Landwirtschaft und Handelswege → Zentren → Ansiedlung",
+      "vorne": "Hydraulische Theorie: Warum steht das Wasser am Anfang einer Stadt?",
+      "hinten": "Wasser ermöglicht Landwirtschaft und Handelswege → Zentren entstehen → Menschen siedeln sich an.",
       "quelle": {
         "id": "q1",
         "stelle": "S. 1"
@@ -251,8 +251,8 @@
     {
       "id": "k10",
       "unterthema": "u2",
-      "vorne": "Militärische Theorie – Ausgangspunkt?",
-      "hinten": "Schutzbauten wie Burgen, Mauern, Festungen → Ansiedlung; Stadt als Schutzmöglichkeit",
+      "vorne": "Militärische Theorie: Was suchten die Menschen in der Stadt?",
+      "hinten": "Schutz – sie siedelten sich rund um Burgen, Mauern und Festungen an.",
       "quelle": {
         "id": "q1",
         "stelle": "S. 1"
@@ -261,8 +261,8 @@
     {
       "id": "k11",
       "unterthema": "u2",
-      "vorne": "Religiöse Theorie – Ausgangspunkt?",
-      "hinten": "Straßen zu einem bestehenden Heiligtum wie Tempel oder Kirche",
+      "vorne": "Religiöse Theorie: Was war zuerst da – die Stadt oder das Heiligtum?",
+      "hinten": "das Heiligtum, z. B. ein Tempel oder eine Kirche; Straßen führten hin, daraus wurde die Stadt",
       "quelle": {
         "id": "q1",
         "stelle": "S. 1"
@@ -271,8 +271,8 @@
     {
       "id": "k12",
       "unterthema": "u2",
-      "vorne": "Ökonomische Theorie – Ausgangspunkt?",
-      "hinten": "Kreuzungen von Handelsrouten → Ansiedlung wegen der Märkte",
+      "vorne": "Ökonomische Theorie: Warum siedelte man gerade an Kreuzungen von Handelsrouten?",
+      "hinten": "Dort entstanden Märkte – wegen der Märkte siedelten sich Menschen an.",
       "quelle": {
         "id": "q1",
         "stelle": "S. 1"
@@ -281,8 +281,8 @@
     {
       "id": "k13",
       "unterthema": "u2",
-      "vorne": "Welche vier Stadtentstehungstheorien gibt es?",
-      "hinten": "hydraulische, militärische, religiöse und ökonomische Theorie",
+      "vorne": "Welche Frage beantworten die vier Stadtentstehungstheorien – und mit welchen Antworten?",
+      "hinten": "Warum Städte entstanden sind: wegen Wasser, Schutz, eines Heiligtums oder des Handels.",
       "quelle": {
         "id": "q1",
         "stelle": "S. 1"
@@ -291,7 +291,7 @@
     {
       "id": "k14",
       "unterthema": "u2",
-      "vorne": "Welche Theorie: Burgen, Mauern und Festungen?",
+      "vorne": "Eine Altstadt mit dicker Mauer und einer Burg in der Mitte – welche Theorie passt?",
       "hinten": "militärische Theorie",
       "quelle": {
         "id": "q1",
@@ -301,7 +301,7 @@
     {
       "id": "k15",
       "unterthema": "u2",
-      "vorne": "Welche Theorie: Märkte an Kreuzungen von Handelsrouten?",
+      "vorne": "Wo sich zwei Handelswege kreuzen, entsteht ein Markt – welche Theorie passt?",
       "hinten": "ökonomische Theorie",
       "quelle": {
         "id": "q1",
@@ -311,8 +311,8 @@
     {
       "id": "k16",
       "unterthema": "u2",
-      "vorne": "Welche Theorie: Tempel oder Kirche als Ausgangspunkt?",
-      "hinten": "religiöse Theorie",
+      "vorne": "Welche zwei Theorien haben gemeinsam, dass der Handel eine Rolle spielt?",
+      "hinten": "hydraulische Theorie (Handelswege) und ökonomische Theorie (Märkte)",
       "quelle": {
         "id": "q1",
         "stelle": "S. 1"
@@ -321,8 +321,8 @@
     {
       "id": "k17",
       "unterthema": "u3",
-      "vorne": "Verstädterung",
-      "hinten": "Zunahme der Stadtbevölkerung",
+      "vorne": "Immer mehr Menschen eines Landes leben in Städten – Fachbegriff?",
+      "hinten": "Verstädterung",
       "quelle": {
         "id": "q1",
         "stelle": "S. 2"
@@ -331,8 +331,8 @@
     {
       "id": "k18",
       "unterthema": "u3",
-      "vorne": "Verstädterungsgrad",
-      "hinten": "Anteil der Stadtbevölkerung an der Gesamtbevölkerung",
+      "vorne": "Wie berechnet man den Verstädterungsgrad?",
+      "hinten": "Stadtbevölkerung geteilt durch Gesamtbevölkerung – als Anteil in Prozent",
       "quelle": {
         "id": "q1",
         "stelle": "S. 2"
@@ -341,8 +341,8 @@
     {
       "id": "k19",
       "unterthema": "u3",
-      "vorne": "Verstädterungsgrad in Österreich?",
-      "hinten": "ca. 67 %",
+      "vorne": "Verstädterungsgrad Österreich ca. 67 % – was bedeutet das?",
+      "hinten": "Rund zwei Drittel der Menschen leben in Städten, rund ein Drittel nicht.",
       "quelle": {
         "id": "q1",
         "stelle": "S. 2"
@@ -351,8 +351,8 @@
     {
       "id": "k20",
       "unterthema": "u3",
-      "vorne": "Urbanisierung",
-      "hinten": "Ausbreitung städtischer Lebensformen, Wirtschafts- und Verhaltensweisen ins Umland",
+      "vorne": "Dörfer übernehmen städtische Lebens- und Wirtschaftsweisen – Fachbegriff?",
+      "hinten": "Urbanisierung",
       "quelle": {
         "id": "q1",
         "stelle": "S. 2"
@@ -361,8 +361,8 @@
     {
       "id": "k21",
       "unterthema": "u3",
-      "vorne": "Suburbanisierung",
-      "hinten": "Abwanderung der Stadtbevölkerung in das Stadtumland",
+      "vorne": "Eine Familie zieht aus der Stadt in die Nachbargemeinde – Fachbegriff?",
+      "hinten": "Suburbanisierung",
       "quelle": {
         "id": "q1",
         "stelle": "S. 2"
@@ -371,8 +371,8 @@
     {
       "id": "k22",
       "unterthema": "u3",
-      "vorne": "Metropolisierung",
-      "hinten": "überdimensionierter Zuzug von Bevölkerung; dadurch gewinnt die Stadt meist an Bedeutung",
+      "vorne": "Enormer Zuzug, die Stadt wird wirtschaftlich und politisch bedeutender – Fachbegriff?",
+      "hinten": "Metropolisierung",
       "quelle": {
         "id": "q1",
         "stelle": "S. 2"
@@ -381,8 +381,8 @@
     {
       "id": "k23",
       "unterthema": "u3",
-      "vorne": "Metropolisierung – in welchen Bereichen gewinnt die Stadt an Bedeutung?",
-      "hinten": "wirtschaftlich und politisch",
+      "vorne": "Verstädterung oder Urbanisierung: Bei welchem Begriff geht es um die Zahl der Menschen, bei welchem um die Lebensweise?",
+      "hinten": "Verstädterung = mehr Stadtbevölkerung; Urbanisierung = städtische Lebensweise breitet sich ins Umland aus",
       "quelle": {
         "id": "q1",
         "stelle": "S. 2"
@@ -391,8 +391,8 @@
     {
       "id": "k24",
       "unterthema": "u3",
-      "vorne": "Menschen ziehen aus der Stadt ins Umland – Fachbegriff?",
-      "hinten": "Suburbanisierung",
+      "vorne": "Kann Urbanisierung stattfinden, ohne dass jemand in die Stadt zieht?",
+      "hinten": "Ja – es geht um die Ausbreitung städtischer Lebensformen ins Umland, nicht um Umzüge.",
       "quelle": {
         "id": "q1",
         "stelle": "S. 2"
@@ -401,8 +401,8 @@
     {
       "id": "k25",
       "unterthema": "u4",
-      "vorne": "Masdar City – wo?",
-      "hinten": "Abu Dhabi",
+      "vorne": "Warum gilt Masdar City in Abu Dhabi als „Stadtmodell der Zukunft“?",
+      "hinten": "Sie soll eine energieautarke Ökostadt werden – Energie ohne Kohlendioxid.",
       "quelle": {
         "id": "q1",
         "stelle": "S. 3"
@@ -411,8 +411,8 @@
     {
       "id": "k26",
       "unterthema": "u4",
-      "vorne": "Masdar City – Ziel des Projekts?",
-      "hinten": "eine energieautarke Musterstadt (Ökostadt)",
+      "vorne": "Masdar City: Woher soll der Strom ohne Kohlendioxid kommen?",
+      "hinten": "aus Solarzellen und Windkraftwerken; dazu energiesparend gebaute Häuser",
       "quelle": {
         "id": "q1",
         "stelle": "S. 3"
@@ -421,8 +421,8 @@
     {
       "id": "k27",
       "unterthema": "u4",
-      "vorne": "Masdar City – Baubeginn und ursprünglich geplante Fertigstellung?",
-      "hinten": "Bau seit 2009, fertig sein sollte sie bis 2016",
+      "vorne": "Masdar City: Was zeigt der Zeitplan 2009 → 2016 → 2025 → 2030?",
+      "hinten": "Das Projekt verzögert sich stark: Baubeginn 2009, die Fertigstellung wurde immer wieder verschoben.",
       "quelle": {
         "id": "q1",
         "stelle": "S. 3"
@@ -431,8 +431,8 @@
     {
       "id": "k28",
       "unterthema": "u4",
-      "vorne": "Masdar City – warum noch nicht fertig, und bis wann jetzt?",
-      "hinten": "Finanzprobleme; zuerst auf 2025, mittlerweile auf 2030 verschoben",
+      "vorne": "Masdar City: Warum wurde die Fertigstellung verschoben?",
+      "hinten": "wegen Finanzproblemen – jetzt bis 2030 geplant",
       "quelle": {
         "id": "q1",
         "stelle": "S. 3"
@@ -441,8 +441,8 @@
     {
       "id": "k29",
       "unterthema": "u4",
-      "vorne": "Masdar City – geplante Einwohner und Fläche?",
-      "hinten": "50 000 Einwohner auf 6 km² (2024: rund 3000 Einwohner)",
+      "vorne": "Masdar City: geplant 50 000 Einwohner, 2024 rund 3000 – was sagt das aus?",
+      "hinten": "Erst etwa 6 % leben dort – das Projekt ist weit von seinem Ziel entfernt.",
       "quelle": {
         "id": "q1",
         "stelle": "S. 3"
@@ -451,8 +451,8 @@
     {
       "id": "k30",
       "unterthema": "u4",
-      "vorne": "Masdar City – Kosten?",
-      "hinten": "22 Milliarden US-Dollar",
+      "vorne": "Masdar City: Wie groß, wie teuer?",
+      "hinten": "6 km², Kosten 22 Milliarden US-Dollar",
       "quelle": {
         "id": "q1",
         "stelle": "S. 3"
@@ -461,7 +461,7 @@
     {
       "id": "k31",
       "unterthema": "u4",
-      "vorne": "Masdar City – Wasserversorgung?",
+      "vorne": "Masdar City: Wie soll die Stadt zu Wasser kommen, ohne Kohlendioxid zu verursachen?",
       "hinten": "über solarbetriebene Entsalzungsanlagen",
       "quelle": {
         "id": "q1",
@@ -471,8 +471,8 @@
     {
       "id": "k32",
       "unterthema": "u4",
-      "vorne": "Masdar City – Verkehr?",
-      "hinten": "automatisch gesteuerte, elektronische Kabinenbahn; kein Punkt mehr als 200 m von einer Haltestelle; Fahrverbot für Verbrennungsmotoren",
+      "vorne": "Masdar City: Warum höchstens 200 m bis zur nächsten Haltestelle?",
+      "hinten": "Verbrennungsmotoren haben Fahrverbot – die automatisch gesteuerte Kabinenbahn muss von überall leicht erreichbar sein.",
       "quelle": {
         "id": "q1",
         "stelle": "S. 3"
@@ -481,8 +481,8 @@
     {
       "id": "k33",
       "unterthema": "u4",
-      "vorne": "Masdar City – Klimatisierung und Architektur?",
-      "hinten": "Klimatisierung über tiefere Erdschichten; dichte, schattenspendende Bauweise → Durchschnittstemperatur soll um 20 °C niedriger sein",
+      "vorne": "Masdar City: Wie hilft die Bauweise gegen die Hitze?",
+      "hinten": "dichte, schattenspendende Architektur → Durchschnittstemperatur soll um 20 °C niedriger sein; Kühlung über tiefere Erdschichten",
       "quelle": {
         "id": "q1",
         "stelle": "S. 3"
@@ -491,8 +491,8 @@
     {
       "id": "k34",
       "unterthema": "u4",
-      "vorne": "Masdar City – Kritikpunkte?",
-      "hinten": "Planungsrealität; zu wenig Abfall für die Energieproduktion, Transport würde anfallen; soziale Frage: können sich einkommensschwache Familien ansiedeln?",
+      "vorne": "Ist Masdar City ein Vorbild? Welche Kritik spricht dagegen?",
+      "hinten": "fragliche Planungsrealität; zu wenig Abfall für die Energieproduktion, Transport nötig; soziale Frage: Können sich einkommensschwache Familien ansiedeln?",
       "quelle": {
         "id": "q1",
         "stelle": "S. 4"
@@ -501,8 +501,8 @@
     {
       "id": "k35",
       "unterthema": "u5",
-      "vorne": "Medina – Beiname?",
-      "hinten": "„die erleuchtete Stadt“",
+      "vorne": "Medina, „die erleuchtete Stadt“ – warum ist sie so bedeutend?",
+      "hinten": "Sie ist die zweitwichtigste heilige Stadt des Islam.",
       "quelle": {
         "id": "q2",
         "stelle": "Handout"
@@ -511,8 +511,8 @@
     {
       "id": "k36",
       "unterthema": "u5",
-      "vorne": "Medina – religiöse Bedeutung?",
-      "hinten": "zweitwichtigste heilige Stadt des Islam",
+      "vorne": "Warum ist der religiöse Tourismus für Medina so wichtig?",
+      "hinten": "Als zweitheiligste Stadt zieht Medina viele Pilger an; der religiöse Tourismus wurde deshalb ausgebaut.",
       "quelle": {
         "id": "q2",
         "stelle": "Handout"
@@ -521,8 +521,8 @@
     {
       "id": "k37",
       "unterthema": "u5",
-      "vorne": "Medina – früherer Name?",
-      "hinten": "Yathrib",
+      "vorne": "Wie hieß Medina früher, und wie hat es begonnen?",
+      "hinten": "Yathrib – als Oasensiedlung, gegründet im 9. Jh. v. Chr.",
       "quelle": {
         "id": "q2",
         "stelle": "Handout"
@@ -531,8 +531,8 @@
     {
       "id": "k38",
       "unterthema": "u5",
-      "vorne": "Medina – Einwohner und Fläche?",
-      "hinten": "1,53 bis 1,65 Mio. Einwohner auf 589 km²; Sprache: Arabisch",
+      "vorne": "Medina begann als Oase – welche Stadtentstehungstheorie passt dazu?",
+      "hinten": "hydraulische Theorie: Das Wasser ermöglichte Landwirtschaft.",
       "quelle": {
         "id": "q2",
         "stelle": "Handout"
@@ -541,8 +541,8 @@
     {
       "id": "k39",
       "unterthema": "u5",
-      "vorne": "Medina – Einwohnerentwicklung?",
-      "hinten": "1950: 51 000 → 1992: 600 000 → heute 1,53 bis 1,65 Mio.; Wachstum 2,1 % pro Jahr",
+      "vorne": "Medina: 1950 51 000, heute rund 1,6 Mio. Einwohner – wie stark ist das Wachstum?",
+      "hinten": "rund das Dreißigfache in wenigen Jahrzehnten; heute 2,1 % pro Jahr",
       "quelle": {
         "id": "q2",
         "stelle": "Handout"
@@ -551,8 +551,8 @@
     {
       "id": "k40",
       "unterthema": "u5",
-      "vorne": "Medina – Gründung und Entwicklung?",
-      "hinten": "gegründet im 9. Jh. v. Chr.; von der Oasensiedlung zur Großstadt",
+      "vorne": "Medina heute: Einwohner und Fläche?",
+      "hinten": "1,53 bis 1,65 Mio. Einwohner auf 589 km²; Sprache: Arabisch",
       "quelle": {
         "id": "q2",
         "stelle": "Handout"
@@ -561,8 +561,8 @@
     {
       "id": "k41",
       "unterthema": "u5",
-      "vorne": "Medina – Lage und Natur?",
-      "hinten": "begünstigte Senke, fruchtbare Oasenlandschaft, vulkanische Landschaft; Dattelanbau, Obstgärten, Landwirtschaft",
+      "vorne": "Warum ist in Medina Landwirtschaft möglich?",
+      "hinten": "begünstigte Senke mit fruchtbarer Oasenlandschaft: Dattelanbau, Obstgärten",
       "quelle": {
         "id": "q2",
         "stelle": "Handout"
@@ -571,8 +571,8 @@
     {
       "id": "k42",
       "unterthema": "u5",
-      "vorne": "Medina – Wirtschaft aktuell?",
-      "hinten": "Investitionsschub mit mehr als 125 000 Arbeitsplätzen; religiöser Tourismus ausgebaut",
+      "vorne": "Was zeigt der Investitionsschub mit mehr als 125 000 Arbeitsplätzen über Medina?",
+      "hinten": "Medina wächst wirtschaftlich stark; auch der religiöse Tourismus wird ausgebaut.",
       "quelle": {
         "id": "q2",
         "stelle": "Handout"
@@ -581,8 +581,8 @@
     {
       "id": "k43",
       "unterthema": "u5",
-      "vorne": "Medina – Chancen?",
-      "hinten": "zweitheiligste Stadt, zieht Pilger an, wenige Steuern, Entwicklungsprojekte",
+      "vorne": "Was fördert die Entwicklung von Medina?",
+      "hinten": "Pilger in die zweitheiligste Stadt, wenige Steuern, Entwicklungsprojekte",
       "quelle": {
         "id": "q2",
         "stelle": "Handout"
@@ -591,8 +591,8 @@
     {
       "id": "k44",
       "unterthema": "u5",
-      "vorne": "Medina – Risiken?",
-      "hinten": "Sicherheitsrisiken durch Drohnen- und Raketenangriffe, Reisewarnungen, strikte Auslegung der Scharia",
+      "vorne": "Warum trifft eine Reisewarnung Medina besonders – und welche Risiken gibt es noch?",
+      "hinten": "Pilger bleiben aus. Weitere Risiken: Drohnen- und Raketenangriffe, strikte Auslegung der Scharia.",
       "quelle": {
         "id": "q2",
         "stelle": "Handout"
@@ -601,8 +601,8 @@
     {
       "id": "k45",
       "unterthema": "u5",
-      "vorne": "Medina – Trends für die Zukunft?",
-      "hinten": "Projekt „Rua al Madinah“ (Einkauf, Restaurants, Kultur), Dienstleistungen für internationale Besucher, Sensoren für Temperatur und Luftqualität, moderne Krankenhäuser",
+      "vorne": "Wie setzt Medina für die Zukunft nicht nur auf Religion?",
+      "hinten": "Projekt „Rua al Madinah“ (Einkauf, Restaurants, Kultur), Angebote für internationale Besucher, Sensoren für Temperatur und Luftqualität, moderne Krankenhäuser",
       "quelle": {
         "id": "q2",
         "stelle": "Handout"
@@ -645,14 +645,14 @@
         },
         {
           "layout": "quiz",
-          "frage": "Welches Merkmal passt zur Stadt?",
+          "frage": "Welche Beschreibung passt vollständig zur Stadt?",
           "optionen": [
-            "geringe Wohnungsdichte",
-            "viele Arbeitsplätze",
-            "unveränderte Umwelt"
+            "dicht verbaut, aber kaum Arbeitsplätze",
+            "dicht verbaut, viele Arbeitsplätze, in Viertel gegliedert",
+            "locker bebaut, unveränderte Umwelt"
           ],
           "richtig": 1,
-          "sprechertext": "Kurze Frage: Welches dieser Merkmale passt zur Stadt?"
+          "sprechertext": "Kurze Frage: Welche dieser Beschreibungen passt vollständig zur Stadt? Achte darauf, dass jedes Merkmal stimmt."
         }
       ]
     },
@@ -705,14 +705,14 @@
         },
         {
           "layout": "quiz",
-          "frage": "Welche Theorie erklärt Städte durch Burgen und Festungen?",
+          "frage": "Eine Altstadt hat dicke Mauern und eine Burg in der Mitte. Welche Theorie erklärt ihre Entstehung?",
           "optionen": [
             "hydraulische Theorie",
             "militärische Theorie",
             "ökonomische Theorie"
           ],
           "richtig": 1,
-          "sprechertext": "Kurze Frage zum Schluss: Welche Theorie erklärt Städte durch Burgen und Festungen?"
+          "sprechertext": "Kurze Frage zum Schluss: Eine Altstadt hat dicke Mauern und eine Burg in der Mitte. Welche Theorie erklärt ihre Entstehung am besten?"
         }
       ]
     },
@@ -835,14 +835,14 @@
         },
         {
           "layout": "quiz",
-          "frage": "Bis wann soll Masdar City jetzt fertig werden?",
+          "frage": "Warum soll in Masdar City keine Haltestelle weiter als 200 m entfernt sein?",
           "optionen": [
-            "2016",
-            "2025",
-            "2030"
+            "weil Verbrennungsmotoren Fahrverbot haben",
+            "damit mehr Parkplätze entstehen",
+            "damit die Stadt schneller fertig wird"
           ],
-          "richtig": 2,
-          "sprechertext": "Kurze Frage zum Schluss: Bis wann soll Masdar City nach dem aktuellen Plan fertig werden?"
+          "richtig": 0,
+          "sprechertext": "Kurze Frage zum Schluss: Warum soll in Masdar City kein Punkt weiter als zweihundert Meter von einer Haltestelle entfernt sein?"
         }
       ]
     },
@@ -920,14 +920,14 @@
         },
         {
           "layout": "quiz",
-          "frage": "Wie hieß Medina früher?",
+          "frage": "Medina begann als Oasensiedlung. Welche Stadtentstehungstheorie passt zu diesem Anfang?",
           "optionen": [
-            "Yathrib",
-            "Masdar",
-            "Mekka"
+            "hydraulische Theorie",
+            "religiöse Theorie",
+            "militärische Theorie"
           ],
           "richtig": 0,
-          "sprechertext": "Kurze Frage zum Schluss: Wie hieß Medina früher?"
+          "sprechertext": "Kurze Frage zum Schluss: Medina begann als Oasensiedlung. Welche Stadtentstehungstheorie passt am besten zu diesem Anfang?"
         }
       ]
     }
