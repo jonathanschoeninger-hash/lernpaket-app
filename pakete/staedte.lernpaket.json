@@ -1,0 +1,248 @@
+{
+  "format": "lernpaket",
+  "version": 1,
+  "id": "gw-staedte-ahs12",
+  "titel": "Städte – Lebensraum mit vielen Facetten",
+  "fach": "Geographie und Wirtschaft",
+  "schultyp": "AHS",
+  "schulstufe": 12,
+  "pruefungsart": "Test",
+  "erstellt": "2026-11-27",
+  "quellen": [
+    { "id": "q1", "name": "Mitschrift GW 2026/27 (PDF)" }
+  ],
+  "unterthemen": [
+    { "id": "u1", "name": "Merkmale des Lebensraums Stadt" },
+    { "id": "u2", "name": "Theorien zur Stadtentstehung" },
+    { "id": "u3", "name": "Verstädterung und verwandte Begriffe" },
+    { "id": "u4", "name": "Masdar City – Stadtmodell der Zukunft" }
+  ],
+  "zusammenfassung": [
+    {
+      "unterthema": "u1",
+      "kurz": "Die Stadt ist ein Lebensraum mit vielen Facetten. Typisch sind dichte Verbauung, geschlossene Besiedlung, viele Arbeitsplätze und verschiedene Versorgungsfunktionen.",
+      "normal": "Städte erkennt man an einer Reihe von Merkmalen. Sie sind dicht verbaut und geschlossen besiedelt. Die Wohnungsdichte ist hoch, ebenso die Verkehrsdichte. Innerhalb der Stadt bilden sich einzelne Viertel. Städte bieten viele Arbeitsplätze und erfüllen verschiedene Versorgungsfunktionen. Dabei wird die natürliche Umwelt stark umgestaltet.",
+      "ausfuehrlich": "Die Stadt ist ein Lebensraum mit vielen Facetten. An mehreren Merkmalen lässt sich erkennen, dass ein Ort eine Stadt ist.\n\nZuerst fällt die Bebauung auf: Städte haben eine dichte Verbauung und eine geschlossene Besiedlung. Auf kleiner Fläche gibt es viele Wohnungen – die Wohnungsdichte ist hoch.\n\nAuch die Verkehrsdichte ist in der Stadt hoch. Innerhalb der Stadt kommt es zur Viertelbildung, das heißt, die Stadt gliedert sich in einzelne Viertel.\n\nStädte bieten viele Arbeitsplätze und erfüllen verschiedene Versorgungsfunktionen. Für all das wird die natürliche Umwelt umgestaltet. In der Mitschrift werden außerdem Tauben als typisch für den Lebensraum Stadt genannt.",
+      "merke": [
+        "Bebauung: dichte Verbauung und geschlossene Besiedlung",
+        "hohe Wohnungsdichte und hohe Verkehrsdichte",
+        "Viertelbildung, viele Arbeitsplätze, verschiedene Versorgungsfunktionen",
+        "Umgestaltung der natürlichen Umwelt"
+      ],
+      "begriffe": ["Viertelbildung", "Wohnungsdichte", "Verkehrsdichte", "Versorgungsfunktionen"],
+      "quelle": { "id": "q1", "stelle": "S. 1" }
+    },
+    {
+      "unterthema": "u2",
+      "kurz": "Vier Theorien erklären, wie Städte entstanden sind: die hydraulische, die militärische, die religiöse und die ökonomische Theorie.",
+      "normal": "Für die Entstehung von Städten gibt es vier Theorien. Die hydraulische Theorie sieht die Verfügbarkeit von Wasser als Ursprung: Daraus entstehen Landwirtschaft und Handelswege, es entwickeln sich Zentren, und Menschen siedeln sich an. Die militärische Theorie besagt, dass sich Menschen rund um Schutzbauten wie Burgen, Mauern und Festungen ansiedelten – die Stadt war eine Schutzmöglichkeit. Die religiöse Theorie erklärt Städte durch Straßen zu einem bestehenden Heiligtum wie einem Tempel oder einer Kirche. Die ökonomische Theorie sieht den Ursprung an Kreuzungen von Handelsrouten, wo sich Menschen wegen der Märkte ansiedelten.",
+      "ausfuehrlich": "Warum sind Städte überhaupt entstanden? Dazu gibt es vier Stadtentstehungstheorien.\n\nDie hydraulische Theorie stellt das Wasser in den Mittelpunkt. Wo Wasser verfügbar ist, können Landwirtschaft und Handelswege entstehen. Daraus entwickeln sich Zentren, und schließlich siedeln sich dort Menschen an.\n\nDie militärische Theorie sieht den Schutz als Ursache. Rund um Schutzbauten wie Burgen, Mauern und Festungen siedelten sich Menschen an. Die Stadt war also vor allem eine Schutzmöglichkeit.\n\nDie religiöse Theorie geht von einem bestehenden Heiligtum aus, etwa einem Tempel oder einer Kirche. Straßen führten zu diesem Heiligtum, und daraus haben sich Städte entwickelt.\n\nDie ökonomische Theorie erklärt Städte durch den Handel. An Kreuzungen von Handelsrouten entstanden Märkte, und wegen dieser Märkte siedelten sich Menschen an.",
+      "merke": [
+        "hydraulisch: Wasser → Landwirtschaft und Handelswege → Zentren → Ansiedlung",
+        "militärisch: Schutzbauten wie Burgen, Mauern, Festungen → Stadt als Schutz",
+        "religiös: Straßen zu einem Heiligtum wie Tempel oder Kirche",
+        "ökonomisch: Kreuzungen von Handelsrouten → Märkte → Ansiedlung"
+      ],
+      "begriffe": ["hydraulische Theorie", "militärische Theorie", "religiöse Theorie", "ökonomische Theorie"],
+      "quelle": { "id": "q1", "stelle": "S. 1" }
+    },
+    {
+      "unterthema": "u3",
+      "kurz": "Verstädterung, Urbanisierung, Suburbanisierung und Metropolisierung beschreiben verschiedene Entwicklungen rund um Städte. Der Verstädterungsgrad liegt in Österreich bei ca. 67 Prozent.",
+      "normal": "Verstädterung bedeutet die Zunahme der Stadtbevölkerung. Der Verstädterungsgrad gibt an, wie groß der Anteil der Stadtbevölkerung an der Gesamtbevölkerung ist – in Österreich sind es ca. 67 Prozent. Urbanisierung ist die Ausbreitung städtischer Lebensformen, Wirtschafts- und Verhaltensweisen ins Umland. Suburbanisierung ist die Abwanderung der Stadtbevölkerung in das Stadtumland. Metropolisierung bezeichnet einen überdimensionierten Zuzug von Bevölkerung, durch den die Stadt meist wirtschaftlich und politisch an Bedeutung gewinnt.",
+      "ausfuehrlich": "Rund um Städte gibt es mehrere Fachbegriffe, die man leicht verwechselt.\n\nVerstädterung ist die Zunahme der Stadtbevölkerung. Wie stark ein Land verstädtert ist, zeigt der Verstädterungsgrad: Er ist der Anteil der Stadtbevölkerung an der Gesamtbevölkerung. In Österreich liegt er bei ca. 67 Prozent.\n\nUrbanisierung meint etwas anderes: Hier breiten sich städtische Lebensformen, Wirtschafts- und Verhaltensweisen ins Umland aus. Es geht also nicht um die Zahl der Menschen, sondern um die Art zu leben und zu wirtschaften.\n\nSuburbanisierung ist die Abwanderung der Stadtbevölkerung in das Stadtumland. Menschen ziehen also aus der Stadt hinaus in die Umgebung.\n\nMetropolisierung bezeichnet einen überdimensionierten Zuzug von Bevölkerung in eine Stadt. Dadurch gewinnt die Stadt meist an Bedeutung, und zwar wirtschaftlich und politisch.",
+      "merke": [
+        "Verstädterung: Zunahme der Stadtbevölkerung",
+        "Verstädterungsgrad: Anteil der Stadtbevölkerung an der Gesamtbevölkerung – Österreich ca. 67 %",
+        "Urbanisierung: städtische Lebensformen, Wirtschafts- und Verhaltensweisen breiten sich ins Umland aus",
+        "Suburbanisierung: Abwanderung der Stadtbevölkerung ins Stadtumland",
+        "Metropolisierung: überdimensionierter Zuzug, die Stadt gewinnt wirtschaftlich und politisch an Bedeutung"
+      ],
+      "begriffe": ["Verstädterung", "Verstädterungsgrad", "Urbanisierung", "Suburbanisierung", "Metropolisierung"],
+      "quelle": { "id": "q1", "stelle": "S. 2" }
+    },
+    {
+      "unterthema": "u4",
+      "kurz": "Masdar City ist eine geplante Ökostadt in Abu Dhabi, die energieautark werden soll. Wegen Finanzproblemen ist sie noch nicht fertig.",
+      "normal": "Masdar City ist ein Stadtmodell der Zukunft: eine geplante Ökostadt in Abu Dhabi. Es soll eine energieautarke Musterstadt entstehen. Gebaut wird seit 2009; fertig sein sollte sie bis 2016. Wegen Finanzproblemen wurde die Fertigstellung zuerst auf 2025 und mittlerweile auf 2030 verschoben. Geplant sind 50 000 Einwohnerinnen und Einwohner auf 6 km², 2024 lebten dort rund 3000. Die Kosten betragen 22 Milliarden US-Dollar. Strom kommt aus Solarzellen und Windkraftwerken, Autos mit Verbrennungsmotor haben Fahrverbot. Kritisiert werden die Planungsrealität, die zu geringe Abfallmenge für die Energieproduktion und die Frage, ob sich auch einkommensschwache Familien ansiedeln können.",
+      "ausfuehrlich": "Masdar City ist eine geplante Ökostadt in Abu Dhabi und gilt als Stadtmodell der Zukunft. Dort soll eine energieautarke Musterstadt entstehen.\n\nGebaut wird seit 2009. Ursprünglich sollte die Stadt bis 2016 fertig sein, sie ist aber noch nicht fertig. Wegen Finanzproblemen wurde die Fertigstellung zuerst auf 2025 verschoben, mittlerweile auf 2030. Geplant sind 50 000 Einwohnerinnen und Einwohner auf einer Fläche von 6 km²; 2024 lebten dort rund 3000 Menschen. Die Kosten betragen 22 Milliarden US-Dollar.\n\nDie Energie soll kohlendioxidfrei sein: Autos mit Verbrennungsmotoren haben Fahrverbot. Die Häuser werden energiesparend gebaut, der Strom kommt aus Solarzellen und Windkraftwerken. Klimatisiert werden die Häuser über tiefere Erdschichten. Die Architektur ist dicht und schattenspendend, dadurch soll die Durchschnittstemperatur um 20 °C niedriger sein.\n\nAbfälle sollen gänzlich recycelt und wieder in Energie umgewandelt werden. Das Wasser kommt aus solarbetriebenen Entsalzungsanlagen. Für den Verkehr gibt es eine automatisch gesteuerte, elektronische Kabinenbahn; kein Punkt der Stadt soll mehr als 200 m von einer Haltestelle entfernt sein. Masdar City ist als Wohn- und Arbeitsstadt geplant, angesiedelt werden Firmen aus dem Ökologiesektor.\n\nAm Projekt gibt es Kritik: Fraglich ist die Planungsrealität. Außerdem gibt es zu wenig Abfall für die Energieproduktion, sodass Transport anfallen würde. Und es stellt sich die soziale Frage, ob sich dort auch einkommensschwache Familien ansiedeln können.",
+      "merke": [
+        "geplante, energieautarke Ökostadt in Abu Dhabi – Bau seit 2009, Fertigstellung jetzt bis 2030 geplant",
+        "Plan: 50 000 Einwohner auf 6 km² (2024: rund 3000), Kosten 22 Mrd. US-Dollar",
+        "Energie aus Sonne und Wind, Fahrverbot für Verbrennungsmotoren, Wasser aus Entsalzungsanlagen",
+        "Kritik: Planungsrealität, zu wenig Abfall für die Energieproduktion, soziale Frage"
+      ],
+      "begriffe": ["Masdar City", "Ökostadt", "energieautarke", "Entsalzungsanlagen", "Kabinenbahn"],
+      "quelle": { "id": "q1", "stelle": "S. 3–4" }
+    }
+  ],
+  "karten": [
+    { "id": "k1", "unterthema": "u1", "vorne": "Lebensraum Stadt – Merkmale der Bebauung?", "hinten": "dichte Verbauung, geschlossene Besiedlung", "quelle": { "id": "q1", "stelle": "S. 1" } },
+    { "id": "k2", "unterthema": "u1", "vorne": "Wie ist die Wohnungsdichte in der Stadt?", "hinten": "hoch", "quelle": { "id": "q1", "stelle": "S. 1" } },
+    { "id": "k3", "unterthema": "u1", "vorne": "Wie ist die Verkehrsdichte in der Stadt?", "hinten": "hoch", "quelle": { "id": "q1", "stelle": "S. 1" } },
+    { "id": "k4", "unterthema": "u1", "vorne": "Merkmal Stadt: Was passiert mit der natürlichen Umwelt?", "hinten": "Sie wird umgestaltet.", "quelle": { "id": "q1", "stelle": "S. 1" } },
+    { "id": "k5", "unterthema": "u1", "vorne": "Merkmal Stadt: Arbeit?", "hinten": "viele Arbeitsplätze", "quelle": { "id": "q1", "stelle": "S. 1" } },
+    { "id": "k6", "unterthema": "u1", "vorne": "Merkmal Stadt: Versorgung?", "hinten": "verschiedene Versorgungsfunktionen", "quelle": { "id": "q1", "stelle": "S. 1" } },
+    { "id": "k7", "unterthema": "u1", "vorne": "Viertelbildung – was ist gemeint?", "hinten": "Die Stadt gliedert sich in einzelne Viertel.", "quelle": { "id": "q1", "stelle": "S. 1" } },
+    { "id": "k8", "unterthema": "u1", "vorne": "Nenne mindestens fünf Merkmale des Lebensraums Stadt.", "hinten": "dichte Verbauung, geschlossene Besiedlung, hohe Wohnungsdichte, hohe Verkehrsdichte, Viertelbildung, viele Arbeitsplätze, Versorgungsfunktionen, Umgestaltung der natürlichen Umwelt, Tauben", "quelle": { "id": "q1", "stelle": "S. 1" } },
+
+    { "id": "k9", "unterthema": "u2", "vorne": "Hydraulische Theorie – Ausgangspunkt?", "hinten": "Verfügbarkeit von Wasser → Landwirtschaft und Handelswege → Zentren → Ansiedlung", "quelle": { "id": "q1", "stelle": "S. 1" } },
+    { "id": "k10", "unterthema": "u2", "vorne": "Militärische Theorie – Ausgangspunkt?", "hinten": "Schutzbauten wie Burgen, Mauern, Festungen → Ansiedlung; Stadt als Schutzmöglichkeit", "quelle": { "id": "q1", "stelle": "S. 1" } },
+    { "id": "k11", "unterthema": "u2", "vorne": "Religiöse Theorie – Ausgangspunkt?", "hinten": "Straßen zu einem bestehenden Heiligtum wie Tempel oder Kirche", "quelle": { "id": "q1", "stelle": "S. 1" } },
+    { "id": "k12", "unterthema": "u2", "vorne": "Ökonomische Theorie – Ausgangspunkt?", "hinten": "Kreuzungen von Handelsrouten → Ansiedlung wegen der Märkte", "quelle": { "id": "q1", "stelle": "S. 1" } },
+    { "id": "k13", "unterthema": "u2", "vorne": "Welche vier Stadtentstehungstheorien gibt es?", "hinten": "hydraulische, militärische, religiöse und ökonomische Theorie", "quelle": { "id": "q1", "stelle": "S. 1" } },
+    { "id": "k14", "unterthema": "u2", "vorne": "Welche Theorie: Burgen, Mauern und Festungen?", "hinten": "militärische Theorie", "quelle": { "id": "q1", "stelle": "S. 1" } },
+    { "id": "k15", "unterthema": "u2", "vorne": "Welche Theorie: Märkte an Kreuzungen von Handelsrouten?", "hinten": "ökonomische Theorie", "quelle": { "id": "q1", "stelle": "S. 1" } },
+    { "id": "k16", "unterthema": "u2", "vorne": "Welche Theorie: Tempel oder Kirche als Ausgangspunkt?", "hinten": "religiöse Theorie", "quelle": { "id": "q1", "stelle": "S. 1" } },
+
+    { "id": "k17", "unterthema": "u3", "vorne": "Verstädterung", "hinten": "Zunahme der Stadtbevölkerung", "quelle": { "id": "q1", "stelle": "S. 2" } },
+    { "id": "k18", "unterthema": "u3", "vorne": "Verstädterungsgrad", "hinten": "Anteil der Stadtbevölkerung an der Gesamtbevölkerung", "quelle": { "id": "q1", "stelle": "S. 2" } },
+    { "id": "k19", "unterthema": "u3", "vorne": "Verstädterungsgrad in Österreich?", "hinten": "ca. 67 %", "quelle": { "id": "q1", "stelle": "S. 2" } },
+    { "id": "k20", "unterthema": "u3", "vorne": "Urbanisierung", "hinten": "Ausbreitung städtischer Lebensformen, Wirtschafts- und Verhaltensweisen ins Umland", "quelle": { "id": "q1", "stelle": "S. 2" } },
+    { "id": "k21", "unterthema": "u3", "vorne": "Suburbanisierung", "hinten": "Abwanderung der Stadtbevölkerung in das Stadtumland", "quelle": { "id": "q1", "stelle": "S. 2" } },
+    { "id": "k22", "unterthema": "u3", "vorne": "Metropolisierung", "hinten": "überdimensionierter Zuzug von Bevölkerung; dadurch gewinnt die Stadt meist an Bedeutung", "quelle": { "id": "q1", "stelle": "S. 2" } },
+    { "id": "k23", "unterthema": "u3", "vorne": "Metropolisierung – in welchen Bereichen gewinnt die Stadt an Bedeutung?", "hinten": "wirtschaftlich und politisch", "quelle": { "id": "q1", "stelle": "S. 2" } },
+    { "id": "k24", "unterthema": "u3", "vorne": "Menschen ziehen aus der Stadt ins Umland – Fachbegriff?", "hinten": "Suburbanisierung", "quelle": { "id": "q1", "stelle": "S. 2" } },
+
+    { "id": "k25", "unterthema": "u4", "vorne": "Masdar City – wo?", "hinten": "Abu Dhabi", "quelle": { "id": "q1", "stelle": "S. 3" } },
+    { "id": "k26", "unterthema": "u4", "vorne": "Masdar City – Ziel des Projekts?", "hinten": "eine energieautarke Musterstadt (Ökostadt)", "quelle": { "id": "q1", "stelle": "S. 3" } },
+    { "id": "k27", "unterthema": "u4", "vorne": "Masdar City – Baubeginn und ursprünglich geplante Fertigstellung?", "hinten": "Bau seit 2009, fertig sein sollte sie bis 2016", "quelle": { "id": "q1", "stelle": "S. 3" } },
+    { "id": "k28", "unterthema": "u4", "vorne": "Masdar City – warum noch nicht fertig, und bis wann jetzt?", "hinten": "Finanzprobleme; zuerst auf 2025, mittlerweile auf 2030 verschoben", "quelle": { "id": "q1", "stelle": "S. 3" } },
+    { "id": "k29", "unterthema": "u4", "vorne": "Masdar City – geplante Einwohner und Fläche?", "hinten": "50 000 Einwohner auf 6 km² (2024: rund 3000 Einwohner)", "quelle": { "id": "q1", "stelle": "S. 3" } },
+    { "id": "k30", "unterthema": "u4", "vorne": "Masdar City – Kosten?", "hinten": "22 Milliarden US-Dollar", "quelle": { "id": "q1", "stelle": "S. 3" } },
+    { "id": "k31", "unterthema": "u4", "vorne": "Masdar City – Wasserversorgung?", "hinten": "über solarbetriebene Entsalzungsanlagen", "quelle": { "id": "q1", "stelle": "S. 3" } },
+    { "id": "k32", "unterthema": "u4", "vorne": "Masdar City – Verkehr?", "hinten": "automatisch gesteuerte, elektronische Kabinenbahn; kein Punkt mehr als 200 m von einer Haltestelle; Fahrverbot für Verbrennungsmotoren", "quelle": { "id": "q1", "stelle": "S. 3" } },
+    { "id": "k33", "unterthema": "u4", "vorne": "Masdar City – Klimatisierung und Architektur?", "hinten": "Klimatisierung über tiefere Erdschichten; dichte, schattenspendende Bauweise → Durchschnittstemperatur soll um 20 °C niedriger sein", "quelle": { "id": "q1", "stelle": "S. 3" } },
+    { "id": "k34", "unterthema": "u4", "vorne": "Masdar City – Kritikpunkte?", "hinten": "Planungsrealität; zu wenig Abfall für die Energieproduktion, Transport würde anfallen; soziale Frage: können sich einkommensschwache Familien ansiedeln?", "quelle": { "id": "q1", "stelle": "S. 4" } }
+  ],
+  "videos": [
+    {
+      "id": "v1",
+      "unterthema": "u1",
+      "titel": "Woran erkennt man eine Stadt?",
+      "folien": [
+        { "layout": "titel", "titel": "Die Stadt", "untertitel": "Lebensraum mit vielen Facetten", "sprechertext": "In diesem Video geht es um den Lebensraum Stadt. Woran erkennt man eigentlich, dass ein Ort eine Stadt ist?" },
+        { "layout": "stichpunkte", "titel": "Bebauung und Dichte", "punkte": ["dichte Verbauung", "geschlossene Besiedlung", "hohe Wohnungsdichte", "hohe Verkehrsdichte"], "sprechertext": "Städte sind dicht verbaut und geschlossen besiedelt. Auf kleiner Fläche gibt es viele Wohnungen, die Wohnungsdichte ist also hoch. Auch die Verkehrsdichte ist hoch." },
+        { "layout": "stichpunkte", "titel": "Leben und Arbeiten", "punkte": ["Viertelbildung", "viele Arbeitsplätze", "verschiedene Versorgungsfunktionen", "Umgestaltung der natürlichen Umwelt"], "sprechertext": "Die Stadt gliedert sich in einzelne Viertel. Sie bietet viele Arbeitsplätze und erfüllt verschiedene Versorgungsfunktionen. Dafür wird die natürliche Umwelt stark umgestaltet." },
+        { "layout": "quiz", "frage": "Welches Merkmal passt zur Stadt?", "optionen": ["geringe Wohnungsdichte", "viele Arbeitsplätze", "unveränderte Umwelt"], "richtig": 1, "sprechertext": "Kurze Frage: Welches dieser Merkmale passt zur Stadt?" }
+      ]
+    },
+    {
+      "id": "v2",
+      "unterthema": "u2",
+      "titel": "Wie sind Städte entstanden?",
+      "folien": [
+        { "layout": "titel", "titel": "Wie entstehen Städte?", "untertitel": "Vier Theorien", "sprechertext": "Warum sind Städte überhaupt entstanden? Dazu gibt es vier Theorien, die wir uns jetzt ansehen." },
+        { "layout": "ablauf", "titel": "Die hydraulische Theorie", "schritte": ["Wasser ist verfügbar", "Landwirtschaft und Handelswege entstehen", "Zentren entwickeln sich", "Menschen siedeln sich an"], "sprechertext": "Die hydraulische Theorie beginnt beim Wasser. Wo Wasser verfügbar ist, entstehen Landwirtschaft und Handelswege. Daraus entwickeln sich Zentren, und Menschen siedeln sich an." },
+        { "layout": "vergleich", "titel": "Schutz oder Glaube?", "links": { "ueberschrift": "Militärische Theorie", "punkte": ["Schutzbauten: Burgen, Mauern, Festungen", "Stadt als Schutzmöglichkeit"] }, "rechts": { "ueberschrift": "Religiöse Theorie", "punkte": ["Straßen zu einem Heiligtum", "Tempel oder Kirche als Ausgangspunkt"] }, "sprechertext": "Nach der militärischen Theorie siedelten sich Menschen rund um Burgen, Mauern und Festungen an, die Stadt bot Schutz. Nach der religiösen Theorie führten Straßen zu einem Heiligtum wie einem Tempel oder einer Kirche, und daraus entwickelten sich Städte." },
+        { "layout": "begriff", "begriff": "Ökonomische Theorie", "definition": "Städte entstehen an Kreuzungen von Handelsrouten, weil sich Menschen wegen der Märkte dort ansiedeln.", "sprechertext": "Die ökonomische Theorie setzt beim Handel an. An Kreuzungen von Handelsrouten gab es Märkte, und deshalb siedelten sich dort Menschen an." },
+        { "layout": "quiz", "frage": "Welche Theorie erklärt Städte durch Burgen und Festungen?", "optionen": ["hydraulische Theorie", "militärische Theorie", "ökonomische Theorie"], "richtig": 1, "sprechertext": "Kurze Frage zum Schluss: Welche Theorie erklärt Städte durch Burgen und Festungen?" }
+      ]
+    },
+    {
+      "id": "v3",
+      "unterthema": "u3",
+      "titel": "Verstädterung, Urbanisierung und Co.",
+      "folien": [
+        { "layout": "titel", "titel": "Städte im Wandel", "untertitel": "Vier Fachbegriffe", "sprechertext": "Verstädterung, Urbanisierung, Suburbanisierung und Metropolisierung klingen ähnlich, meinen aber Verschiedenes. Wir gehen sie der Reihe nach durch." },
+        { "layout": "begriff", "begriff": "Verstädterung", "definition": "Zunahme der Stadtbevölkerung. Der Verstädterungsgrad ist der Anteil der Stadtbevölkerung an der Gesamtbevölkerung.", "sprechertext": "Verstädterung bedeutet, dass die Stadtbevölkerung zunimmt. Der Verstädterungsgrad zeigt, wie groß der Anteil der Stadtbevölkerung an der Gesamtbevölkerung ist." },
+        { "layout": "zahl", "zahl": "67", "einheit": "%", "bedeutung": "Verstädterungsgrad in Österreich – ungefährer Anteil der Stadtbevölkerung", "sprechertext": "In Österreich liegt der Verstädterungsgrad bei ungefähr 67 Prozent." },
+        { "layout": "vergleich", "titel": "Urbanisierung oder Suburbanisierung?", "links": { "ueberschrift": "Urbanisierung", "punkte": ["städtische Lebensformen breiten sich ins Umland aus", "auch Wirtschafts- und Verhaltensweisen"] }, "rechts": { "ueberschrift": "Suburbanisierung", "punkte": ["Stadtbevölkerung wandert ab", "Ziel: das Stadtumland"] }, "sprechertext": "Bei der Urbanisierung breiten sich städtische Lebensformen, Wirtschafts- und Verhaltensweisen ins Umland aus. Bei der Suburbanisierung wandert dagegen die Stadtbevölkerung selbst in das Stadtumland ab." },
+        { "layout": "begriff", "begriff": "Metropolisierung", "definition": "Überdimensionierter Zuzug von Bevölkerung – die Stadt gewinnt dadurch meist wirtschaftlich und politisch an Bedeutung.", "sprechertext": "Metropolisierung bedeutet einen überdimensionierten Zuzug von Bevölkerung. Dadurch gewinnt die Stadt meist an Bedeutung, wirtschaftlich und politisch." },
+        { "layout": "merke", "text": "Verstädterung = mehr Menschen in Städten. Urbanisierung = städtische Lebensweisen breiten sich aus. Suburbanisierung = Abwanderung ins Stadtumland.", "sprechertext": "Merke dir: Verstädterung heißt mehr Menschen in Städten, Urbanisierung heißt, städtische Lebensweisen breiten sich aus, und Suburbanisierung heißt Abwanderung ins Stadtumland." }
+      ]
+    },
+    {
+      "id": "v4",
+      "unterthema": "u4",
+      "titel": "Masdar City – die Ökostadt in der Wüste",
+      "folien": [
+        { "layout": "titel", "titel": "Masdar City", "untertitel": "Stadtmodell der Zukunft in Abu Dhabi", "sprechertext": "Masdar City ist eine geplante Ökostadt in Abu Dhabi. Dort soll eine energieautarke Musterstadt entstehen." },
+        { "layout": "stichpunkte", "titel": "Das Projekt", "punkte": ["Bau seit 2009", "geplant fertig bis 2016", "Finanzprobleme: jetzt Ziel 2030", "Kosten: 22 Milliarden US-Dollar"], "sprechertext": "Gebaut wird seit 2009, fertig sein sollte die Stadt bis 2016. Wegen Finanzproblemen wurde das zuerst auf 2025 und mittlerweile auf 2030 verschoben. Die Kosten liegen bei 22 Milliarden US-Dollar." },
+        { "layout": "zahl", "zahl": "50 000", "einheit": "Einwohner", "bedeutung": "geplant auf 6 km² – 2024 lebten dort rund 3000 Menschen", "sprechertext": "Geplant sind fünfzigtausend Einwohnerinnen und Einwohner auf sechs Quadratkilometern. Im Jahr 2024 lebten dort aber erst rund dreitausend Menschen." },
+        { "layout": "stichpunkte", "titel": "Energie und Klima", "punkte": ["Strom aus Solarzellen und Windkraftwerken", "Fahrverbot für Verbrennungsmotoren", "Klimatisierung über tiefere Erdschichten", "schattenspendende Bauweise: 20 °C kühler"], "sprechertext": "Die Energie soll kohlendioxidfrei sein: Strom kommt aus Solarzellen und Windkraftwerken, Autos mit Verbrennungsmotor dürfen nicht fahren. Die Häuser werden über tiefere Erdschichten klimatisiert. Durch die dichte, schattenspendende Bauweise soll es im Schnitt um zwanzig Grad kühler sein." },
+        { "layout": "stichpunkte", "titel": "Wasser, Abfall, Verkehr", "punkte": ["Wasser aus solarbetriebenen Entsalzungsanlagen", "Abfälle recyceln und in Energie umwandeln", "Kabinenbahn: höchstens 200 m zur Haltestelle", "Firmen aus dem Ökologiesektor"], "sprechertext": "Wasser liefern solarbetriebene Entsalzungsanlagen. Abfälle sollen ganz recycelt und wieder zu Energie werden. Eine automatische Kabinenbahn fährt so, dass kein Punkt mehr als zweihundert Meter von einer Haltestelle entfernt ist. Angesiedelt werden Firmen aus dem Ökologiesektor." },
+        { "layout": "stichpunkte", "titel": "Kritik am Projekt", "punkte": ["Planungsrealität", "zu wenig Abfall für die Energieproduktion", "soziale Frage: Platz für einkommensschwache Familien?"], "sprechertext": "Es gibt aber Kritik. Fraglich ist, ob die Planung realistisch ist. Für die Energieproduktion gibt es zu wenig Abfall, dafür müsste Abfall herantransportiert werden. Und können sich dort auch einkommensschwache Familien ansiedeln?" },
+        { "layout": "quiz", "frage": "Bis wann soll Masdar City jetzt fertig werden?", "optionen": ["2016", "2025", "2030"], "richtig": 2, "sprechertext": "Kurze Frage zum Schluss: Bis wann soll Masdar City nach dem aktuellen Plan fertig werden?" }
+      ]
+    }
+  ],
+  "fragen": [
+    { "id": "f1", "unterthema": "u1", "typ": "mc", "schwierigkeit": 1, "frage": "Welche Wohnungsdichte ist typisch für eine Stadt?", "optionen": ["eine hohe Wohnungsdichte", "eine geringe Wohnungsdichte", "eine sinkende Wohnungsdichte", "eine Wohnungsdichte wie am Land"], "richtig": [0], "erklaerung": "In der Stadt gibt es auf kleiner Fläche viele Wohnungen – die hohe Wohnungsdichte ist ein Merkmal des Lebensraums Stadt.", "quelle": { "id": "q1", "stelle": "S. 1" }, "nurTest": false },
+    { "id": "f2", "unterthema": "u1", "typ": "mehrfach", "schwierigkeit": 2, "frage": "Welche Merkmale gehören laut Mitschrift zum Lebensraum Stadt?", "optionen": ["dichte Verbauung", "geschlossene Besiedlung", "geringe Verkehrsdichte", "viele Arbeitsplätze", "unveränderte natürliche Umwelt"], "richtig": [0, 1, 3], "erklaerung": "Städte sind dicht verbaut, geschlossen besiedelt und bieten viele Arbeitsplätze. Die Verkehrsdichte ist hoch, und die natürliche Umwelt wird umgestaltet.", "quelle": { "id": "q1", "stelle": "S. 1" }, "nurTest": false },
+    { "id": "f3", "unterthema": "u1", "typ": "wahrfalsch", "schwierigkeit": 1, "frage": "In der Stadt wird die natürliche Umwelt umgestaltet.", "richtig": true, "erklaerung": "Die Umgestaltung der natürlichen Umwelt ist eines der Merkmale des Lebensraums Stadt.", "quelle": { "id": "q1", "stelle": "S. 1" }, "nurTest": false },
+    { "id": "f4", "unterthema": "u1", "typ": "wahrfalsch", "schwierigkeit": 1, "frage": "Für Städte ist eine geringe Verkehrsdichte typisch.", "richtig": false, "erklaerung": "Das Gegenteil stimmt: Eine hohe Verkehrsdichte ist typisch für die Stadt.", "quelle": { "id": "q1", "stelle": "S. 1" }, "nurTest": false },
+    { "id": "f5", "unterthema": "u1", "typ": "lueckentext", "schwierigkeit": 2, "frage": "Ergänze die Merkmale der Stadt.", "text": "Die Stadt gliedert sich in einzelne Viertel – man spricht von {{1}}. Außerdem erfüllt sie verschiedene {{2}}.", "luecken": [["Viertelbildung"], ["Versorgungsfunktionen"]], "erklaerung": "Viertelbildung und verschiedene Versorgungsfunktionen gehören zu den Merkmalen des Lebensraums Stadt.", "quelle": { "id": "q1", "stelle": "S. 1" }, "nurTest": false },
+    { "id": "f6", "unterthema": "u1", "typ": "mc", "schwierigkeit": 2, "frage": "Welches Merkmal beschreibt, dass in der Stadt viel gebaut ist und kaum freie Flächen bleiben?", "optionen": ["dichte Verbauung", "Suburbanisierung", "Viertelbildung", "Metropolisierung"], "richtig": [0], "erklaerung": "Die dichte Verbauung ist ein Merkmal der Stadt. Suburbanisierung und Metropolisierung sind Entwicklungen, keine Merkmale der Bebauung.", "quelle": { "id": "q1", "stelle": "S. 1" }, "nurTest": false },
+    { "id": "f7", "unterthema": "u1", "typ": "mehrfach", "schwierigkeit": 2, "frage": "Welche Dichten sind in der Stadt hoch?", "optionen": ["Wohnungsdichte", "Verkehrsdichte", "Walddichte", "Dichte an Ackerflächen"], "richtig": [0, 1], "erklaerung": "Laut Mitschrift sind sowohl die Wohnungsdichte als auch die Verkehrsdichte in der Stadt hoch.", "quelle": { "id": "q1", "stelle": "S. 1" }, "nurTest": false },
+    { "id": "f8", "unterthema": "u1", "typ": "freitext", "schwierigkeit": 3, "frage": "Beschreibe den Lebensraum Stadt anhand von mindestens vier Merkmalen.", "musterloesung": "Die Stadt ist dicht verbaut und geschlossen besiedelt, die Wohnungsdichte und die Verkehrsdichte sind hoch. Es kommt zur Viertelbildung. Die Stadt bietet viele Arbeitsplätze und erfüllt verschiedene Versorgungsfunktionen; dabei wird die natürliche Umwelt umgestaltet.", "maxPunkte": 2, "bewertungspunkte": [
+      { "text": "nennt Merkmale der Bebauung oder Dichte", "woerter": ["verbau", "geschlossen", "wohnungsdichte", "verkehrsdichte", "dicht"] },
+      { "text": "nennt Merkmale zu Arbeit, Versorgung, Vierteln oder Umwelt", "woerter": ["arbeitspl", "versorgung", "viertel", "umwelt", "umgestalt"] }
+    ], "erklaerung": "Eine vollständige Antwort verbindet Merkmale der Bebauung und Dichte mit Merkmalen zu Arbeit, Versorgung und Umwelt.", "quelle": { "id": "q1", "stelle": "S. 1" }, "nurTest": true },
+    { "id": "f9", "unterthema": "u1", "typ": "wahrfalsch", "schwierigkeit": 2, "frage": "Städte bieten nur wenige Arbeitsplätze.", "richtig": false, "erklaerung": "Viele Arbeitsplätze sind ein Merkmal des Lebensraums Stadt.", "quelle": { "id": "q1", "stelle": "S. 1" }, "nurTest": true },
+    { "id": "f10", "unterthema": "u1", "typ": "mc", "schwierigkeit": 2, "frage": "Welches der folgenden ist kein Merkmal des Lebensraums Stadt?", "optionen": ["geringe Wohnungsdichte", "Viertelbildung", "viele Arbeitsplätze", "Umgestaltung der natürlichen Umwelt"], "richtig": [0], "erklaerung": "Die Wohnungsdichte ist in der Stadt hoch, nicht gering. Die anderen drei sind Merkmale der Stadt.", "quelle": { "id": "q1", "stelle": "S. 1" }, "nurTest": true },
+
+    { "id": "f11", "unterthema": "u2", "typ": "zuordnen", "schwierigkeit": 2, "frage": "Ordne jeder Theorie ihren Ausgangspunkt zu.", "paare": [
+      { "links": "hydraulische Theorie", "rechts": "Verfügbarkeit von Wasser" },
+      { "links": "militärische Theorie", "rechts": "Schutzbauten wie Burgen" },
+      { "links": "religiöse Theorie", "rechts": "Heiligtum wie Tempel oder Kirche" },
+      { "links": "ökonomische Theorie", "rechts": "Kreuzungen von Handelsrouten" }
+    ], "erklaerung": "Jede der vier Theorien sieht einen anderen Grund für die Ansiedlung: Wasser, Schutz, ein Heiligtum oder Handel.", "quelle": { "id": "q1", "stelle": "S. 1" }, "nurTest": false },
+    { "id": "f12", "unterthema": "u2", "typ": "reihenfolge", "schwierigkeit": 2, "frage": "Bringe die Schritte der hydraulischen Theorie in die richtige Reihenfolge.", "schritte": ["Wasser ist verfügbar", "Landwirtschaft und Handelswege entstehen", "Zentren entwickeln sich", "Menschen siedeln sich an"], "erklaerung": "Am Anfang steht das Wasser. Es ermöglicht Landwirtschaft und Handelswege, daraus entstehen Zentren, in denen sich Menschen ansiedeln.", "quelle": { "id": "q1", "stelle": "S. 1" }, "nurTest": false },
+    { "id": "f13", "unterthema": "u2", "typ": "mc", "schwierigkeit": 1, "frage": "Nach welcher Theorie entstanden Städte rund um Burgen, Mauern und Festungen?", "optionen": ["militärische Theorie", "religiöse Theorie", "hydraulische Theorie", "ökonomische Theorie"], "richtig": [0], "erklaerung": "Die militärische Theorie sieht Schutzbauten als Ausgangspunkt – die Stadt war eine Schutzmöglichkeit.", "quelle": { "id": "q1", "stelle": "S. 1" }, "nurTest": false },
+    { "id": "f14", "unterthema": "u2", "typ": "mc", "schwierigkeit": 1, "frage": "Nach der ökonomischen Theorie siedelten sich Menschen an Kreuzungen von Handelsrouten an, weil …", "optionen": ["… es dort Märkte gab.", "… es dort ein Heiligtum gab.", "… es dort Festungen gab.", "… es dort besonders viel Wasser gab."], "richtig": [0], "erklaerung": "Die ökonomische Theorie erklärt Städte durch den Handel: An Kreuzungen von Handelsrouten entstanden Märkte.", "quelle": { "id": "q1", "stelle": "S. 1" }, "nurTest": false },
+    { "id": "f15", "unterthema": "u2", "typ": "wahrfalsch", "schwierigkeit": 1, "frage": "Nach der religiösen Theorie entwickelten sich Städte aus Straßen zu einem bestehenden Heiligtum.", "richtig": true, "erklaerung": "Straßen führten zu einem Heiligtum wie einem Tempel oder einer Kirche, und daraus entwickelten sich Städte.", "quelle": { "id": "q1", "stelle": "S. 1" }, "nurTest": false },
+    { "id": "f16", "unterthema": "u2", "typ": "lueckentext", "schwierigkeit": 2, "frage": "Ergänze die Sätze zu den Stadtentstehungstheorien.", "text": "Nach der militärischen Theorie war die Stadt vor allem eine {{1}}. Nach der hydraulischen Theorie war die Verfügbarkeit von {{2}} entscheidend.", "luecken": [["Schutzmöglichkeit", "Schutz"], ["Wasser"]], "erklaerung": "Die militärische Theorie betont den Schutz durch Burgen, Mauern und Festungen, die hydraulische Theorie das Wasser.", "quelle": { "id": "q1", "stelle": "S. 1" }, "nurTest": false },
+    { "id": "f17", "unterthema": "u2", "typ": "wahrfalsch", "schwierigkeit": 2, "frage": "Die hydraulische Theorie erklärt die Entstehung von Städten durch Märkte an Kreuzungen von Handelsrouten.", "richtig": false, "erklaerung": "Das beschreibt die ökonomische Theorie. Die hydraulische Theorie geht von der Verfügbarkeit von Wasser aus.", "quelle": { "id": "q1", "stelle": "S. 1" }, "nurTest": false },
+    { "id": "f18", "unterthema": "u2", "typ": "freitext", "schwierigkeit": 3, "frage": "Erkläre zwei der vier Stadtentstehungstheorien.", "musterloesung": "Zum Beispiel: Nach der hydraulischen Theorie ermöglicht verfügbares Wasser Landwirtschaft und Handelswege, es entstehen Zentren, in denen sich Menschen ansiedeln. Nach der ökonomischen Theorie entstanden an Kreuzungen von Handelsrouten Märkte, wegen derer sich Menschen ansiedelten. Möglich sind auch die militärische Theorie mit Burgen, Mauern und Festungen als Schutz und die religiöse Theorie mit Straßen zu einem Heiligtum wie Tempel oder Kirche.", "maxPunkte": 2, "bewertungspunkte": [
+      { "text": "erklärt eine Theorie über Wasser oder Schutzbauten", "woerter": ["wasser", "burg", "mauer", "festung", "schutz"] },
+      { "text": "erklärt eine Theorie über ein Heiligtum oder den Handel", "woerter": ["heiligtum", "tempel", "kirche", "handel", "markt"] }
+    ], "erklaerung": "Zu jeder Theorie gehört ein Ausgangspunkt – Wasser, Schutz, Heiligtum oder Handel – und die Folge, dass sich Menschen dort ansiedeln.", "quelle": { "id": "q1", "stelle": "S. 1" }, "nurTest": true },
+    { "id": "f19", "unterthema": "u2", "typ": "mc", "schwierigkeit": 2, "frage": "Welche Theorie sieht einen Tempel oder eine Kirche als Ausgangspunkt einer Stadt?", "optionen": ["religiöse Theorie", "militärische Theorie", "ökonomische Theorie", "hydraulische Theorie"], "richtig": [0], "erklaerung": "Die religiöse Theorie geht von Straßen zu einem bestehenden Heiligtum aus.", "quelle": { "id": "q1", "stelle": "S. 1" }, "nurTest": true },
+    { "id": "f20", "unterthema": "u2", "typ": "zuordnen", "schwierigkeit": 3, "frage": "Ordne jedes Beispiel der passenden Theorie zu.", "paare": [
+      { "links": "Festung", "rechts": "militärische Theorie" },
+      { "links": "Kirche", "rechts": "religiöse Theorie" },
+      { "links": "Markt an einer Kreuzung von Handelsrouten", "rechts": "ökonomische Theorie" },
+      { "links": "Wasser für die Landwirtschaft", "rechts": "hydraulische Theorie" }
+    ], "erklaerung": "Festungen stehen für Schutz, Kirchen für ein Heiligtum, Märkte für Handel und Wasser für die hydraulische Theorie.", "quelle": { "id": "q1", "stelle": "S. 1" }, "nurTest": true },
+
+    { "id": "f21", "unterthema": "u3", "typ": "zuordnen", "schwierigkeit": 2, "frage": "Ordne jedem Begriff die passende Erklärung zu.", "paare": [
+      { "links": "Verstädterung", "rechts": "Zunahme der Stadtbevölkerung" },
+      { "links": "Urbanisierung", "rechts": "Ausbreitung städtischer Lebensformen ins Umland" },
+      { "links": "Suburbanisierung", "rechts": "Abwanderung der Stadtbevölkerung ins Stadtumland" },
+      { "links": "Metropolisierung", "rechts": "überdimensionierter Zuzug von Bevölkerung" }
+    ], "erklaerung": "Die vier Begriffe beschreiben verschiedene Entwicklungen: mehr Stadtbevölkerung, städtische Lebensweisen im Umland, Abwanderung ins Umland und starker Zuzug.", "quelle": { "id": "q1", "stelle": "S. 2" }, "nurTest": false },
+    { "id": "f22", "unterthema": "u3", "typ": "zahl", "schwierigkeit": 1, "frage": "Wie hoch ist der Verstädterungsgrad in Österreich laut Mitschrift ungefähr?", "loesung": 67, "toleranz": 2, "einheit": "%", "erklaerung": "In Österreich lebt ca. 67 Prozent der Bevölkerung in Städten.", "quelle": { "id": "q1", "stelle": "S. 2" }, "nurTest": false },
+    { "id": "f23", "unterthema": "u3", "typ": "mc", "schwierigkeit": 1, "frage": "Was versteht man unter Suburbanisierung?", "optionen": ["Abwanderung der Stadtbevölkerung in das Stadtumland", "Zunahme der Stadtbevölkerung", "Ausbreitung städtischer Lebensformen ins Umland", "überdimensionierter Zuzug in eine Stadt"], "richtig": [0], "erklaerung": "Bei der Suburbanisierung ziehen Menschen aus der Stadt hinaus in das Stadtumland.", "quelle": { "id": "q1", "stelle": "S. 2" }, "nurTest": false },
+    { "id": "f24", "unterthema": "u3", "typ": "wahrfalsch", "schwierigkeit": 2, "frage": "Der Verstädterungsgrad ist der Anteil der Stadtbevölkerung an der Gesamtbevölkerung.", "richtig": true, "erklaerung": "Genau so ist der Verstädterungsgrad definiert.", "quelle": { "id": "q1", "stelle": "S. 2" }, "nurTest": false },
+    { "id": "f25", "unterthema": "u3", "typ": "lueckentext", "schwierigkeit": 2, "frage": "Ergänze die Fachbegriffe.", "text": "Die Zunahme der Stadtbevölkerung heißt {{1}}. Die Ausbreitung städtischer Lebensformen ins Umland heißt {{2}}.", "luecken": [["Verstädterung"], ["Urbanisierung"]], "erklaerung": "Verstädterung betrifft die Zahl der Menschen in Städten, Urbanisierung die Ausbreitung städtischer Lebensweisen.", "quelle": { "id": "q1", "stelle": "S. 2" }, "nurTest": false },
+    { "id": "f26", "unterthema": "u3", "typ": "mc", "schwierigkeit": 2, "frage": "Durch Metropolisierung gewinnt eine Stadt meist an Bedeutung – in welchen Bereichen?", "optionen": ["wirtschaftlich und politisch", "nur kulturell", "nur landwirtschaftlich", "religiös und militärisch"], "richtig": [0], "erklaerung": "Durch den überdimensionierten Zuzug gewinnt die Stadt laut Mitschrift wirtschaftlich und politisch an Bedeutung.", "quelle": { "id": "q1", "stelle": "S. 2" }, "nurTest": false },
+    { "id": "f27", "unterthema": "u3", "typ": "wahrfalsch", "schwierigkeit": 2, "frage": "Urbanisierung bedeutet, dass Menschen aus der Stadt ins Umland abwandern.", "richtig": false, "erklaerung": "Das ist Suburbanisierung. Urbanisierung ist die Ausbreitung städtischer Lebensformen, Wirtschafts- und Verhaltensweisen ins Umland.", "quelle": { "id": "q1", "stelle": "S. 2" }, "nurTest": false },
+    { "id": "f28", "unterthema": "u3", "typ": "freitext", "schwierigkeit": 3, "frage": "Erkläre den Unterschied zwischen Verstädterung und Urbanisierung.", "musterloesung": "Verstädterung ist die Zunahme der Stadtbevölkerung, es geht also um die Zahl der Menschen in Städten. Urbanisierung ist die Ausbreitung städtischer Lebensformen, Wirtschafts- und Verhaltensweisen ins Umland, es geht also um die Art zu leben.", "maxPunkte": 2, "bewertungspunkte": [
+      { "text": "Verstädterung: Zunahme der Stadtbevölkerung", "woerter": ["zunahme", "stadtbevölkerung", "mehr menschen", "wachs"] },
+      { "text": "Urbanisierung: Ausbreitung städtischer Lebensformen ins Umland", "woerter": ["lebensform", "lebensweise", "verhaltensweise", "umland", "ausbreitung"] }
+    ], "erklaerung": "Verstädterung beschreibt die Menge der Stadtbevölkerung, Urbanisierung die Ausbreitung städtischer Lebensweisen.", "quelle": { "id": "q1", "stelle": "S. 2" }, "nurTest": true },
+    { "id": "f29", "unterthema": "u3", "typ": "mc", "schwierigkeit": 3, "frage": "Eine Stadt verzeichnet einen überdimensionierten Zuzug und gewinnt dadurch wirtschaftlich und politisch an Bedeutung. Welcher Begriff passt?", "optionen": ["Metropolisierung", "Suburbanisierung", "Urbanisierung", "Verstädterungsgrad"], "richtig": [0], "erklaerung": "Überdimensionierter Zuzug und wachsende Bedeutung der Stadt beschreiben die Metropolisierung.", "quelle": { "id": "q1", "stelle": "S. 2" }, "nurTest": true },
+    { "id": "f30", "unterthema": "u3", "typ": "zahl", "schwierigkeit": 2, "frage": "Der Verstädterungsgrad in Österreich liegt bei ca. 67 %. Wie viel Prozent der Bevölkerung leben demnach nicht in Städten?", "loesung": 33, "toleranz": 2, "einheit": "%", "erklaerung": "100 % minus 67 % ergibt rund 33 %, die nicht in Städten leben.", "quelle": { "id": "q1", "stelle": "S. 2" }, "nurTest": true },
+
+    { "id": "f31", "unterthema": "u4", "typ": "mc", "schwierigkeit": 1, "frage": "Wo wird Masdar City gebaut?", "optionen": ["in Abu Dhabi", "in Dubai", "in Katar", "in Saudi-Arabien"], "richtig": [0], "erklaerung": "Masdar City ist eine geplante Ökostadt in Abu Dhabi.", "quelle": { "id": "q1", "stelle": "S. 3" }, "nurTest": false },
+    { "id": "f32", "unterthema": "u4", "typ": "zahl", "schwierigkeit": 2, "frage": "Für wie viele Einwohnerinnen und Einwohner ist Masdar City geplant?", "loesung": 50000, "toleranz": 0, "erklaerung": "Geplant sind 50 000 Einwohner auf 6 km²; 2024 lebten dort rund 3000 Menschen.", "quelle": { "id": "q1", "stelle": "S. 3" }, "nurTest": false },
+    { "id": "f33", "unterthema": "u4", "typ": "zahl", "schwierigkeit": 2, "frage": "Wie weit soll in Masdar City höchstens jeder Punkt der Stadt von einer Haltestelle entfernt sein?", "loesung": 200, "toleranz": 0, "einheit": "m", "erklaerung": "Mit der automatisch gesteuerten Kabinenbahn soll kein Punkt der Stadt mehr als 200 m von einer Haltestelle entfernt sein.", "quelle": { "id": "q1", "stelle": "S. 3" }, "nurTest": false },
+    { "id": "f34", "unterthema": "u4", "typ": "mehrfach", "schwierigkeit": 2, "frage": "Welche Merkmale hat Masdar City laut Mitschrift?", "optionen": ["Strom aus Solarzellen und Windkraftwerken", "Fahrverbot für Autos mit Verbrennungsmotor", "Wasser aus solarbetriebenen Entsalzungsanlagen", "Kohlekraftwerk für die Grundversorgung", "Stadtautobahn durch das Zentrum"], "richtig": [0, 1, 2], "erklaerung": "Masdar City setzt auf kohlendioxidfreie Energie aus Sonne und Wind, verbietet Verbrennungsmotoren und gewinnt Wasser aus solarbetriebenen Entsalzungsanlagen.", "quelle": { "id": "q1", "stelle": "S. 3" }, "nurTest": false },
+    { "id": "f35", "unterthema": "u4", "typ": "reihenfolge", "schwierigkeit": 2, "frage": "Bringe die Termine von Masdar City in die richtige zeitliche Reihenfolge.", "schritte": ["Baubeginn 2009", "ursprünglich geplante Fertigstellung 2016", "erste Verschiebung der Fertigstellung auf 2025", "aktuelle Planung: Fertigstellung 2030"], "erklaerung": "Gebaut wird seit 2009. Fertig sein sollte die Stadt 2016; wegen Finanzproblemen wurde das zuerst auf 2025 und mittlerweile auf 2030 verschoben.", "quelle": { "id": "q1", "stelle": "S. 3" }, "nurTest": false },
+    { "id": "f36", "unterthema": "u4", "typ": "wahrfalsch", "schwierigkeit": 1, "frage": "In Masdar City sollen Abfälle gänzlich recycelt und wieder in Energie umgewandelt werden.", "richtig": true, "erklaerung": "Das ist eines der geplanten Merkmale von Masdar City.", "quelle": { "id": "q1", "stelle": "S. 3" }, "nurTest": false },
+    { "id": "f37", "unterthema": "u4", "typ": "lueckentext", "schwierigkeit": 2, "frage": "Ergänze die Sätze zum Klima in Masdar City.", "text": "Die Häuser werden über tiefere {{1}} klimatisiert. Durch die dichte, schattenspendende Bauweise soll die Durchschnittstemperatur um {{2}} °C niedriger sein.", "luecken": [["Erdschichten"], ["20", "zwanzig"]], "erklaerung": "Die Klimatisierung läuft über tiefere Erdschichten, und die schattenspendende Architektur soll die Temperatur im Schnitt um 20 °C senken.", "quelle": { "id": "q1", "stelle": "S. 3" }, "nurTest": false },
+    { "id": "f38", "unterthema": "u4", "typ": "freitext", "schwierigkeit": 3, "frage": "Nenne und erkläre zwei Kritikpunkte am Projekt Masdar City.", "musterloesung": "Erstens gibt es zu wenig Abfall für die Energieproduktion, sodass Abfall herantransportiert werden müsste; außerdem wird die Planungsrealität bezweifelt. Zweitens stellt sich die soziale Frage, ob sich dort auch einkommensschwache Familien ansiedeln können.", "maxPunkte": 2, "bewertungspunkte": [
+      { "text": "nennt die zu geringe Abfallmenge bzw. den Transport oder die Planungsrealität", "woerter": ["abfall", "müll", "transport", "planung", "realität"] },
+      { "text": "nennt die soziale Frage nach einkommensschwachen Familien", "woerter": ["einkommensschwach", "sozial", "arm", "familie", "leistbar"] }
+    ], "erklaerung": "Kritisiert werden die Planungsrealität, die zu geringe Abfallmenge für die Energieproduktion und die soziale Frage.", "quelle": { "id": "q1", "stelle": "S. 4" }, "nurTest": true },
+    { "id": "f39", "unterthema": "u4", "typ": "mc", "schwierigkeit": 2, "frage": "Warum wurde die Fertigstellung von Masdar City verschoben?", "optionen": ["wegen Finanzproblemen", "wegen eines Erdbebens", "wegen Wassermangels", "wegen eines Bauverbots"], "richtig": [0], "erklaerung": "Laut Mitschrift führten Finanzprobleme dazu, dass die Fertigstellung zuerst auf 2025 und mittlerweile auf 2030 verschoben wurde.", "quelle": { "id": "q1", "stelle": "S. 3" }, "nurTest": true },
+    { "id": "f40", "unterthema": "u4", "typ": "zuordnen", "schwierigkeit": 3, "frage": "Ordne jedem Bereich von Masdar City die geplante Lösung zu.", "paare": [
+      { "links": "Strom", "rechts": "Solarzellen und Windkraftwerke" },
+      { "links": "Wasser", "rechts": "solarbetriebene Entsalzungsanlagen" },
+      { "links": "Verkehr", "rechts": "automatisch gesteuerte Kabinenbahn" },
+      { "links": "Abfall", "rechts": "Recycling und Umwandlung in Energie" },
+      { "links": "Wirtschaft", "rechts": "Firmen aus dem Ökologiesektor" }
+    ], "erklaerung": "Masdar City soll in allen Bereichen ohne fossile Energie auskommen: Sonne und Wind, Entsalzung mit Solarstrom, Kabinenbahn, Recycling und Ökofirmen.", "quelle": { "id": "q1", "stelle": "S. 3" }, "nurTest": true }
+  ]
+}
