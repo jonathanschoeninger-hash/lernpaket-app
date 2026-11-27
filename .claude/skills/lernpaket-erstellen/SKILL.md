@@ -27,6 +27,13 @@ Diese Angaben brauchst du. Fehlt eine, frag **einmal** gesammelt nach. Wenn niem
   - **8–15 Karteikarten:** Vorderseite eine klare Frage oder ein Begriff, Rückseite kurz
   - **1 Video** mit 3–8 Folien. Erste Folie `titel`, letzte Folie `merke` oder `quiz`. Sprechertext 1–4 Sätze pro Folie, gesprochen gut verständlich (keine Klammern, keine Abkürzungen, Formeln ausgeschrieben)
   - **10 Fragen** (Standard), davon **3 mit `nurTest: true`**. Mindestens 3 verschiedene Fragetypen pro Unterthema. Schwierigkeit gemischt (1 leicht, 2 mittel, 3 schwer)
+- **Fragen wie eine Lehrkraft stellen – Verständnis statt Nachschlagen.** Höchstens etwa ein Viertel der Fragen darf reines Wiedergeben sein (Begriff, Jahreszahl, Zahl). Die übrigen verlangen, das Gelernte anzuwenden, zu begründen, zu vergleichen oder zu beurteilen:
+  - Fallbeispiel oder Beobachtung → Begriff/Theorie zuordnen („Eine Familie aus Linz zieht in die Nachbargemeinde – welcher Vorgang ist das?“)
+  - Warum-Fragen, deren Antwort aus dem Material folgt („Warum soll keine Haltestelle weiter als 200 m entfernt sein?“)
+  - mit Zahlen aus dem Material rechnen statt sie abzufragen
+  - Zusammenhänge zwischen Unterthemen herstellen
+  - Freitext mit Operatoren wie „erkläre“, „vergleiche“, „nimm Stellung“, „beurteile“
+  Nie „laut Mitschrift/Skript/Handout“ in die Frage schreiben. Fallbeispiele dürfen erfunden sein, die richtige Lösung muss aber eindeutig aus dem Material folgen.
 - Multiple Choice: genau 4 Optionen, falsche Optionen plausibel, ähnliche Länge wie die richtige, kein „alle oben genannten“.
 - Jede Frage hat eine `erklaerung` (1–3 Sätze, warum die Lösung stimmt).
 - Jede Frage, Karte und Zusammenfassung hat eine `quelle` (Datei-ID + Stelle wie „S. 4“ oder „Min. 3:20“), wenn bekannt.
